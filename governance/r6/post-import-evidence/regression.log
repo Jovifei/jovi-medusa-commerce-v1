@@ -1,0 +1,22 @@
+[r6] build image from imported audited source (jovi-medusa-r6-backend:local)
+[r6] create isolated network jovi-medusa-r6-internal
+[r6] boot postgres
+[r6] boot redis
+[r6] wait postgres ready (real query on target DB)
+[r6] boot backend (migrate then start)
+[r6] wait backend healthy (9000)
+[r6] backend healthy
+[r6] run jest-unit
+exit=0 script=jest-unit
+[r6] run jest-integration
+exit=0 script=jest-integration
+[r6] run x2-first
+exit=0 script=x2-first
+[r6] run x2-replay
+exit=0 script=x2-replay
+[r6] run x2-concurrency
+exit=0 script=x2-concurrency
+[r6] run x2-negative
+exit=0 script=x2-negative
+[r6] done; see /e/project/jovi-medusa-commerce-v1/governance/r6/post-import-evidence
+[r6] cleanup

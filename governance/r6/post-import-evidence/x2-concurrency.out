@@ -1,0 +1,13 @@
+{"level":"info","message":"redisUrl not found. A fake redis instance will be used.","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"Executing script at src/scripts/jovi-x2-concurrency.ts...","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"redisUrl not found. A fake redis instance will be used.","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"No link to load from /workspace/node_modules/.pnpm/@medusajs+draft-order@2.19.0_@medusajs+admin-sdk@2.19.0_@medusajs+cli@2.19.0_@types+nod_a503bc77b69dc58a1c66515384cb4534/node_modules/@medusajs/draft-order/.medusa/server/src/links. skipped.","timestamp":"2026-09-02 17:09:28"}
+{"level":"warn","message":"Local Event Bus installed. This is not recommended for production.","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"Connection to Redis in \"locking-redis\" provider established","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"Locking module: Using \"locking-redis\" as default.","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"[Workflow-engine-redis] Connection to Redis in module 'workflow-engine-redis' established","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"[Workflow-engine-redis] Connection to Redis PubSub in module 'workflow-engine-redis' established","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"No workflow to load from /workspace/node_modules/.pnpm/@medusajs+draft-order@2.19.0_@medusajs+admin-sdk@2.19.0_@medusajs+cli@2.19.0_@types+nod_a503bc77b69dc58a1c66515384cb4534/node_modules/@medusajs/draft-order/.medusa/server/src/workflows. skipped.","timestamp":"2026-09-02 17:09:28"}
+{"level":"info","message":"No subscriber to load from /workspace/node_modules/.pnpm/@medusajs+draft-order@2.19.0_@medusajs+admin-sdk@2.19.0_@medusajs+cli@2.19.0_@types+nod_a503bc77b69dc58a1c66515384cb4534/node_modules/@medusajs/draft-order/.medusa/server/src/subscribers. skipped.","timestamp":"2026-09-02 17:09:28"}
+{"runs":10,"unique_results":1,"run_id":"x2_951abc2715fc9be2","state":"READY_FOR_HUMAN_DELIVERY"}
+{"level":"info","message":"Finished executing script.","timestamp":"2026-09-02 17:09:33"}

@@ -1,0 +1,62 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.33kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 123B done
+#3 DONE 0.0s
+
+#4 [build 1/9] FROM docker.io/library/node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca
+#4 resolve docker.io/library/node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 5.18kB done
+#5 DONE 0.0s
+
+#6 [build 2/9] WORKDIR /workspace
+#6 CACHED
+
+#7 [build 7/9] RUN pnpm --filter @dtc/backend exec tsc --noEmit
+#7 CACHED
+
+#8 [runtime 3/4] RUN corepack enable && corepack prepare pnpm@10.32.0 --activate
+#8 CACHED
+
+#9 [build 9/9] RUN mkdir -p apps/backend/public/admin && cp -R apps/backend/.medusa/server/public/admin/. apps/backend/public/admin/
+#9 CACHED
+
+#10 [build 3/9] COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
+#10 CACHED
+
+#11 [build 4/9] COPY apps/backend/package.json apps/backend/package.json
+#11 CACHED
+
+#12 [build 5/9] RUN corepack enable && corepack prepare pnpm@10.32.0 --activate && pnpm install --frozen-lockfile
+#12 CACHED
+
+#13 [build 6/9] COPY . .
+#13 CACHED
+
+#14 [build 8/9] RUN pnpm --filter @dtc/backend exec medusa build
+#14 CACHED
+
+#15 [runtime 4/4] COPY --from=build /workspace /workspace
+#15 CACHED
+
+#16 exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:ba4bb6070c0c3ce94657900d69a5ae36ae530a3d898457ba7175234dfc9482a3 done
+#16 exporting config sha256:090918a81791a5a1b183f5d2d096edca7bc210fe3c7433e63b4e515ff806764e done
+#16 exporting attestation manifest sha256:d635b364b2c8782a33fc35bef15eb0afda325de802613e65f2e68243a4b579b5 done
+#16 exporting manifest list sha256:f1aca547619f4c7e5f841b793650a0566f72e7b7042b92522c16385918baf6fb done
+#16 naming to docker.io/library/jovi-medusa-r6-backend:local done
+#16 unpacking to docker.io/library/jovi-medusa-r6-backend:local done
+#16 DONE 0.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/q4fbwdoxtvp4e2w92zi1qz2cq

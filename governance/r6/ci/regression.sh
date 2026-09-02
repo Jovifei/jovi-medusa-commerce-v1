@@ -12,7 +12,11 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
-BACKEND="$REPO_ROOT/audit-source/backend/jovi-medusa-backend"
+# Docker Desktop on Windows cannot use MSYS POSIX paths (/e/...). Convert the
+# repo root to a Windows path (E:/...) for every docker build context / bind-mount
+# argument. cygpath -m emits E:/project/... (forward slashes, drive-prefixed).
+REPO_ROOT_WIN="$(cygpath -m "$REPO_ROOT")"
+BACKEND="$REPO_ROOT_WIN/audit-source/backend/jovi-medusa-backend"
 APP="$BACKEND/apps/backend"
 OUT="${R6_EVIDENCE_OUT:-$REPO_ROOT/governance/r6/post-import-evidence}"
 NS="jovi-medusa-r6"
@@ -53,31 +57,52 @@ docker run -d --name "$REDIS" --network "$NET" -v "$RDV":/data \
   redis@sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1 \
   redis-server --appendonly yes --appendfsync always >/dev/null
 
-log "wait postgres ready"
-for i in $(seq 1 40); do docker exec "$DB" pg_isready -U postgres -d jovi_medusa_r6 >/dev/null 2>&1 && break; sleep 2; done
-docker exec "$DB" pg_isready -U postgres -d jovi_medusa_r6 >/dev/null
+log "wait postgres ready (real query on target DB)"
+# pg_isready can report "accepting connections" while postgres is still finishing
+# initdb on a FRESH volume. That race makes the backend's db:migrate time out. Poll
+# until a real SELECT on the target database succeeds (run from the backend image on
+# the same isolated network), which guarantees init is complete before backend boot.
+DB_READY=""
+for i in $(seq 1 60); do
+  if docker run --rm --network "$NET" "$IMG" sh -lc \
+    "cd /workspace/apps/backend && node -e \"const {Client}=require('/workspace/node_modules/.pnpm/pg@8.23.0/node_modules/pg');const c=new Client({connectionString:'postgres://postgres@$DB:5432/jovi_medusa_r6?sslmode=disable',ssl:false});c.connect().then(()=>c.end()).catch(()=>process.exit(1))\"" \
+    >/dev/null 2>&1; then DB_READY=1; break; fi
+  sleep 3
+done
+[ -n "$DB_READY" ] || { log "postgres never became queryable"; exit 1; }
 
 log "boot backend (migrate then start)"
 docker run -d --name "$BE" --network "$NET" \
   -e NODE_ENV=production \
-  -e "DATABASE_URL=postgres://postgres@$DB:5432/jovi_medusa_r6" \
+  -e "DATABASE_URL=postgres://postgres@$DB:5432/jovi_medusa_r6?sslmode=disable" \
   -e 'DATABASE_DRIVER_OPTIONS={"connection":{"ssl":false}}' \
   -e "REDIS_URL=redis://$REDIS:6379" \
   -e "LOCKING_REDIS_URL=redis://$REDIS:6379" \
   -e "JOVI_FIXTURE_ROOT=/r2-tests/fixtures/synthetic-digital-checklist" \
   -e "JOVI_X2_EVIDENCE_ROOT=/workspace/runtime/evidence" \
-  -v "$REPO_ROOT/audit-source/tests:/r2-tests:ro" \
+  -v "$REPO_ROOT_WIN/audit-source/tests:/r2-tests:ro" \
   -e "JWT_SECRET=$JWT" -e "COOKIE_SECRET=$COOKIE" \
   --entrypoint sh "$IMG" -lc \
   "cd /workspace/apps/backend && corepack pnpm --filter @dtc/backend exec medusa db:migrate && corepack pnpm --filter @dtc/backend exec medusa start -H 0.0.0.0 -p 9000" >/dev/null
 
 log "wait backend healthy (9000)"
+BE_OK=""
 for i in $(seq 1 60); do
-  if docker exec "$BE" sh -lc "node -e \"require('http').get('http://127.0.0.1:9000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))\"" >/dev/null 2>&1; then break; fi
+  if docker exec "$BE" sh -lc "node -e \"require('http').get('http://127.0.0.1:9000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))\"" >/dev/null 2>&1; then BE_OK=1; break; fi
   sleep 3
 done
+if [ -z "$BE_OK" ]; then
+  log "backend never became healthy; container logs:"
+  docker logs "$BE" 2>&1 | tail -40 | tee -a "$LOG"
+  exit 1
+fi
+log "backend healthy"
 
-run(){ log "run $1"; docker exec -e NODE_ENV=test "$BE" sh -lc "cd /workspace/apps/backend && $2" > "$OUT/$1.out" 2> "$OUT/$1.err"; echo "exit=$? script=$1" | tee -a "$LOG"; }
+# @medusajs/test-utils ModuleTestRunner creates isolated temp DBs and connects to
+# postgres via DB_HOST/DB_USERNAME/DB_PORT env (defaults to localhost:5432). Inside
+# this isolated internal network the postgres server is "$DB", so inject those vars
+# on every test exec (X2 scripts run via medusa exec and use the container DATABASE_URL).
+run(){ log "run $1"; docker exec -e NODE_ENV=test -e "DB_HOST=$DB" -e DB_USERNAME=postgres -e DB_PORT=5432 "$BE" sh -lc "cd /workspace/apps/backend && $2" > "$OUT/$1.out" 2> "$OUT/$1.err"; echo "exit=$? script=$1" | tee -a "$LOG"; }
 
 # TypeScript already covered in static job; here the image build ran `tsc --noEmit`.
 

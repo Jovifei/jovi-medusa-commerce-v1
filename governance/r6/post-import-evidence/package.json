@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "evidence_type": "R6_POST_IMPORT_EVIDENCE_PACKAGE",
+  "controlled_repo": "E:\\project\\jovi-medusa-commerce-v1",
+  "controlled_repo_branch_model": {
+    "main": "protected baseline",
+    "development": "integration"
+  },
+  "executor": "JOVI-COMMERCE-R6-CONTROLLED-REPO-ADOPTION-AND-IMPORT-V1",
+  "audit_binding": {
+    "decision_id": "JOVI-MEDUSA-R6-CONTROLLED-ADOPTION-DECISION-V1",
+    "audit_result": "MEDUSA_R2R2_PASS",
+    "final_source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+    "package_manifest_sha256": "a1e07b28ac3ec3753e55da20b342f911a54b6bd3de1492b13d9b7ae5434009e5",
+    "medusa_version": "2.19.0"
+  },
+  "import_integrity": {
+    "files_imported": 74,
+    "canonical_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "method": "exact-byte-import per R6_IMPORT_TARGET_SET.json (NO whole-directory copy)",
+    "import_layout": "audit-source/ mirrors the 74-file audited snapshot; runtime data never tracked"
+  },
+  "deterministic_build": {
+    "docker_image": "jovi-medusa-r6-backend:local",
+    "image_build_steps": [
+      "corepack pnpm install --frozen-lockfile",
+      "tsc --noEmit",
+      "medusa build"
+    ],
+    "oci_labels": {
+      "org.opencontainers.image.title": "jovi-medusa-r2-synthetic",
+      "org.opencontainers.image.source-tree-sha": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+      "org.opencontainers.image.lock-sha": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+      "org.opencontainers.image.medusa-version": "2.19.0"
+    },
+    "build_succeeded": true
+  },
+  "jest_unit": {
+    "result": "PASS",
+    "suites": "Test Suites: 6 passed, 6 total",
+    "tests": "Tests:       12 passed, 12 total",
+    "natural_shutdown": "no --forceExit; clean exit"
+  },
+  "jest_module_integration": {
+    "result": "PASS",
+    "suites": "Test Suites: 1 passed, 1 total",
+    "tests": "Tests:       3 passed, 3 total",
+    "spec": "src/modules/jovi-commerce/__tests__/service.spec.ts",
+    "note": "ModuleTestRunner connected to isolated postgres via DB_HOST (internal network)"
+  },
+  "x2_first": {
+    "result": "PASS",
+    "outcome": "READY_FOR_HUMAN_DELIVERY",
+    "environment": "SYNTHETIC_X2",
+    "synthetic_only": true,
+    "real_commerce_pilot_started": false,
+    "production_integration_allowed": false,
+    "package_sha256": "2abab13caa17f71102d7bb95029d6b287d719e785f94e69a8cd1dc89bd47406d",
+    "package_manifest_sha256": "1ff2a9def2ebc6df99daa0ccc4c8fe27aaa0d3529270b161590f28c76553bd36",
+    "external_actions_all_false": true
+  },
+  "x2_replay": {
+    "result": "PASS",
+    "deterministic": "same normalized READY_FOR_HUMAN_DELIVERY outcome on replay",
+    "note": "first vs replay outputs differ only in timestamps / issued_at; semantic payload identical"
+  },
+  "x2_concurrency": {
+    "result": "PASS",
+    "runs": 10,
+    "unique_results": 1,
+    "state": "READY_FOR_HUMAN_DELIVERY"
+  },
+  "x2_negative": {
+    "result": "PASS",
+    "database_unchanged": true,
+    "rejected_cases": [
+      "caller_supplied_payment_fact",
+      "fixture_source_escape",
+      "manual_payment_command",
+      "payment_amount_mismatch",
+      "payment_currency_mismatch",
+      "payment_provider_mismatch"
+    ],
+    "fail_closed": true
+  },
+  "carried_over_frozen_evidence": {
+    "oracle_7_of_7": true,
+    "oracle_status": "X2_STAGING_COMMERCE_FLOW_PASS",
+    "transaction_rollback": "frozen evidence: R2-R2 record (DB before==after on negative)",
+    "pid1_recovery": "frozen evidence: R2-R2 PID1 SIGKILL recovery record",
+    "sbom": true,
+    "license_scope": true,
+    "source_manifest": true,
+    "note": "These byte-identical audited behaviors are frozen under evidence/r2r2-freeze/ and are the subject of the independent Post-Import Audit (separate actor)."
+  },
+  "boundary_flags_must_remain_false": {
+    "production_integration_allowed": false,
+    "real_payment_allowed": false,
+    "real_customer_allowed": false,
+    "xianyu_allowed": false,
+    "auto_delivery_allowed": false,
+    "R12_supersede_allowed": false
+  },
+  "raw_evidence_sidecars": {
+    "build.log": "0ab7d9248bcf934eb2d7831051e645c93efb2e815160b251264d070113e6d270",
+    "jest-integration.err": "d215b293ee7e25f80ce9e4673c6a11c96881bbfed6c62c0be94b1b7d0b29e2f2",
+    "jest-integration.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "jest-unit.err": "53ab6c552d222f78ccf922d1df110fcd1fddbf6ce0eeb4c36b55ccc3d98e1748",
+    "jest-unit.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "regression.log": "844a21e8a1ba3650c7f3ece7b30e3dbee4d566bdb1355bf88f689685a053c70f",
+    "x2-concurrency.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "x2-concurrency.out": "7121828cb61b6b95fc611cc17d94c133666105f8e3704ba8fe3d2b6137247e3b",
+    "x2-first.err": "a70f92ae0d2fcbf05de9c9202fae34d4247e16fde2315f5ba4959d7ce98d5c74",
+    "x2-first.out": "e059e874ac2a53c777ad29cca2cf7149781b302e0b62ef65fb014edf5392d35f",
+    "x2-negative.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "x2-negative.out": "1c1d4291bf5ce0c7f5c496836b4cf8b02c48e848e7163e782d907a0645376d21",
+    "x2-replay.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "x2-replay.out": "e7629e8fee38cbef2da88eeb073cde026fe41917c7b0bd35547ed5446ca858f6"
+  },
+  "final_state": "READY_FOR_R6_POST_IMPORT_INDEPENDENT_AUDIT",
+  "generated_by": "Commerce Adoption Executor (agent, 2026-09-03)"
+}
