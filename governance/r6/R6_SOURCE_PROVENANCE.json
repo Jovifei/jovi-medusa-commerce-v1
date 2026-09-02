@@ -1,0 +1,33 @@
+{
+  "bindings": {
+    "audit_commit": "6e59863787dfa73348971c694b774e5712950879",
+    "audit_result": "MEDUSA_R2R2_PASS",
+    "backend_image_id": "sha256:19da68692a32b02d98ada22d8a83633600978c2d19823c7aa104a43c8ac1ad62",
+    "backend_image_manifest_digest": "sha256:31a3e509a7cb67c01f31cdb310ff108f659de0d2b83352c80777b94fd0498ff3",
+    "candidate_branch": "r2r2-gap-closure-and-r6-adoption-prep-20260901",
+    "decision_id": "JOVI-MEDUSA-R6-CONTROLLED-ADOPTION-DECISION-V1",
+    "final_source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "license_scope_file": "MEDUSA_R2R2_ADMIN_LICENSE_SCOPE.json",
+    "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+    "medusa_commit": "87d77fa1b56ec287aa6655aaa2f54245387aa2f2",
+    "medusa_tag": "v2.19.0",
+    "medusa_version": "2.19.0",
+    "package_manifest_sha256": "a1e07b28ac3ec3753e55da20b342f911a54b6bd3de1492b13d9b7ae5434009e5",
+    "postgres_image_digest": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+    "r2r1_baseline_source_tree_sha256": "d15eb73e94a1fcf8b19ac2c8e03b317fa5ea94f7d8242548aa3eac4dec334e8d",
+    "redis_image_digest": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1",
+    "sbom_file": "MEDUSA_R2R2_SBOM.cdx.json"
+  },
+  "evidence_type": "R6_SOURCE_PROVENANCE",
+  "imported_bytes_pinned": true,
+  "schema_version": 1,
+  "source_lineage": {
+    "final": "R2-R2 audited source tree (e533f0ce..., 74 files)",
+    "intermediate_deltas": [
+      "M1: removed --forceExit from apps/backend/package.json test scripts",
+      "L1: added apps/backend/src/api/admin/jovi-commerce/receipts/route.ts (read-only)",
+      "section-III isolation: docker-compose.r2.yml renamed to r2-r2 namespace"
+    ],
+    "materialized_from": "R2-R1 frozen source snapshot (d15eb73e...), zero undocumented drift"
+  }
+}

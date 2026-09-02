@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "evidence_type": "R6_SOURCE_MANIFEST_SUMMARY",
+  "bound_audited_source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+  "file_count": 74,
+  "imported_under": "audit-source/",
+  "authoritative_manifest": "evidence/r2r2-freeze/MEDUSA_R2R2_SOURCE_SNAPSHOT_MANIFEST.json",
+  "note": "The full 74-entry per-file manifest (path/sha256/size) is the frozen evidence MEDUSA_R2R2_SOURCE_SNAPSHOT_MANIFEST.json preserved under evidence/; audit-source/ reproduces it byte-for-byte. Re-verification is deterministic via governance/r6/ci/verify_source_tree.py audit-source e533f0ce...",
+  "verified_at": "2026-09-03",
+  "import_method": "exact byte import; no whole-directory copy; no node_modules/.medusa/runtime data"
+}

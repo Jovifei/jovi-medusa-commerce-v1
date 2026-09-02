@@ -1,0 +1,93 @@
+{
+  "manifest_sha256_equal": true,
+  "oracle_catalog_manifest_sha256": "951abc2715fc9be22303c305e82185ff1fae0c79be4db709dcb33eaf8c82f1d6",
+  "oracle_command": {
+    "command": [
+      "py",
+      "-3.12",
+      "-B",
+      "-m",
+      "jovi_commerce",
+      "x2",
+      "run",
+      "--work-dir",
+      "E:\\Claude_allow\\Download\\jovi-commerce-oracle-r2r2-evidence-20260901-122826",
+      "--fixture-dir",
+      "E:\\project\\jovi-commerce-engine-v1\\.worktrees\\landing-phase1\\tests\\fixtures\\commerce\\synthetic-digital-checklist"
+    ],
+    "duration_seconds": 2.772,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:29.659827+00:00",
+    "label": "python-oracle",
+    "started_at": "2026-09-01T04:28:26.888305+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "{\"artifact_manifest\":[{\"path\":\"data/commerce.db\",\"sha256\":\"79aa1fef2ee860587cbeec6f6f1a57043b550b8445269d516f3236b0142f2066\",\"size\":94208},{\"path\":\"delivery/delivery_ord_3cb2475ab37441c78e9e44a0d5762255.zip\",\"sha256\":\"0e95e4b727d2328e3395f5ed755a5501e54307529240ae52fb8bf3721a252478\",\"size\":202},{\"path\":\"delivery/delivery_receipt.json\",\"sha256\":\"5a390bf2dc3750c6601c415b87b445ae91ac0f8d18cfae83c34fe225ff5cddc9\",\"size\":552},{\"path\":\"delivery/delivery_receipt.json.sha256\",\"sha256\":\"18b99b5f3030418f4a17ad8856f6ba00dd37a2520d180908cfe26f3509b9aba5\",\"size\":88},{\"path\":\"delivery/entitlement.json\",\"sha256\":\"1e175f9f4bce606706eae30b0735d7c9c3434434d14c05ad79f8340be162f0a8\",\"size\":341},{\"path\":\"delivery/entitlement.json.sha256\",\"sha256\":\"2ca5a4d4b551119960029041ee7265859d3e6d7f321be3cb59133f5e4054c228\",\"size\":83},{\"path\":\"delivery/package_manifest.json\",\"sha256\":\"68a3fe504d9ed0f043ad0db30835b3e70f5646dc112989f293a385c5cd606cf1\",\"size\":516},{\"path\":\"delivery/package_manifest.json.sha256\",\"sha256\":\"ea2e7068230c21c417d91dd38751b475e2b2ac377456fd6c99c1fac3335b62c0\",\"size\":88},{\"path\":\"evidence/01_catalog.json\",\"sha256\":\"b8cc90409c32f0a6ad6b91af0a6852a1db7fdbf98e24c447303f360836c0301a\",\"size\":192},{\"path\":\"evidence/01_catalog.json.sha256\",\"sha256\":\"43edf23dd3d29ac4a887bb60bbe26e35a43d2adac9b707e2bccd2be05d44452a\",\"size\":82},{\"path\":\"evidence/02_listing.json\",\"sha256\":\"7621b274b86b0d0aa748eefe19ab054ec05029595748c630c6f04ea59fd50aa0\",\"size\":208},{\"path\":\"evidence/02_listing.json.sha256\",\"sha256\":\"eb40c2cf9ee20c6f2ab3c8ccafc8fa7b26fc6a4fe6c8fc7a865cd0719b74cd94\",\"size\":82},{\"path\":\"evidence/03_order.json\",\"sha256\":\"27990e58e9952540f1f8086b745caaf6e88e0dee408205f6e8b1c9b2a0f3b5e5\",\"size\":97},{\"path\":\"evidence/03_order.json.sha256\",\"sha256\":\"c88a6fb9b223bf2ca88e683d209b095e3e20fb765bcef7d17d634bc94f61bf87\",\"size\":80},{\"path\":\"evidence/04_payment.json\",\"sha256\":\"f5d483c120b63f9b66a9b67070169c3c2c8011e0cd7645dea7fe0f4eae5bed6a\",\"size\":97},{\"path\":\"evidence/04_payment.json.sha256\",\"sha256\":\"cdc179d69d1e11d6e66c922ceeb5446198e4470a94471974238c43c6533e8410\",\"size\":82},{\"path\":\"evidence/05_entitlement.json\",\"sha256\":\"ab7b112d58da50857194510fbf15b95a6780b687913b3c2a4b1e94a6917f8a7f\",\"size\":125},{\"path\":\"evidence/05_entitlement.json.sha256\",\"sha256\":\"4410e7e3b7d3498a74f66c48a99aefd983f6f532b17fb239f6d736f0e7b93ae4\",\"size\":86},{\"path\":\"evidence/06_delivery.json\",\"sha256\":\"d9e9629505b01c6e0c60a1f065ff9ebcc17055cf2208e90588d6aedb07811f76\",\"size\":158},{\"path\":\"evidence/06_delivery.json.sha256\",\"sha256\":\"c738852cbeb7269d064172af9df413e09b5f4810dcf0f50635e8b51bfa685f1c\",\"size\":83},{\"path\":\"evidence/07_support_metrics.json\",\"sha256\":\"7c0a8de4c8c4a56f860874b210b1149ce7531378f102588a6c096a9ebbc2a4a3\",\"size\":203},{\"path\":\"evidence/07_support_metrics.json.sha256\",\"sha256\":\"08334d15a5a97797b78c683d3494d5040f5e5a6dbe59746975b83e7a18e52ad9\",\"size\":90},{\"path\":\"listing/changelog.md\",\"sha256\":\"c5162f2e60ec6dcbb487bf5afc01e4134a7144640168daae02601a8a306ad4ae\",\"size\":114},{\"path\":\"listing/delivery.md\",\"sha256\":\"a83aa427e2baaf67de2f428499675869fa6838dad92dc40dc384650e2be7ca2f\",\"size\":209},{\"path\":\"listing/description.md\",\"sha256\":\"03bbd264ca75dbbffe5014d66534aec8c50d925d1a9f6e4f9ee8af7f8fe3c34d\",\"size\":390},{\"path\":\"listing/faq.md\",\"sha256\":\"3de90e10fb1e6d9a2807871682aee989958dd6fa44da4b58ac6b4118a41af0cb\",\"size\":163},{\"path\":\"listing/images_prompt.md\",\"sha256\":\"409ae888ced81e855f4e2f723f542f645009150427da74378a2e2315d175b85f\",\"size\":267},{\"path\":\"listing/listing.json\",\"sha256\":\"2985eeaa21f59901112aa2fee10dcde26c498eb76735e33d3a426265b51c1f41\",\"size\":1039},{\"path\":\"listing/manifest.sha256.json\",\"sha256\":\"830b0dfbc7acdfb7cad053d11ab70e60fb62ce894c4a02e8deb57de9482fe7c4\",\"size\":974},{\"path\":\"listing/run.json\",\"sha256\":\"6da40978ba5ff150f548df60364a79f3ed82ce2e2d9a12187494ca9258af54cf\",\"size\":979},{\"path\":\"listing/title.md\",\"sha256\":\"e12f0c9523bfb39ea46b624e56615e4cadd27bb59ddeac0be1e6fda84d493957\",\"size\":84},{\"path\":\"metrics/COMMERCE_METRICS.json\",\"sha256\":\"ef18b50704837a07f93756e8ed6509261da79bc99b4d507f548d924a5ceb9122\",\"size\":350},{\"path\":\"metrics/COMMERCE_METRICS.json.sha256\",\"sha256\":\"bdea3acb78dde7a56c3d7055672219b8ec905ac600c8cd8aafdbc98ed8645f9e\",\"size\":88},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/1.json\",\"sha256\":\"e559630422194498d4172eecd58be040e91347122b63d9ff9eb187ff3d76acc0\",\"size\":570},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/1.json.sha256\",\"sha256\":\"75d2bfe8a20f8e290f4f5089040b5befadd394e63af294666c0f1c156a784018\",\"size\":73},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/2.json\",\"sha256\":\"3ba6686c2db903b39bef96ed0cf8042b9d7baecf048aca13cb9787e5ae1034f4\",\"size\":535},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/2.json.sha256\",\"sha256\":\"508c29d249fba4970fec203e07b857879a0b933b7b59d4937b78ff6f86e51a6d\",\"size\":73},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/3.json\",\"sha256\":\"e1eef32dfc224e9fbf54cd2d6b7110c53b309db0b17f2556b13e74bc30f5d026\",\"size\":581},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/3.json.sha256\",\"sha256\":\"0b467ed5580d07ba8c2ab023ecf14bf54e3ede727c9f249921e978b41b4ead1c\",\"size\":73},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/4.json\",\"sha256\":\"3ff6ed27860a3ffd3379fcfec0ba4369c6fe981449788359b60e4c873eb5f777\",\"size\":561},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/4.json.sha256\",\"sha256\":\"1348d560ccb1af8e428c04b9ae737b4bf20267877bf06640678983954f054e0d\",\"size\":73},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/5.json\",\"sha256\":\"d86702f066db52c9470b076effdf794c828a455036801adc55f5dba48c508b86\",\"size\":571},{\"path\":\"workspace/receipts/orders/ord_3cb2475ab37441c78e9e44a0d5762255/5.json.sha256\",\"sha256\":\"7887d25dc39d8a79e3ad4d307dbb25f9ed43b4adf68240ec81130137e2dcd49c\",\"size\":73},{\"path\":\"xianyu/bundle.json\",\"sha256\":\"2f70649ec4315d3cb19db7b51ca7525b7ac8c4f922601e9e66cd1961731f556d\",\"size\":1867},{\"path\":\"xianyu/manifest.sha256.json\",\"sha256\":\"b65505296606b178f696b9c9cab7f764672c2449173e550bef7b84537b8714c1\",\"size\":422},{\"path\":\"xianyu/package.sha256.txt\",\"sha256\":\"c7a22e0331f1664f46c45fa6c6a8472f9b222307348632aeb815490ebd815a6c\",\"size\":66},{\"path\":\"xianyu/reply_rules.json\",\"sha256\":\"5898c8e9eeebdf68be6b69f3e795d3067878b8ede823444abca7a46d5eeda655\",\"size\":273}],\"artifact_manifest_sha256\":\"763d619f06bc1e2704da12d296e982ab9cb2bf872a9e00badd4b9091f4cfbf6b\",\"catalog_manifest_sha256\":\"951abc2715fc9be22303c305e82185ff1fae0c79be4db709dcb33eaf8c82f1d6\",\"counts\":{\"deliveries\":1,\"entitlements\":1,\"orders\":1,\"payments\":1},\"event_chain_verified\":true,\"evidence_sha256\":{\"catalog\":\"b8cc90409c32f0a6ad6b91af0a6852a1db7fdbf98e24c447303f360836c0301a\",\"delivery\":\"d9e9629505b01c6e0c60a1f065ff9ebcc17055cf2208e90588d6aedb07811f76\",\"entitlement\":\"ab7b112d58da50857194510fbf15b95a6780b687913b3c2a4b1e94a6917f8a7f\",\"listing\":\"7621b274b86b0d0aa748eefe19ab054ec05029595748c630c6f04ea59fd50aa0\",\"order\":\"27990e58e9952540f1f8086b745caaf6e88e0dee408205f6e8b1c9b2a0f3b5e5\",\"payment\":\"f5d483c120b63f9b66a9b67070169c3c2c8011e0cd7645dea7fe0f4eae5bed6a\",\"support_metrics\":\"7c0a8de4c8c4a56f860874b210b1149ce7531378f102588a6c096a9ebbc2a4a3\",\"xianyu_bundle\":\"2f70649ec4315d3cb19db7b51ca7525b7ac8c4f922601e9e66cd1961731f556d\"},\"main_import_authorized\":false,\"order_id\":\"ord_3cb2475ab37441c78e9e44a0d5762255\",\"order_status\":\"READY_FOR_HUMAN_DELIVERY\",\"pilot_not_started\":true,\"real_platform_actions\":false,\"risk\":[\"REAL_COMMERCE_PILOT_NOT_STARTED\",\"G3_RECEIPT_NOT_BOUND\"],\"schema_version\":1,\"status\":\"X2_STAGING_COMMERCE_FLOW_PASS\",\"synthetic\":true,\"xianyu\":{\"approval\":\"PENDING\",\"bundle_sha256\":\"2f70649ec4315d3cb19db7b51ca7525b7ac8c4f922601e9e66cd1961731f556d\",\"delivery_catalog\":[],\"external_actions\":{\"change_price\":false,\"deliver\":false,\"publish\":false,\"refund\":false,\"send_message\":false},\"reply_auto_send\":false}}\n",
+    "stdout_sha256": "f38a18b519990a9ddf4eba20034987b1d5fc9a8ef99bf5e02c1ee2cbf6ba8f22"
+  },
+  "oracle_status": "X2_STAGING_COMMERCE_FLOW_PASS",
+  "package_bytes": {
+    "difference_explanation": "R2-R2 uses fflate STORE with fixed metadata; Python oracle uses its own ZIP writer. Per-file SHA and manifest are the authoritative semantic comparison.",
+    "equal": false,
+    "oracle_sha256": "0e95e4b727d2328e3395f5ed755a5501e54307529240ae52fb8bf3721a252478",
+    "r2r2_sha256": "2abab13caa17f71102d7bb95029d6b287d719e785f94e69a8cd1dc89bd47406d"
+  },
+  "per_file_sha256": [
+    {
+      "equal": true,
+      "oracle_sha256": "7b13e94548ca63d105160070674dd3a967c452f5cfc6338255f2bfd3aa68bbcb",
+      "path": "assets/checklist.txt",
+      "r2r2_sha256": "7b13e94548ca63d105160070674dd3a967c452f5cfc6338255f2bfd3aa68bbcb"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "ee41b91c618c9327c0d769367acc296e06a6cf4611be3009598151a98431154e",
+      "path": "changelog.md",
+      "r2r2_sha256": "ee41b91c618c9327c0d769367acc296e06a6cf4611be3009598151a98431154e"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "201b773859ee0c23022a1b596e7d00c1a6eaad1f7b8a863c0503c4f1630a5c4a",
+      "path": "delivery.json",
+      "r2r2_sha256": "201b773859ee0c23022a1b596e7d00c1a6eaad1f7b8a863c0503c4f1630a5c4a"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "29c385a2145a425aa0a5c06c0233674669041346807a90dc0fb753cffd97513d",
+      "path": "faq.md",
+      "r2r2_sha256": "29c385a2145a425aa0a5c06c0233674669041346807a90dc0fb753cffd97513d"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "a9541b3a1bc030529be8c7a56798fd583827e69962c2c3b714830048cfef8ea7",
+      "path": "pricing.json",
+      "r2r2_sha256": "a9541b3a1bc030529be8c7a56798fd583827e69962c2c3b714830048cfef8ea7"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "dc4fa6cfc53b8da3744100a362ee525b41de5b3b28dcd1f144430d595538146d",
+      "path": "product.json",
+      "r2r2_sha256": "dc4fa6cfc53b8da3744100a362ee525b41de5b3b28dcd1f144430d595538146d"
+    },
+    {
+      "equal": true,
+      "oracle_sha256": "a53531c381c4625bed559c9a478c4d9d9c9a2cf89bcec5565e8a7e09e5081822",
+      "path": "version.json",
+      "r2r2_sha256": "a53531c381c4625bed559c9a478c4d9d9c9a2cf89bcec5565e8a7e09e5081822"
+    }
+  ],
+  "r2r2_source_fixture_manifest_sha256": "951abc2715fc9be22303c305e82185ff1fae0c79be4db709dcb33eaf8c82f1d6",
+  "random_ids_and_time": "intentionally mapped separately",
+  "schema_version": 1,
+  "semantic_mapping": {
+    "amount_major": "19.90",
+    "amount_minor": 1990,
+    "currency": "CNY",
+    "production_integration_allowed": false,
+    "real_platform_actions": false,
+    "state": {
+      "oracle": "READY_FOR_HUMAN_DELIVERY",
+      "r2r2": "READY_FOR_HUMAN_DELIVERY"
+    }
+  }
+}

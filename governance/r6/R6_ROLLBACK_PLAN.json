@@ -1,0 +1,25 @@
+{
+  "boundary_kept": "production_integration_allowed=false",
+  "evidence_type": "R6_ROLLBACK_PLAN",
+  "schema_version": 1,
+  "steps": [
+    {
+      "action": "record source commit (audit_commit) and expect SHA; import only if all bindings match.",
+      "when": "before import begins"
+    },
+    {
+      "action": "abort import; restore audit-source from the verified snapshot; report NOT_IMPORTED.",
+      "when": "on import SHA mismatch"
+    },
+    {
+      "action": "revert development branch to the pre-import commit; keep main untouched; log evidence; do NOT advance to Post-Import Audit.",
+      "when": "on regression failure"
+    },
+    {
+      "action": "freeze development; escalate to Jovi; never enable production/payment/Xianyu/n8n.",
+      "when": "production risk appears"
+    }
+  ],
+  "strategy": "The controlled repo keeps main + development only; every import is a committed, reviewable change. No force-push, no history rewrite.",
+  "trigger": "Any exact-byte mismatch, any regression failure in R6 synthetic verification, or any Jovi override."
+}

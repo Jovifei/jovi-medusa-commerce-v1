@@ -1,0 +1,7 @@
+{
+  "product_id": "synthetic-digital-checklist",
+  "version": "1.0.0",
+  "status": "RELEASED",
+  "change_summary": "Initial synthetic staging release.",
+  "compatibility": ["Windows"]
+}

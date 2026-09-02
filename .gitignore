@@ -1,0 +1,33 @@
+# ---- jovi-medusa-commerce-v1 root .gitignore ----
+# R6 controlled Commerce repo. Never track runtime data, install trees, build
+# output, secrets, logs, or review-queue. Audit-source is byte-pinned; the only
+# ignored entry under it is the runtime volume placeholder (created at run time).
+
+# runtime data volumes (created by compose at run time; never committed)
+audit-source/runtime-r2r2/
+**/runtime-r2r2/
+
+# install / build / cache (defense-in-depth even though not imported)
+node_modules/
+**/node_modules/
+**/.medusa/
+dist/
+build/
+*.tsbuildinfo
+
+# logs
+*.log
+logs/
+
+# secrets
+.env
+.env.*
+!.env.example
+**/secrets/
+credentials*.json
+
+# editor / os
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

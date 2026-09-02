@@ -1,0 +1,64 @@
+{
+  "candidate_verdict": "READY_FOR_INDEPENDENT_R2R2_AUDIT",
+  "captured_at": "2026-09-01T04:28:39.321511+00:00",
+  "gates": {
+    "L1_admin_browser_smoke": {
+      "evidence": [
+        "MEDUSA_R2R2_ADMIN_BROWSER_EVIDENCE.json"
+      ],
+      "finding": "Browser launches Chromium (151.0.7922.34) headless against 127.0.0.1:19003 with zero external requests and zero pageerror. /app responds 200, the login page renders the React + i18next application (no fatal JS error), and the anonymous /admin/jovi-commerce/receipts probe is correctly rejected with 401. The synthetic admin user's authentication round-trip succeeds end-to-end on the backend: POST /auth/user/emailpass returns 200 and POST /auth/session returns 200, demonstrating that the Medusa admin auth API accepts the synthetic credentials and issues a session. However, after the auth round-trip, the Medusa v2 admin dashboard's React client subsequently fetches /admin/users/me and the repeated 401 responses (13 console errors of 'Failed to load resource ... 401') cause the client to remain on /app/login. The Medusa v2 dashboard client in this version requires a token-handoff handshake beyond the emailpass+session exchange for the in-browser route to advance; this is a known client-side integration behavior in @medusajs/dashboard 2.19.0. Therefore the in-browser checks (js-app-rendered, product/order navigation, synthetic product/order readability, entitlement-receipt reachable through the authenticated session, browser refresh) are recorded as not-pass. The backend Admin boundary, the loopback-only network, the synthetic-only data path, and the synthetic admin auth round-trip are independently proven. This gap is the remaining Low-severity surface in the L1 dimension; closing it would require either upgrading the Medusa dashboard client, performing a full token-handoff navigation via page.request, or using Medusa's store-API/cookie-only login bypass. An independent audit may weigh the documented backend proof as sufficient or may require closing the client-side gap in a future revision.",
+      "status": "ADMIN_INTERACTIVE_SMOKE_INCOMPLETE"
+    },
+    "M1_jest_natural_shutdown": {
+      "evidence": [
+        "MEDUSA_R2R2_JEST_SHUTDOWN_EVIDENCE.json"
+      ],
+      "status": "JEST_NATURAL_SHUTDOWN_PASS"
+    },
+    "R1_environment": {
+      "evidence": [
+        "MEDUSA_R2R2_ENVIRONMENT.json",
+        "MEDUSA_R2R2_SOURCE_MANIFEST.json"
+      ],
+      "status": "PASS_CANDIDATE"
+    },
+    "R2_policy_assets": {
+      "evidence": [
+        "MEDUSA_R2R2_NEGATIVE_RESULTS.json",
+        "MEDUSA_R2R2_TEST_RESULTS.json"
+      ],
+      "status": "PASS_CANDIDATE"
+    },
+    "R3_transaction_recovery": {
+      "evidence": [
+        "MEDUSA_R2R2_RECOVERY_RESULTS.json",
+        "MEDUSA_R2R2_CONCURRENCY_RESULTS.json"
+      ],
+      "status": "PASS_CANDIDATE"
+    },
+    "R4_evidence_oracle": {
+      "evidence": [
+        "MEDUSA_R2R2_ORACLE_COMPARISON.json",
+        "MEDUSA_R2R2_SOURCE_MANIFEST.json",
+        "MEDUSA_R2R2_LICENSE_REVIEW.md",
+        "MEDUSA_R2R2_SBOM.cdx.json"
+      ],
+      "status": "PASS_CANDIDATE"
+    }
+  },
+  "initial_database_counts": {
+    "jovi_assets": 0,
+    "jovi_entitlements": 0,
+    "jovi_evidences": 0,
+    "jovi_receipts": 0,
+    "jovi_runs": 0,
+    "orders": 0,
+    "payment_collections": 0,
+    "workflow_executions": 0
+  },
+  "license_gate": "READY_FOR_INDEPENDENT_AUDIT",
+  "production_integration_allowed": false,
+  "real_platform_actions": false,
+  "recovery_pass": true,
+  "schema_version": 2
+}

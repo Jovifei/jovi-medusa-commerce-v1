@@ -1,0 +1,106 @@
+# jovi-medusa-commerce-v1 — required checks (PR gate)
+# Runs on PRs to main and on pushes to development.
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [development]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ---- deterministic static checks (no DB) ----
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.1
+
+      - name: Enable corepack (pnpm)
+        run: |
+          corepack enable
+          corepack prepare pnpm@10.32.0 --activate
+
+      # provenance / manifest validation first (fail fast if import drifts)
+      - name: Validate audited source tree SHA (deterministic)
+        run: |
+          python3 governance/r6/ci/verify_source_tree.py audit-source \
+            e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa
+
+      - name: Validate evidence sidecars
+        run: |
+          python3 governance/r6/ci/verify_sidecars.py evidence/r2r2-freeze
+
+      - name: Install frozen deps
+        working-directory: audit-source/backend/jovi-medusa-backend
+        run: pnpm install --frozen-lockfile
+
+      - name: TypeScript check (deterministic)
+        working-directory: audit-source/backend/jovi-medusa-backend
+        run: pnpm --filter @dtc/backend exec tsc --noEmit
+
+      - name: Secret scan
+        run: |
+          python3 governance/r6/ci/secret_scan.py . --exclude node_modules --exclude .git \
+            --exclude '**/runtime-r2r2/**' --exclude audit-source/backend/jovi-medusa-backend/pnpm-lock.yaml
+
+      - name: Unit tests (12) — natural shutdown, no --forceExit
+        working-directory: audit-source/backend/jovi-medusa-backend/apps/backend
+        run: |
+          TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules corepack pnpm exec jest --silent --runInBand
+
+      - name: License / SBOM check
+        run: python3 governance/r6/ci/license_check.py
+
+  # ---- DB-backed integration + synthetic commerce regression ----
+  integration:
+    runs-on: ubuntu-latest
+    needs: static-checks
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.1
+
+      - name: Enable corepack
+        run: corepack enable && corepack prepare pnpm@10.32.0 --activate
+
+      - name: Install frozen deps
+        working-directory: audit-source/backend/jovi-medusa-backend
+        run: pnpm install --frozen-lockfile
+
+      - name: Boot compose stack (Postgres/Redis/backend, loopback)
+        working-directory: audit-source/backend/jovi-medusa-backend
+        env:
+          MEDUSA_R2R2_DATABASE_URL: postgres://postgres@localhost:5432/jovi_medusa_r2
+          MEDUSA_R2R2_DATABASE_DRIVER_OPTIONS: '{"connection":{"ssl":false}}'
+          MEDUSA_R2R2_REDIS_URL: redis://localhost:6379
+          MEDUSA_R2R2_LOCKING_REDIS_URL: redis://localhost:6379
+          MEDUSA_R2R2_JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          MEDUSA_R2R2_COOKIE_SECRET: ${{ secrets.COOKIE_SECRET }}
+        run: |
+          docker compose -f docker-compose.r2.yml up -d db redis
+          # wait health
+          for i in $(seq 1 40); do
+            docker inspect --format '{{.State.Health.Status}}' jovi-medusa-r2-r2-db 2>/dev/null | grep -q healthy && break; sleep 3
+          done
+
+      - name: Integration (service.spec) — natural shutdown
+        working-directory: audit-source/backend/jovi-medusa-backend/apps/backend
+        run: |
+          TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules \
+          corepack pnpm exec jest src/modules/jovi-commerce/__tests__/service.spec.ts --silent=false --runInBand
+
+      - name: Full synthetic regression (X2 / concurrency / negative / recovery)
+        working-directory: audit-source/backend/jovi-medusa-backend
+        run: bash governance/r6/ci/regression.sh

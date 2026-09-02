@@ -1,0 +1,72 @@
+{
+  "binding": {
+    "required_r2r1_package_manifest_sha256": "748ec4bcc2eb7061b2280ef367e43fcc0458bb21ff46583aacf882e1cd90a4c6",
+    "required_r2r1_source_tree_sha256": "d15eb73e94a1fcf8b19ac2c8e03b317fa5ea94f7d8242548aa3eac4dec334e8d"
+  },
+  "delta": {
+    "added": [
+      {
+        "attribution": "Gap L1: new strictly read-only admin receipts endpoint used by the interactive Admin browser smoke",
+        "path": "backend/jovi-medusa-backend/apps/backend/src/api/admin/jovi-commerce/receipts/route.ts",
+        "sha256": "e6a7a7e9d178d2b1f7582a941883c681cb1cc28c14ac7f3a8fc384263c5058f6",
+        "size": 2323
+      }
+    ],
+    "changed": [
+      {
+        "attribution": "Gap M1: removed --forceExit from the test:unit, test:integration:http and test:integration:modules npm scripts",
+        "path": "backend/jovi-medusa-backend/apps/backend/package.json",
+        "r2r1": {
+          "sha256": "2e422739df47496443a82744fa0707f5df4111616e7be17ebc15a11fea9e7f93",
+          "size": 1948
+        },
+        "r2r2": {
+          "sha256": "abc27df48fa646912d6b5ad96285875f5619d5205cd4c8f68f977eee285bb043",
+          "size": 1912
+        }
+      },
+      {
+        "attribution": "Task section III isolation: compose project/container/network/volume/env keys renamed from the r2 to the r2-r2 namespace",
+        "path": "backend/jovi-medusa-backend/docker-compose.r2.yml",
+        "r2r1": {
+          "sha256": "b9b2794911a1b8239072aff8506cde6400c192acc9d17431ceb46bf35e451e6c",
+          "size": 2911
+        },
+        "r2r2": {
+          "sha256": "04590d81034f75d616ad96391795e84764cc7ea036e284218c2b419c9c3f7044",
+          "size": 2942
+        }
+      }
+    ],
+    "removed": []
+  },
+  "evidence_type": "MEDUSA_R2R2_INITIAL_SOURCE_SHA_MATCH_PROOF",
+  "file_diffs": {
+    "backend/jovi-medusa-backend/apps/backend/package.json": "--- r2-r1-source-snapshot/backend/jovi-medusa-backend/apps/backend/package.json\n+++ r2-r2-source-snapshot/backend/jovi-medusa-backend/apps/backend/package.json\n@@ -17,9 +17,9 @@\n     \"start\": \"medusa start\",\n     \"dev\": \"medusa develop\",\n     \"lint\": \"medusa lint\",\n-    \"test:integration:http\": \"TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit\",\n-    \"test:integration:modules\": \"TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit\",\n-    \"test:unit\": \"TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit\"\n+    \"test:integration:http\": \"TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand\",\n+    \"test:integration:modules\": \"TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand\",\n+    \"test:unit\": \"TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand\"\n   },\n   \"dependencies\": {\n     \"@medusajs/admin-sdk\": \"2.19.0\",",
+    "backend/jovi-medusa-backend/docker-compose.r2.yml": "--- r2-r1-source-snapshot/backend/jovi-medusa-backend/docker-compose.r2.yml\n+++ r2-r2-source-snapshot/backend/jovi-medusa-backend/docker-compose.r2.yml\n@@ -1,14 +1,16 @@\n+name: jovi-medusa-r2-r2\n+\n services:\n   db:\n     image: postgres@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685\n-    container_name: jovi-medusa-r2-r1-db\n+    container_name: jovi-medusa-r2-r2-db\n     restart: \"no\"\n     environment:\n       POSTGRES_USER: postgres\n       POSTGRES_DB: jovi_medusa_r2\n       POSTGRES_HOST_AUTH_METHOD: trust\n     volumes:\n-      - ./runtime-final7/postgres:/var/lib/postgresql/data\n+      - ./runtime-r2r2/postgres:/var/lib/postgresql/data\n     networks: [r2-internal]\n     healthcheck:\n       test: [\"CMD-SHELL\", \"pg_isready -U postgres -d jovi_medusa_r2\"]\n@@ -18,11 +20,11 @@\n \n   redis:\n     image: redis@sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1\n-    container_name: jovi-medusa-r2-r1-redis\n+    container_name: jovi-medusa-r2-r2-redis\n     restart: \"no\"\n     command: [\"redis-server\", \"--appendonly\", \"yes\", \"--appendfsync\", \"always\"]\n     volumes:\n-      - ./runtime-final7/redis:/data\n+      - ./runtime-r2r2/redis:/data\n     networks: [r2-internal]\n     healthcheck:\n       test: [\"CMD\", \"redis-cli\", \"ping\"]\n@@ -31,32 +33,32 @@\n       retries: 20\n \n   backend:\n-    image: jovi-medusa-r2-r1-backend:local\n+    image: jovi-medusa-r2-r2-backend:local\n     build:\n       context: .\n       dockerfile: Dockerfile\n       network: default\n-    container_name: jovi-medusa-r2-r1-backend\n+    container_name: jovi-medusa-r2-r2-backend\n     restart: \"no\"\n     depends_on:\n       db: {condition: service_healthy}\n       redis: {condition: service_healthy}\n     environment:\n       NODE_ENV: production\n-      DATABASE_URL: ${MEDUSA_R2_DATABASE_URL}\n-      DATABASE_DRIVER_OPTIONS: ${MEDUSA_R2_DATABASE_DRIVER_OPTIONS}\n-      REDIS_URL: ${MEDUSA_R2_REDIS_URL}\n-      LOCKING_REDIS_URL: ${MEDUSA_R2_LOCKING_REDIS_URL}\n+      DATABASE_URL: ${MEDUSA_R2R2_DATABASE_URL}\n+      DATABASE_DRIVER_OPTIONS: ${MEDUSA_R2R2_DATABASE_DRIVER_OPTIONS}\n+      REDIS_URL: ${MEDUSA_R2R2_REDIS_URL}\n+      LOCKING_REDIS_URL: ${MEDUSA_R2R2_LOCKING_REDIS_URL}\n       JOVI_FIXTURE_ROOT: /r2-tests/fixtures/synthetic-digital-checklist\n       JOVI_X2_EVIDENCE_ROOT: /workspace/runtime/evidence\n-      STORE_CORS: http://127.0.0.1:19002\n-      ADMIN_CORS: http://127.0.0.1:19002\n-      AUTH_CORS: http://127.0.0.1:19002\n-      JWT_SECRET: ${MEDUSA_R2_JWT_SECRET}\n-      COOKIE_SECRET: ${MEDUSA_R2_COOKIE_SECRET}\n+      STORE_CORS: http://127.0.0.1:19003\n+      ADMIN_CORS: http://127.0.0.1:19003\n+      AUTH_CORS: http://127.0.0.1:19003\n+      JWT_SECRET: ${MEDUSA_R2R2_JWT_SECRET}\n+      COOKIE_SECRET: ${MEDUSA_R2R2_COOKIE_SECRET}\n     volumes:\n       - ../../tests:/r2-tests:ro\n-      - ../../runtime-final7:/workspace/runtime\n+      - ../../runtime-r2r2:/workspace/runtime\n     networks: [r2-internal]\n     healthcheck:\n       test: [\"CMD\", \"node\", \"-e\", \"require('http').get('http://127.0.0.1:9000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))\"]\n@@ -67,20 +69,20 @@\n \n   admin:\n     image: node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca\n-    container_name: jovi-medusa-r2-r1-admin\n+    container_name: jovi-medusa-r2-r2-admin\n     restart: \"no\"\n     depends_on:\n       backend: {condition: service_healthy}\n     volumes:\n       - ./tools/admin-proxy.mjs:/proxy.mjs:ro\n     ports:\n-      - \"127.0.0.1:19002:19001\"\n+      - \"127.0.0.1:19003:19001\"\n     networks: [r2-internal, r2-admin-edge]\n     command: [\"node\", \"/proxy.mjs\"]\n \n networks:\n   r2-internal:\n-    name: jovi-medusa-r2-r1-internal\n+    name: jovi-medusa-r2-r2-internal\n     internal: true\n   r2-admin-edge:\n-    name: jovi-medusa-r2-r1-admin-edge\n+    name: jovi-medusa-r2-r2-admin-edge"
+  },
+  "generated_at": "2026-09-02T07:00:06.510719+00:00",
+  "initial_tree_reconstruction": {
+    "description": "R2-R2 tree rows minus added files, with changed files restored from the frozen R2-R1 snapshot; canonical order preserved",
+    "equals_r2r1_frozen_source_tree_sha256": true,
+    "reconstructed_entries": 73,
+    "reconstructed_initial_source_tree_sha256": "d15eb73e94a1fcf8b19ac2c8e03b317fa5ea94f7d8242548aa3eac4dec334e8d"
+  },
+  "method": "Entry-level delta between the frozen R2-R1 source snapshot and the R2-R2 source snapshot using the canonical snapshot_manifest.py tree()/digest() algorithm; the initial tree is reconstructed by reverting the documented post-materialization deltas (isolation rename, Gap M1, Gap L1) and digesting the result",
+  "note": "Backfilled evidence file (2026-09-02): the initial-match check was performed at materialization time on 2026-09-01 but was not persisted as a package artifact; this file makes the proof recomputable from frozen evidence. No R2-R1 frozen file is read-modified by this script.",
+  "observed": {
+    "r2r1_frozen_source_tree_entries": 73,
+    "r2r1_frozen_source_tree_sha256": "d15eb73e94a1fcf8b19ac2c8e03b317fa5ea94f7d8242548aa3eac4dec334e8d",
+    "r2r1_package_manifest_sha256_matches_binding": true,
+    "r2r1_package_manifest_sha256_observed_from_sidecar": "748ec4bcc2eb7061b2280ef367e43fcc0458bb21ff46583aacf882e1cd90a4c6",
+    "r2r2_final_source_tree_entries": 74,
+    "r2r2_final_source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "r2r2_recorded_end_tree_matches_live_snapshot": true,
+    "r2r2_source_manifest_end_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "r2r2_source_snapshot_manifest_end_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa"
+  },
+  "question": "Was jovi-medusa-v2-spike-r2-r2 materialized exactly from the frozen R2-R1 source snapshot (initial source SHA == R2-R1 audited source SHA, task section III)?",
+  "schema_version": 1,
+  "undocumented_drift_entries": 0,
+  "verdict": "R2R2_INITIAL_SOURCE_SHA_MATCH_PROVEN"
+}

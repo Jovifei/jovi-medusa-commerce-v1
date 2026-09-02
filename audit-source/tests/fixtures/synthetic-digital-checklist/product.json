@@ -1,0 +1,9 @@
+{
+  "product_id": "synthetic-digital-checklist",
+  "name": "Synthetic Digital Checklist",
+  "summary": "A local-only synthetic checklist fixture for staging tests.",
+  "owner": "Jovi",
+  "rights_status": "ORIGINAL",
+  "current_version": "1.0.0",
+  "supported_platforms": ["Windows"]
+}

@@ -1,0 +1,8 @@
+{
+  "product_id": "synthetic-digital-checklist",
+  "version": "1.0.0",
+  "mode": "DIGITAL_DOWNLOAD",
+  "package_files": ["assets/checklist.txt"],
+  "license_type": "SINGLE_USER",
+  "support_days": 30
+}

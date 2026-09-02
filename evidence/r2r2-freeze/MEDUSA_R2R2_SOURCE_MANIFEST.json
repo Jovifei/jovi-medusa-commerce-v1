@@ -1,0 +1,386 @@
+{
+  "captured_at": "2026-09-01T04:28:35.255713+00:00",
+  "entries": [
+    {
+      "path": "backend/jovi-medusa-backend/.dockerignore",
+      "sha256": "536d170d6a854c0af1f9c311497d95975349de2e8fa484759cc5c15e0c844342",
+      "size": 83
+    },
+    {
+      "path": "backend/jovi-medusa-backend/.gitignore",
+      "sha256": "648a90ea8e129d0f448cdb77f87afb666a94729f4de17b52b4f9b0b5e0ad74d0",
+      "size": 612
+    },
+    {
+      "path": "backend/jovi-medusa-backend/.npmrc",
+      "sha256": "8e6873c770efbcb49f9c069e0d0e913863f45e58a1c9a7193ac61d7b8ce4e50e",
+      "size": 25
+    },
+    {
+      "path": "backend/jovi-medusa-backend/AGENTS.md",
+      "sha256": "02a5a09b3df348daf69c84523fcf22e7d7be3e7de93cb06cc0fb124dd98c070b",
+      "size": 8667
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/.gitignore",
+      "sha256": "4358d5e526a54f6e64aa8dc73accdf674d7b3609237266966b3229d197e886d1",
+      "size": 252
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/eslint.config.ts",
+      "sha256": "04714571cdea23dfd0fc18b34eb4270159c3935bb72f332f895722d0372a80f2",
+      "size": 156
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/instrumentation.ts",
+      "sha256": "5f2c62063900da994b1debe897abe047ff02fd75ce265419f2eeef7a40890d01",
+      "size": 804
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/integration-tests/setup.js",
+      "sha256": "f06e6c878ae8589e990eecf37ca5162afb3cedd908e5a35d399a3299a99e8c70",
+      "size": 102
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/jest.config.js",
+      "sha256": "8d1bb1615d807644b2f4560fce1f7d92dd71f5022e87220b6ed64b3bb396e8c2",
+      "size": 869
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/medusa-config.ts",
+      "sha256": "d5fcc1b70b07e39cd45e9a955bdfe83d5ca95419327238b78e9a3d8c0e89fecf",
+      "size": 972
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/package.json",
+      "sha256": "abc27df48fa646912d6b5ad96285875f5619d5205cd4c8f68f977eee285bb043",
+      "size": 1912
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/README.md",
+      "sha256": "e774709ae2af71701ea40daa1b9b64f3539e35f456ad8691cf46525edd7841d0",
+      "size": 3032
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/admin/i18n/index.ts",
+      "sha256": "9aeb8d59b4d483ca6298e9a450fbf37dfd2b4c63990135ab1d040d76314087ec",
+      "size": 17
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/admin/i18n/README.md",
+      "sha256": "c514d8bf510d38cf03be91a83f6c1e789bb7cc511bf8f1efda85db0cc19075b9",
+      "size": 1748
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/admin/README.md",
+      "sha256": "5d9129054d10ae16600dbfacadbf50b27e449db97dc5aa4f844ea96a5aaa49ef",
+      "size": 1018
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/admin/tsconfig.json",
+      "sha256": "5650f40f422afcce73393bc35ecb3657d35df4b1999980b10fff4807d37062bc",
+      "size": 635
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/admin/vite-env.d.ts",
+      "sha256": "b440b802c2cfeac6a24eda510bd63c1f23c6ab5c52bcfe3a32a918dbad6b46c8",
+      "size": 37
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/api/admin/jovi-commerce/receipts/route.ts",
+      "sha256": "e6a7a7e9d178d2b1f7582a941883c681cb1cc28c14ac7f3a8fc384263c5058f6",
+      "size": 2323
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/api/README.md",
+      "sha256": "7b155eda46a0173b7b06d083b60535697c457125c599cc42704e2ca344e2cc83",
+      "size": 3895
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/jobs/README.md",
+      "sha256": "2f3a44325319e6fc9dfc28bef7f0a3707d1f18d449230791973c9098f8239c6f",
+      "size": 1424
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/links/README.md",
+      "sha256": "c10eb19d80163955890399ec84543f3244f17629ac1b498e0ec0b346acbf8dd5",
+      "size": 789
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/migration-scripts/initial-data-seed.ts",
+      "sha256": "56ca731536226ec850cc59260454e674d348ce2cf2760815372dbf5caa67e53d",
+      "size": 1390
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/domain.unit.spec.ts",
+      "sha256": "4cb495b8487413c4a669b4f66ee8050c17b252e4240b74ea4caa9eed779f2891",
+      "size": 2686
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/fixture.unit.spec.ts",
+      "sha256": "902fa68e5065b540c174e16e15acb5714801da95c801d2616288283c69ab5048",
+      "size": 1849
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/package.unit.spec.ts",
+      "sha256": "2ea84522da892c045e7def8633de2ba434fcede2b562ead19a9f9ea7bdeac702",
+      "size": 1423
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/policy-command.unit.spec.ts",
+      "sha256": "127f764f11d2b6417520c3d837e62da7cfcc9c0b7c0775b3a0dc02168a3097ef",
+      "size": 315
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/service.spec.ts",
+      "sha256": "8ddb5bc38c144e4a53ccb2f78f616338137a2414a0edb067570bddb41d8b5928",
+      "size": 2094
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/x2-contract.unit.spec.ts",
+      "sha256": "ad1b3ef8d35a4a632f3348d98c5cfc4f78e3d197288ed46a7156c8b064b7b825",
+      "size": 1263
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/domain.ts",
+      "sha256": "5a0784b542e34c6bf4d78e1e50ffb505a7fc6cb1aeab4557d39fb27b41a7f8a6",
+      "size": 5007
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/fixture.ts",
+      "sha256": "2e01dde95a8cd56829c30f489083e5f81fdaa0bed3caebe5772c91e13cd4bb4c",
+      "size": 1749
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/index.ts",
+      "sha256": "a965fec2ccc1a42f04351effd220d27480dc80814f0f3159ed468b890fbfe8d3",
+      "size": 242
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/medusa-binding.ts",
+      "sha256": "ab4f7be2629b8350e15eee55146e3dacf3f68034ca3368de73cdfbc5c548fa57",
+      "size": 6438
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/.snapshot-jovi-commerce.json",
+      "sha256": "a8a99dfd40677d3a4fac96db9723e1e2e6a31d1f40a9d31269cf9981ee073f90",
+      "size": 20798
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260830091019.ts",
+      "sha256": "c6505b7a0800b2d3a12ff6715e25af467f0115cb1d8db5f23f5b5d1d4253f8eb",
+      "size": 4187
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260830104855.ts",
+      "sha256": "fd643635f23d7071bd14abfcb26fa6da0bd6116e7c803673996018532c7d4e44",
+      "size": 859
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260830105444.ts",
+      "sha256": "54f9dff352f62821f8fad72c062bcc53791231d7b309904a656c208e4f3250cb",
+      "size": 458
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260831122000.ts",
+      "sha256": "3e37881e75719a2e1979f754c56c0433c4a3f02d8a9f5318e6eaccfe80c62f0f",
+      "size": 6871
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260831150000.ts",
+      "sha256": "286808936840533384a14968739f1cdea6eefd86a4766d52ddbb2d8d53e75a79",
+      "size": 1648
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/models/jovi-asset.ts",
+      "sha256": "a7a4865932f01c5ce90d47a4056d204e983f691518d54a150f553f7c4b0d736a",
+      "size": 567
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/models/jovi-delivery-receipt.ts",
+      "sha256": "301c639750dddb660b39733fb6c2983f50d2ff12238c21f0e052f17bbc83c0ee",
+      "size": 576
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/models/jovi-entitlement.ts",
+      "sha256": "6a158f6c9b8783d1223c10da7ccbac4b1b42f4d8843b4f56d5d82d482ec7d8a0",
+      "size": 587
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/models/jovi-evidence.ts",
+      "sha256": "85e89a49b1593dfe778890c300fab57fb7bf15c7f1c6a2d2be5cca288301f4ce",
+      "size": 831
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/models/jovi-run.ts",
+      "sha256": "179e6b069c99a254afbaa00edda3e54b54ba24ee7558fe0b20c33652acf1168b",
+      "size": 785
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/package.ts",
+      "sha256": "e63796e5371075fe56f7471a817aae36777c2e561c87708e3e8a2cfa45a57dcd",
+      "size": 3421
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/policy-command.ts",
+      "sha256": "80d8b86bc09e54fde8a4650d4ab835a1fee599d51438d820b7f71a4103e0bac9",
+      "size": 155
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/service.ts",
+      "sha256": "9c7d16c8c0f536272fb8024f7ad0ce9ac8142f99fc977e1d239499c655af5164",
+      "size": 18385
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/modules/README.md",
+      "sha256": "21c98d95eb7daf8fd484f38c560ba8451d1a0e38e020e65f6a200330d06c20f6",
+      "size": 2937
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-x2-concurrency.ts",
+      "sha256": "76e538b163f14f3563efd357cfa61e5b195b9f338d9050b9fe919da2ae838fda",
+      "size": 3858
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-x2-negative.ts",
+      "sha256": "322beb67440ea012dee76568c87e4e2fdebab0c5bc179eb4b2e476ccf5323e7a",
+      "size": 5670
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-x2-recovery-kill.ts",
+      "sha256": "43daf37f693998d697175bf18813daa3f89053092a4a8082188353525a946d7e",
+      "size": 114
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-x2.ts",
+      "sha256": "6f3f111d4b8e674a3087b45e6358ab9d26c7b55d214229837390f315251be0cf",
+      "size": 9760
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/subscribers/README.md",
+      "sha256": "efd186ba60935cb888fa2ce2219de730412c21acb717d13d8af6080351602237",
+      "size": 1799
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/workflows/__tests__/jovi-x2.unit.spec.ts",
+      "sha256": "ab76472257cbc557bc33a64d446f8cbf4b2c32e71c8183241536d744d43689ee",
+      "size": 3644
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/workflows/jovi-x2.ts",
+      "sha256": "5b746106e4c1a3ae08931c383e44cb06c60191a7f9463fa31d0be89ba8219329",
+      "size": 222
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/src/workflows/README.md",
+      "sha256": "5ccbd9a5d6870a009fa03c5f47bba69d78edb727c6c9b3a29c5e15b8f53e1dc3",
+      "size": 1725
+    },
+    {
+      "path": "backend/jovi-medusa-backend/apps/backend/tsconfig.json",
+      "sha256": "059fe40df625fe00ebd88f6f725ed48d6d24f3f15633199dc8126d46e4f7954f",
+      "size": 804
+    },
+    {
+      "path": "backend/jovi-medusa-backend/CLAUDE.md",
+      "sha256": "28d30aacf0f1bd5860d6b77bf59d8ad683bb7572fca1563ab105c5aa4eac59d8",
+      "size": 183
+    },
+    {
+      "path": "backend/jovi-medusa-backend/docker-compose.r2.yml",
+      "sha256": "04590d81034f75d616ad96391795e84764cc7ea036e284218c2b419c9c3f7044",
+      "size": 2942
+    },
+    {
+      "path": "backend/jovi-medusa-backend/Dockerfile",
+      "sha256": "4df023ebc17bc1716f493b00cc86a465308c8973b858b6415b424d1a2e123b42",
+      "size": 1296
+    },
+    {
+      "path": "backend/jovi-medusa-backend/eslint.config.ts",
+      "sha256": "04714571cdea23dfd0fc18b34eb4270159c3935bb72f332f895722d0372a80f2",
+      "size": 156
+    },
+    {
+      "path": "backend/jovi-medusa-backend/LICENSE",
+      "sha256": "bf89540a2e9cf8c93faab48e3e4bd678b9ba50ba7c22807c572a72d326774265",
+      "size": 1084
+    },
+    {
+      "path": "backend/jovi-medusa-backend/package.json",
+      "sha256": "f6a3d4576ce51281d89143a1fe698e5099c4cae1cb73136e1dc930249d30ebac",
+      "size": 746
+    },
+    {
+      "path": "backend/jovi-medusa-backend/pnpm-lock.yaml",
+      "sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+      "size": 523402
+    },
+    {
+      "path": "backend/jovi-medusa-backend/pnpm-workspace.yaml",
+      "sha256": "be1a141f5ac582c7eebb66dde38a2f3539b86a72b99cd346b6bcbf8bf941c3e7",
+      "size": 58
+    },
+    {
+      "path": "backend/jovi-medusa-backend/README.md",
+      "sha256": "093288bab87dfe703b8e456982336723f474b768487805b04101b13f8cf7baad",
+      "size": 5087
+    },
+    {
+      "path": "backend/jovi-medusa-backend/tools/admin-proxy.mjs",
+      "sha256": "8c6079adfb3ce0ae483468d3200e6256331d6d63834b5ebdd0efce5e52a5ebbb",
+      "size": 925
+    },
+    {
+      "path": "backend/jovi-medusa-backend/turbo.json",
+      "sha256": "66d41e97b8416831b17e0c727b5f438a49d93fa9b627b1cbbddb80fe4e2d30d5",
+      "size": 429
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/assets/checklist.txt",
+      "sha256": "7b13e94548ca63d105160070674dd3a967c452f5cfc6338255f2bfd3aa68bbcb",
+      "size": 64
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/changelog.md",
+      "sha256": "ee41b91c618c9327c0d769367acc296e06a6cf4611be3009598151a98431154e",
+      "size": 60
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/delivery.json",
+      "sha256": "201b773859ee0c23022a1b596e7d00c1a6eaad1f7b8a863c0503c4f1630a5c4a",
+      "size": 202
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/faq.md",
+      "sha256": "29c385a2145a425aa0a5c06c0233674669041346807a90dc0fb753cffd97513d",
+      "size": 97
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/pricing.json",
+      "sha256": "a9541b3a1bc030529be8c7a56798fd583827e69962c2c3b714830048cfef8ea7",
+      "size": 139
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/product.json",
+      "sha256": "dc4fa6cfc53b8da3744100a362ee525b41de5b3b28dcd1f144430d595538146d",
+      "size": 285
+    },
+    {
+      "path": "tests/fixtures/synthetic-digital-checklist/version.json",
+      "sha256": "a53531c381c4625bed559c9a478c4d9d9c9a2cf89bcec5565e8a7e09e5081822",
+      "size": 186
+    }
+  ],
+  "entry_count": 74,
+  "excluded": [
+    "node_modules",
+    ".medusa",
+    "runtime*",
+    ".env",
+    ".git"
+  ],
+  "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+  "schema_version": 2,
+  "source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa"
+}

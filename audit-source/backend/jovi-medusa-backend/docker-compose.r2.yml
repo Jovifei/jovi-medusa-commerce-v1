@@ -1,0 +1,88 @@
+name: jovi-medusa-r2-r2
+
+services:
+  db:
+    image: postgres@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685
+    container_name: jovi-medusa-r2-r2-db
+    restart: "no"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: jovi_medusa_r2
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - ./runtime-r2r2/postgres:/var/lib/postgresql/data
+    networks: [r2-internal]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d jovi_medusa_r2"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis@sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1
+    container_name: jovi-medusa-r2-r2-redis
+    restart: "no"
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "always"]
+    volumes:
+      - ./runtime-r2r2/redis:/data
+    networks: [r2-internal]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  backend:
+    image: jovi-medusa-r2-r2-backend:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      network: default
+    container_name: jovi-medusa-r2-r2-backend
+    restart: "no"
+    depends_on:
+      db: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${MEDUSA_R2R2_DATABASE_URL}
+      DATABASE_DRIVER_OPTIONS: ${MEDUSA_R2R2_DATABASE_DRIVER_OPTIONS}
+      REDIS_URL: ${MEDUSA_R2R2_REDIS_URL}
+      LOCKING_REDIS_URL: ${MEDUSA_R2R2_LOCKING_REDIS_URL}
+      JOVI_FIXTURE_ROOT: /r2-tests/fixtures/synthetic-digital-checklist
+      JOVI_X2_EVIDENCE_ROOT: /workspace/runtime/evidence
+      STORE_CORS: http://127.0.0.1:19003
+      ADMIN_CORS: http://127.0.0.1:19003
+      AUTH_CORS: http://127.0.0.1:19003
+      JWT_SECRET: ${MEDUSA_R2R2_JWT_SECRET}
+      COOKIE_SECRET: ${MEDUSA_R2R2_COOKIE_SECRET}
+    volumes:
+      - ../../tests:/r2-tests:ro
+      - ../../runtime-r2r2:/workspace/runtime
+    networks: [r2-internal]
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:9000/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    command: ["sh", "-lc", "corepack pnpm --filter @dtc/backend exec medusa db:migrate && corepack pnpm --filter @dtc/backend exec medusa start -H 0.0.0.0 -p 9000"]
+
+  admin:
+    image: node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca
+    container_name: jovi-medusa-r2-r2-admin
+    restart: "no"
+    depends_on:
+      backend: {condition: service_healthy}
+    volumes:
+      - ./tools/admin-proxy.mjs:/proxy.mjs:ro
+    ports:
+      - "127.0.0.1:19003:19001"
+    networks: [r2-internal, r2-admin-edge]
+    command: ["node", "/proxy.mjs"]
+
+networks:
+  r2-internal:
+    name: jovi-medusa-r2-r2-internal
+    internal: true
+  r2-admin-edge:
+    name: jovi-medusa-r2-r2-admin-edge

@@ -1,0 +1,565 @@
+{
+  "admin_edge_network": {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "jovi-medusa-r2-r2-admin-edge"
+    ],
+    "duration_seconds": 0.314,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:37.062612+00:00",
+    "label": "admin-network",
+    "started_at": "2026-09-01T04:28:36.748265+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "[\n    {\n        \"Name\": \"jovi-medusa-r2-r2-admin-edge\",\n        \"Id\": \"cf8058cdb6af69efb94ff658131ae1dae1f6a6ceac60a291c6d822fbc3038c90\",\n        \"Created\": \"2026-09-01T04:07:11.514504834Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"192.168.0.0/20\",\n                    \"Gateway\": \"192.168.0.1\"\n                }\n            ]\n        },\n        \"Internal\": false,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"51a2a29f5764677ec92841f9fe7c3113a01468617beb64e90ee44abe4138007c\",\n            \"com.docker.compose.network\": \"r2-admin-edge\",\n            \"com.docker.compose.project\": \"jovi-medusa-r2-r2\",\n            \"com.docker.compose.version\": \"5.4.0\"\n        },\n        \"Containers\": {\n            \"bcbb7bcffffcd6220857ff2f13a4aba169fafbff24ce6dc3031d8f71e0186b02\": {\n                \"Name\": \"jovi-medusa-r2-r2-admin\",\n                \"EndpointID\": \"7465049cc611d777ffeaffc093f6b94199277daafe402004919c346baf25847a\",\n                \"MacAddress\": \"36:20:97:a1:39:3f\",\n                \"IPv4Address\": \"192.168.0.2/20\",\n                \"IPv6Address\": \"\"\n            }\n        },\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"192.168.0.0/20\": {\n                        \"IPsInUse\": 4,\n                        \"DynamicIPsAvailable\": 4092\n                    }\n                }\n            }\n        }\n    }\n]\n",
+    "stdout_sha256": "35986a269f95582cb6d49e42e6bbcfc31d98b4deca928f036944c068001f5317"
+  },
+  "backend_external_probe": {
+    "command": [
+      "docker",
+      "exec",
+      "jovi-medusa-r2-r2-backend",
+      "node",
+      "-e",
+      "require('http').get('http://1.1.1.1',{timeout:1500},r=>{console.log('status='+r.statusCode);process.exit(9)}).on('error',e=>{console.log('error='+e.code);process.exit(0)}).on('timeout',function(){console.log('timeout');this.destroy();process.exit(0)})"
+    ],
+    "duration_seconds": 0.347,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:34.349775+00:00",
+    "label": "backend-external-network",
+    "started_at": "2026-09-01T04:28:34.003168+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "error=ENETUNREACH\n",
+    "stdout_sha256": "8760ea8d95e4298f154ec9d66c62a0ae69669d319933c34e7e236aa1228d5e09"
+  },
+  "build": {
+    "command": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "--build-arg",
+      "JOVI_SOURCE_TREE_SHA=e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+      "--build-arg",
+      "JOVI_LOCK_SHA=9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+      "-t",
+      "jovi-medusa-r2-r2-backend:local",
+      "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend"
+    ],
+    "duration_seconds": 56.259,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:24:24.235513+00:00",
+    "label": "docker-build",
+    "started_at": "2026-09-01T04:23:27.976560+00:00",
+    "stderr": "M docker.io/library/node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca\n#4 resolve docker.io/library/node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca done\n#4 DONE 0.0s\n\n#5 [internal] load build context\n#5 transferring context: 47.84MB 3.3s done\n#5 DONE 3.3s\n\n#6 [build 2/9] WORKDIR /workspace\n#6 CACHED\n\n#7 [build 3/9] COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./\n#7 CACHED\n\n#8 [build 4/9] COPY apps/backend/package.json apps/backend/package.json\n#8 CACHED\n\n#9 [build 5/9] RUN corepack enable && corepack prepare pnpm@10.32.0 --activate && pnpm install --frozen-lockfile\n#9 CACHED\n\n#10 [build 6/9] COPY . .\n#10 DONE 0.1s\n\n#11 [build 7/9] RUN pnpm --filter @dtc/backend exec tsc --noEmit\n#11 DONE 1.8s\n\n#12 [build 8/9] RUN pnpm --filter @dtc/backend exec medusa build\n#12 0.610 ╔════════════════════════════════════════════════════════════════════════╗\n#12 0.610 ║                                                                        ║\n#12 0.610 ║   Medusa collects anonymous usage analytics                            ║\n#12 0.610 ║   to help improve Medusa for all users.                                ║\n#12 0.610 ║                                                                        ║\n#12 0.610 ║   If you'd like to opt-out, you can use `medusa telemetry --disable`   ║\n#12 0.610 ║                                                                        ║\n#12 0.610 ║                                                                        ║\n#12 0.610 ╚════════════════════════════════════════════════════════════════════════╝\n#12 1.386 \u001b[32minfo\u001b[39m:    redisUrl not found. A fake redis instance will be used.\n#12 1.399 \u001b[32minfo\u001b[39m:    Generating types...\n#12 1.401 \u001b[32minfo\u001b[39m:    No link to load from /workspace/node_modules/.pnpm/@medusajs+draft-order@2.19.0_@medusajs+admin-sdk@2.19.0_@medusajs+cli@2.19.0_@types+nod_a503bc77b69dc58a1c66515384cb4534/node_modules/@medusajs/draft-order/.medusa/server/src/links. skipped.\n#12 1.850 \u001b[32minfo\u001b[39m:    Types generated successfully\n#12 1.914 \u001b[32minfo\u001b[39m:    Linting project...\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/domain.ts\n#12 2.355   56:11   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   62:202  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   64:96   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   70:194  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   72:200  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   79:76   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   80:23   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   87:129  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   89:34   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/fixture.ts\n#12 2.355   14:38  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   20:36  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   26:62  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   33:68  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   34:47  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/medusa-binding.ts\n#12 2.355   68:151  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   69:96   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   73:69   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   74:24   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   75:45   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   76:75   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   77:60   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   78:63   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   79:61   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   80:103  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   81:121  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   82:129  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   83:96   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   84:59   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   85:73   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   86:199  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   89:140  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   93:89   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/package.ts\n#12 2.355   21:123  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   28:65   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   32:44   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   34:47   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   39:49   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   57:41   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/policy-command.ts\n#12 2.355   2:9  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/modules/jovi-commerce/service.ts\n#12 2.355    47:101  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    82:104  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    87:57   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    88:47   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    89:57   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    93:93   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    94:98   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355    95:91   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   102:84   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   106:80   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   135:78   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   143:98   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   147:110  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   148:196  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   155:38   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   157:42   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   168:167  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   174:263  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   178:13   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   183:232  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   219:37   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   228:29   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/scripts/jovi-x2-concurrency.ts\n#12 2.355   21:106  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   45:74   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/scripts/jovi-x2-negative.ts\n#12 2.355   61:63  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   62:72  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 /workspace/apps/backend/src/scripts/jovi-x2.ts\n#12 2.355   41:148  warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   49:35   warning  Use `ContainerRegistrationKeys.QUERY` instead of the magic string `query`                                                                         @medusajs/prefer-container-registration-keys\n#12 2.355   52:42   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   61:23   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355   72:33   warning  Throw `MedusaError` instead of a generic `Error`. Use `new MedusaError(MedusaError.Types.X, \"...\")` so the error maps to the correct HTTP status  @medusajs/use-medusa-error-not-generic-error\n#12 2.355 \n#12 2.355 ✖ 70 problems (0 errors, 70 warnings)\n#12 2.355   0 errors and 1 warning potentially fixable with the `--fix` option.\n#12 2.355 \u001b[33mwarn\u001b[39m:    Lint produced 70 warning(s).\n#12 2.355 \u001b[32minfo\u001b[39m:    Starting build...\n#12 2.533 \u001b[32minfo\u001b[39m:    Compiling backend source...\n#12 2.533 \u001b[32minfo\u001b[39m:    Removing existing \".medusa/server\" folder\n#12 4.916 \u001b[32minfo\u001b[39m:    Compiling frontend source...\n#12 4.917 \u001b[32minfo\u001b[39m:    Backend build completed successfully (2.38s)\n#12 14.85 \u001b[32minfo\u001b[39m:    Frontend build completed successfully (12.31s)\n#12 DONE 14.9s\n\n#13 [build 9/9] RUN mkdir -p apps/backend/public/admin && cp -R apps/backend/.medusa/server/public/admin/. apps/backend/public/admin/\n#13 DONE 0.2s\n\n#14 [runtime 3/4] RUN corepack enable && corepack prepare pnpm@10.32.0 --activate\n#14 CACHED\n\n#15 [runtime 4/4] COPY --from=build /workspace /workspace\n#15 DONE 5.1s\n\n#16 exporting to image\n#16 exporting layers\n#16 exporting layers 11.9s done\n#16 exporting manifest sha256:31a3e509a7cb67c01f31cdb310ff108f659de0d2b83352c80777b94fd0498ff3 done\n#16 exporting config sha256:c1c308f61a2180437de7142bd18a591de97621a0043d31bce84ce97df83e5c40 done\n#16 exporting attestation manifest sha256:57cbbedc55074b4e4fbcc9181ae992616870f489195391a37777d7ddfe789f4b done\n#16 exporting manifest list sha256:19da68692a32b02d98ada22d8a83633600978c2d19823c7aa104a43c8ac1ad62 done\n#16 naming to docker.io/library/jovi-medusa-r2-r2-backend:local done\n#16 unpacking to docker.io/library/jovi-medusa-r2-r2-backend:local\n#16 unpacking to docker.io/library/jovi-medusa-r2-r2-backend:local 10.8s done\n#16 DONE 22.8s\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/bw8m48pllims7rz0nxz72jz0s\n",
+    "stderr_sha256": "044dbef951416099caaa7319afdd9c4fbbe388936eba314d60136ffd04dd74db",
+    "stdout": "",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "captured_at": "2026-09-01T04:28:37.062642+00:00",
+  "compose": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend\\docker-compose.r2.yml",
+      "up",
+      "-d",
+      "backend",
+      "admin"
+    ],
+    "duration_seconds": 22.984,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:24:47.219999+00:00",
+    "label": "compose-up",
+    "started_at": "2026-09-01T04:24:24.235655+00:00",
+    "stderr": " Container jovi-medusa-r2-r2-db Running \n Container jovi-medusa-r2-r2-redis Running \n Container jovi-medusa-r2-r2-backend Recreate \n Container jovi-medusa-r2-r2-backend Recreated \n Container jovi-medusa-r2-r2-redis Waiting \n Container jovi-medusa-r2-r2-db Waiting \n Container jovi-medusa-r2-r2-redis Healthy \n Container jovi-medusa-r2-r2-db Healthy \n Container jovi-medusa-r2-r2-backend Starting \n Container jovi-medusa-r2-r2-backend Started \n Container jovi-medusa-r2-r2-backend Waiting \n Container jovi-medusa-r2-r2-backend Healthy \n Container jovi-medusa-r2-r2-admin Starting \n Container jovi-medusa-r2-r2-admin Started \n",
+    "stderr_sha256": "bb095a042293a20a735d6158ff0a9a70239b2a92255d54bfb2aca4aa119f41fa",
+    "stdout": "",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "constraints": {
+    "auto_delivery": false,
+    "email": false,
+    "production_integration_allowed": false,
+    "storefront": false,
+    "stripe": false,
+    "webhook": false,
+    "xianyu": false
+  },
+  "containers": {
+    "jovi-medusa-r2-r2-admin": {
+      "image": "node@sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca",
+      "image_id": "sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca",
+      "labels": {
+        "com.docker.compose.config-hash": "a68a26791bb6d52dfd17a84a5ea42149fc7a383424cccf64bb4d2664947861de",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "backend:service_healthy:false",
+        "com.docker.compose.image": "sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "jovi-medusa-r2-r2",
+        "com.docker.compose.project.config_files": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend\\docker-compose.r2.yml",
+        "com.docker.compose.project.working_dir": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend",
+        "com.docker.compose.service": "admin",
+        "com.docker.compose.version": "5.4.0"
+      },
+      "manifest_digest": "sha256:ffb27ca0f26a231a08930c872631cea70cbb318463d1e712922b5c7cfdc3fcca",
+      "networks": {
+        "jovi-medusa-r2-r2-admin-edge": {
+          "Aliases": [
+            "jovi-medusa-r2-r2-admin",
+            "admin"
+          ],
+          "DNSNames": [
+            "jovi-medusa-r2-r2-admin",
+            "admin",
+            "bcbb7bcffffc"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7465049cc611d777ffeaffc093f6b94199277daafe402004919c346baf25847a",
+          "Gateway": "192.168.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "192.168.0.2",
+          "IPPrefixLen": 20,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "36:20:97:a1:39:3f",
+          "NetworkID": "cf8058cdb6af69efb94ff658131ae1dae1f6a6ceac60a291c6d822fbc3038c90"
+        },
+        "jovi-medusa-r2-r2-internal": {
+          "Aliases": [
+            "jovi-medusa-r2-r2-admin",
+            "admin"
+          ],
+          "DNSNames": [
+            "jovi-medusa-r2-r2-admin",
+            "admin",
+            "bcbb7bcffffc"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "5b6ac521e789ecbced469e581f70a8779ca5e0ce6a8038b60df7a3d4817fc3cb",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.31.0.5",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "ce:b6:21:e0:7b:f8",
+          "NetworkID": "647f6928194a649ef33745048c076a01cb2d1b7d45d06577ed2130f073378694"
+        }
+      },
+      "ports": {
+        "19001/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19003"
+          }
+        ]
+      },
+      "repo_digests": null,
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2026-09-01T04:22:47.518316561Z",
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 66984,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-09-01T04:24:47.062005538Z",
+        "Status": "running"
+      }
+    },
+    "jovi-medusa-r2-r2-backend": {
+      "image": "jovi-medusa-r2-r2-backend:local",
+      "image_id": "sha256:19da68692a32b02d98ada22d8a83633600978c2d19823c7aa104a43c8ac1ad62",
+      "labels": {
+        "com.docker.compose.config-hash": "b31aae25e496c251011bc3e4d465a509699b5642742532a80973842311d29b70",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "redis:service_healthy:false,db:service_healthy:false",
+        "com.docker.compose.image": "sha256:31a3e509a7cb67c01f31cdb310ff108f659de0d2b83352c80777b94fd0498ff3",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "jovi-medusa-r2-r2",
+        "com.docker.compose.project.config_files": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend\\docker-compose.r2.yml",
+        "com.docker.compose.project.working_dir": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend",
+        "com.docker.compose.replace": "jovi-medusa-r2-r2-backend",
+        "com.docker.compose.service": "backend",
+        "com.docker.compose.version": "5.4.0",
+        "org.opencontainers.image.lock-sha": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+        "org.opencontainers.image.medusa-version": "2.19.0",
+        "org.opencontainers.image.source-tree-sha": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+        "org.opencontainers.image.title": "jovi-medusa-r2-synthetic"
+      },
+      "manifest_digest": "sha256:31a3e509a7cb67c01f31cdb310ff108f659de0d2b83352c80777b94fd0498ff3",
+      "networks": {
+        "jovi-medusa-r2-r2-internal": {
+          "Aliases": [
+            "jovi-medusa-r2-r2-backend",
+            "backend"
+          ],
+          "DNSNames": [
+            "jovi-medusa-r2-r2-backend",
+            "backend",
+            "e28cabc51ae8"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "67f08b001ce9b25ffbe8d90c48db76f728679376e5d38089aa13b94314f89d06",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.31.0.4",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "66:a0:28:9f:51:56",
+          "NetworkID": "647f6928194a649ef33745048c076a01cb2d1b7d45d06577ed2130f073378694"
+        }
+      },
+      "ports": {},
+      "repo_digests": null,
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2026-09-01T04:27:10.968392463Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-09-01T04:28:13.544557612Z",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-09-01T04:28:13.508281841Z"
+            },
+            {
+              "End": "2026-09-01T04:28:18.583274602Z",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-09-01T04:28:18.544854948Z"
+            },
+            {
+              "End": "2026-09-01T04:28:23.624132137Z",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-09-01T04:28:23.584413843Z"
+            },
+            {
+              "End": "2026-09-01T04:28:28.661214961Z",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-09-01T04:28:28.623993698Z"
+            },
+            {
+              "End": "2026-09-01T04:28:33.704412092Z",
+              "ExitCode": 0,
+              "Output": "",
+              "Start": "2026-09-01T04:28:33.66152317Z"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 75689,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-09-01T04:27:12.952045623Z",
+        "Status": "running"
+      }
+    },
+    "jovi-medusa-r2-r2-db": {
+      "image": "postgres@sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "image_id": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+      "labels": {
+        "com.docker.compose.config-hash": "3d5e99b132d66097a0fe6feca57ad3df6bd22b885a335d7adc7fff5ec2d420ee",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:075f7ba66bc9b3ce7d6b8b635208ff61cd7cf1a67d71ec530eec5d7ae0cbe571",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "jovi-medusa-r2-r2",
+        "com.docker.compose.project.config_files": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend\\docker-compose.r2.yml",
+        "com.docker.compose.project.working_dir": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend",
+        "com.docker.compose.service": "db",
+        "com.docker.compose.version": "5.4.0"
+      },
+      "manifest_digest": "sha256:075f7ba66bc9b3ce7d6b8b635208ff61cd7cf1a67d71ec530eec5d7ae0cbe571",
+      "networks": {
+        "jovi-medusa-r2-r2-internal": {
+          "Aliases": [
+            "jovi-medusa-r2-r2-db",
+            "db"
+          ],
+          "DNSNames": [
+            "jovi-medusa-r2-r2-db",
+            "db",
+            "f3f51ed12855"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "f033c5493ffff2fdf4ffc497ed1176deefe26dfe8f00f3c1fd24af754b339937",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.31.0.2",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "32:d1:11:e7:b6:cd",
+          "NetworkID": "647f6928194a649ef33745048c076a01cb2d1b7d45d06577ed2130f073378694"
+        }
+      },
+      "ports": {},
+      "repo_digests": null,
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2026-09-01T04:22:54.611188137Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-09-01T04:28:22.534591125Z",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-09-01T04:28:22.484977911Z"
+            },
+            {
+              "End": "2026-09-01T04:28:25.581244683Z",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-09-01T04:28:25.534314134Z"
+            },
+            {
+              "End": "2026-09-01T04:28:28.630478989Z",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-09-01T04:28:28.582056418Z"
+            },
+            {
+              "End": "2026-09-01T04:28:31.684531037Z",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-09-01T04:28:31.631881601Z"
+            },
+            {
+              "End": "2026-09-01T04:28:34.734432436Z",
+              "ExitCode": 0,
+              "Output": "/var/run/postgresql:5432 - accepting connections\n",
+              "Start": "2026-09-01T04:28:34.685120819Z"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 61935,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-09-01T04:23:09.521703268Z",
+        "Status": "running"
+      }
+    },
+    "jovi-medusa-r2-r2-redis": {
+      "image": "redis@sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1",
+      "image_id": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1",
+      "labels": {
+        "com.docker.compose.config-hash": "99835dcabd0a37eca378cf19fcc353662a9037b5d5b102a1bae8b96313354d8b",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "",
+        "com.docker.compose.image": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "jovi-medusa-r2-r2",
+        "com.docker.compose.project.config_files": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend\\docker-compose.r2.yml",
+        "com.docker.compose.project.working_dir": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend",
+        "com.docker.compose.service": "redis",
+        "com.docker.compose.version": "5.4.0"
+      },
+      "manifest_digest": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1",
+      "networks": {
+        "jovi-medusa-r2-r2-internal": {
+          "Aliases": [
+            "jovi-medusa-r2-r2-redis",
+            "redis"
+          ],
+          "DNSNames": [
+            "jovi-medusa-r2-r2-redis",
+            "redis",
+            "d4ad5fa16754"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "4e8b62cd98dd3282abb8b189d1e9e53023a6c0c12d359cf09378c1692d68c4e2",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.31.0.3",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "76:28:d8:ce:23:68",
+          "NetworkID": "647f6928194a649ef33745048c076a01cb2d1b7d45d06577ed2130f073378694"
+        }
+      },
+      "ports": {},
+      "repo_digests": null,
+      "state": {
+        "Dead": false,
+        "Error": "",
+        "ExitCode": 0,
+        "FinishedAt": "2026-09-01T04:22:51.554216058Z",
+        "Health": {
+          "FailingStreak": 0,
+          "Log": [
+            {
+              "End": "2026-09-01T04:28:24.260254145Z",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-09-01T04:28:24.239865862Z"
+            },
+            {
+              "End": "2026-09-01T04:28:27.281419037Z",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-09-01T04:28:27.259434388Z"
+            },
+            {
+              "End": "2026-09-01T04:28:30.305705984Z",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-09-01T04:28:30.282297869Z"
+            },
+            {
+              "End": "2026-09-01T04:28:33.32835779Z",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-09-01T04:28:33.306779347Z"
+            },
+            {
+              "End": "2026-09-01T04:28:36.351326592Z",
+              "ExitCode": 0,
+              "Output": "PONG\n",
+              "Start": "2026-09-01T04:28:36.32925992Z"
+            }
+          ],
+          "Status": "healthy"
+        },
+        "OOMKilled": false,
+        "Paused": false,
+        "Pid": 61936,
+        "Restarting": false,
+        "Running": true,
+        "StartedAt": "2026-09-01T04:23:09.52253385Z",
+        "Status": "running"
+      }
+    }
+  },
+  "fixture_manifest_sha256": "951abc2715fc9be22303c305e82185ff1fae0c79be4db709dcb33eaf8c82f1d6",
+  "fixture_root": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\tests\\fixtures\\synthetic-digital-checklist",
+  "host_probes": [
+    {
+      "body": "OK",
+      "bytes": 2,
+      "status": 200,
+      "url": "http://127.0.0.1:19003/health"
+    },
+    {
+      "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta\n            http-equiv=\"Content-Type\"\n            content=\"text/html; charset=UTF-8\"\n        />\n        <meta\n            name=\"viewport\"\n            co",
+      "bytes": 581,
+      "status": 200,
+      "url": "http://127.0.0.1:19003/app"
+    }
+  ],
+  "internal_network": {
+    "command": [
+      "docker",
+      "network",
+      "inspect",
+      "jovi-medusa-r2-r2-internal"
+    ],
+    "duration_seconds": 0.313,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:36.748215+00:00",
+    "label": "network-internal",
+    "started_at": "2026-09-01T04:28:36.435713+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "[\n    {\n        \"Name\": \"jovi-medusa-r2-r2-internal\",\n        \"Id\": \"647f6928194a649ef33745048c076a01cb2d1b7d45d06577ed2130f073378694\",\n        \"Created\": \"2026-09-01T03:58:45.492094695Z\",\n        \"Scope\": \"local\",\n        \"Driver\": \"bridge\",\n        \"EnableIPv4\": true,\n        \"EnableIPv6\": false,\n        \"IPAM\": {\n            \"Driver\": \"default\",\n            \"Options\": null,\n            \"Config\": [\n                {\n                    \"Subnet\": \"172.31.0.0/16\",\n                    \"Gateway\": \"172.31.0.1\"\n                }\n            ]\n        },\n        \"Internal\": true,\n        \"Attachable\": false,\n        \"Ingress\": false,\n        \"ConfigFrom\": {\n            \"Network\": \"\"\n        },\n        \"ConfigOnly\": false,\n        \"Options\": {\n            \"com.docker.network.enable_ipv4\": \"true\",\n            \"com.docker.network.enable_ipv6\": \"false\"\n        },\n        \"Labels\": {\n            \"com.docker.compose.config-hash\": \"12b5a42d723efebc197c4b5600c9f4b70b2ba6c278373a125c08900b644192f5\",\n            \"com.docker.compose.network\": \"r2-internal\",\n            \"com.docker.compose.project\": \"jovi-medusa-r2-r2\",\n            \"com.docker.compose.version\": \"5.4.0\"\n        },\n        \"Containers\": {\n            \"bcbb7bcffffcd6220857ff2f13a4aba169fafbff24ce6dc3031d8f71e0186b02\": {\n                \"Name\": \"jovi-medusa-r2-r2-admin\",\n                \"EndpointID\": \"5b6ac521e789ecbced469e581f70a8779ca5e0ce6a8038b60df7a3d4817fc3cb\",\n                \"MacAddress\": \"ce:b6:21:e0:7b:f8\",\n                \"IPv4Address\": \"172.31.0.5/16\",\n                \"IPv6Address\": \"\"\n            },\n            \"d4ad5fa16754373170a5be95f3e2b60cbd53baf6f072a9b35b3e3e5a52b18429\": {\n                \"Name\": \"jovi-medusa-r2-r2-redis\",\n                \"EndpointID\": \"4e8b62cd98dd3282abb8b189d1e9e53023a6c0c12d359cf09378c1692d68c4e2\",\n                \"MacAddress\": \"76:28:d8:ce:23:68\",\n                \"IPv4Address\": \"172.31.0.3/16\",\n                \"IPv6Address\": \"\"\n            },\n            \"e28cabc51ae8cf7678e2916dd975b587b4be2a6e9b4bfce54f4bc01ca2071b55\": {\n                \"Name\": \"jovi-medusa-r2-r2-backend\",\n                \"EndpointID\": \"67f08b001ce9b25ffbe8d90c48db76f728679376e5d38089aa13b94314f89d06\",\n                \"MacAddress\": \"66:a0:28:9f:51:56\",\n                \"IPv4Address\": \"172.31.0.4/16\",\n                \"IPv6Address\": \"\"\n            },\n            \"f3f51ed128557c6416f5486ad047117e5fcd2299835dc6386793f8b43c2f2925\": {\n                \"Name\": \"jovi-medusa-r2-r2-db\",\n                \"EndpointID\": \"f033c5493ffff2fdf4ffc497ed1176deefe26dfe8f00f3c1fd24af754b339937\",\n                \"MacAddress\": \"32:d1:11:e7:b6:cd\",\n                \"IPv4Address\": \"172.31.0.2/16\",\n                \"IPv6Address\": \"\"\n            }\n        },\n        \"Status\": {\n            \"IPAM\": {\n                \"Subnets\": {\n                    \"172.31.0.0/16\": {\n                        \"IPsInUse\": 7,\n                        \"DynamicIPsAvailable\": 65529\n                    }\n                }\n            }\n        }\n    }\n]\n",
+    "stdout_sha256": "50b1b54921133a2fda3cd0024f57ac661499f28c5ed8b1bbc9864f843947e5c9"
+  },
+  "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+  "node": {
+    "command": [
+      "docker",
+      "exec",
+      "jovi-medusa-r2-r2-backend",
+      "node",
+      "-p",
+      "process.version+' '+process.execPath"
+    ],
+    "duration_seconds": 0.322,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:34.671855+00:00",
+    "label": "backend-node-version",
+    "started_at": "2026-09-01T04:28:34.349814+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "v22.17.1 /usr/local/bin/node\n",
+    "stdout_sha256": "8e2388ef5f3af9fb46e92c760370e67b5e2d93c47e21e8c7a40ba72b25aa5048"
+  },
+  "pnpm": {
+    "command": [
+      "docker",
+      "exec",
+      "jovi-medusa-r2-r2-backend",
+      "sh",
+      "-lc",
+      "corepack pnpm --version"
+    ],
+    "duration_seconds": 0.472,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:35.143504+00:00",
+    "label": "backend-pnpm-version",
+    "started_at": "2026-09-01T04:28:34.671885+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "10.32.0\n",
+    "stdout_sha256": "f3b27d7660756299b84bf8f1da6988ec6118612f6f270cd53067e9998f30f774"
+  },
+  "redis_persistence": {
+    "command": [
+      "docker",
+      "exec",
+      "jovi-medusa-r2-r2-redis",
+      "redis-cli",
+      "INFO",
+      "persistence"
+    ],
+    "duration_seconds": 0.365,
+    "exit_code": 0,
+    "finished_at": "2026-09-01T04:28:34.003139+00:00",
+    "label": "redis-info",
+    "started_at": "2026-09-01T04:28:33.637963+00:00",
+    "stderr": "",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout": "# Persistence\nloading:0\nasync_loading:0\ncurrent_cow_peak:0\ncurrent_cow_size:0\ncurrent_cow_size_age:0\ncurrent_fork_perc:0.00\ncurrent_save_keys_processed:0\ncurrent_save_keys_total:0\nrdb_changes_since_last_save:17\nrdb_bgsave_in_progress:0\nrdb_last_save_time:1788236890\nrdb_last_bgsave_status:ok\nrdb_last_bgsave_time_sec:0\nrdb_current_bgsave_time_sec:-1\nrdb_saves:1\nrdb_last_cow_size:782336\nrdb_last_load_keys_expired:0\nrdb_last_load_keys_loaded:0\naof_enabled:1\naof_rewrite_in_progress:0\naof_rewrite_scheduled:0\naof_last_rewrite_time_sec:-1\naof_current_rewrite_time_sec:-1\naof_last_bgrewrite_status:ok\naof_rewrites:0\naof_rewrites_consecutive_failures:0\naof_last_write_status:ok\naof_last_cow_size:0\nmodule_fork_in_progress:0\nmodule_fork_last_cow_size:0\naof_current_size:538569\naof_base_size:0\naof_pending_rewrite:0\naof_buffer_length:0\naof_pending_bio_fsync:0\naof_delayed_fsync:0\n",
+    "stdout_sha256": "290b741a93e0f376ad32defe10eb3fbf47b376a1d96d49222fc5c2535fd2269b"
+  },
+  "schema_version": 1,
+  "source_manifest_sha256": "169a0381eaf0ddd66ddbbf58c953d981c78b48fde145523f448ec14e06aa5236",
+  "source_root": "E:\\Claude_allow\\Download\\jovi-medusa-v2-spike-r2-r2\\backend\\jovi-medusa-backend",
+  "source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa"
+}

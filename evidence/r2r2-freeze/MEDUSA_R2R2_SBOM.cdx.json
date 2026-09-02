@@ -1,0 +1,1709 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "author": "Colin McDonnell <zod@colinhacks.com>",
+      "bom-ref": "pkg:npm/zod@4.2.0",
+      "description": "TypeScript-first schema declaration and validation library with static type inference",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/zod/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://zod.dev"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/colinhacks/zod.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "zod",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/zod/package.json"
+        }
+      ],
+      "purl": "pkg:npm/zod@4.2.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "4.2.0"
+    },
+    {
+      "bom-ref": "pkg:npm/yalc@1.0.0-pre.53",
+      "description": "Work with npm/yarn packages locally like a boss.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/yalc/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/whitecolor/yalc"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/whitecolor/yalc.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "yalc",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/yalc/package.json"
+        }
+      ],
+      "purl": "pkg:npm/yalc@1.0.0-pre.53",
+      "scope": "optional",
+      "type": "library",
+      "version": "1.0.0-pre.53"
+    },
+    {
+      "author": "Evan You",
+      "bom-ref": "pkg:npm/vite@7.3.6",
+      "description": "Native-ESM powered web dev build tool",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/vite/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://vite.dev"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/vitejs/vite.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "vite",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/vite/package.json"
+        }
+      ],
+      "purl": "pkg:npm/vite@7.3.6",
+      "scope": "optional",
+      "type": "library",
+      "version": "7.3.6"
+    },
+    {
+      "author": "Microsoft Corp.",
+      "bom-ref": "pkg:npm/typescript@5.9.3",
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/typescript/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.typescriptlang.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/microsoft/TypeScript.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+          }
+        }
+      ],
+      "name": "typescript",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/typescript/package.json"
+        }
+      ],
+      "purl": "pkg:npm/typescript@5.9.3",
+      "scope": "optional",
+      "type": "library",
+      "version": "5.9.3"
+    },
+    {
+      "author": "Blake Embrey <hello@blakeembrey.com> (http://blakeembrey.me)",
+      "bom-ref": "pkg:npm/ts-node@10.9.2",
+      "description": "TypeScript execution environment and REPL for node.js, with source map support",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/ts-node/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://typestrong.org/ts-node"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/TypeStrong/ts-node.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "ts-node",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/ts-node/package.json"
+        }
+      ],
+      "purl": "pkg:npm/ts-node@10.9.2",
+      "scope": "optional",
+      "type": "library",
+      "version": "10.9.2"
+    },
+    {
+      "author": "Remix Software <hello@remix.run>",
+      "bom-ref": "pkg:npm/react-router-dom@7.18.2",
+      "description": "Declarative routing for React web applications",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/react-router-dom/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/remix-run/react-router#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/remix-run/react-router.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react-router-dom",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/react-router-dom/package.json"
+        }
+      ],
+      "purl": "pkg:npm/react-router-dom@7.18.2",
+      "scope": "optional",
+      "type": "framework",
+      "version": "7.18.2"
+    },
+    {
+      "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
+      "bom-ref": "pkg:npm/react-i18next@13.5.0",
+      "description": "Internationalization for react done right. Using the i18next i18n ecosystem.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/react-i18next/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/i18next/react-i18next"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/i18next/react-i18next.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react-i18next",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/react-i18next/package.json"
+        }
+      ],
+      "purl": "pkg:npm/react-i18next@13.5.0",
+      "scope": "optional",
+      "type": "framework",
+      "version": "13.5.0"
+    },
+    {
+      "bom-ref": "pkg:npm/react-dom@18.3.1",
+      "description": "React package for working with the DOM.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/react-dom/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/react/react.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react-dom",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/react-dom/package.json"
+        }
+      ],
+      "purl": "pkg:npm/react-dom@18.3.1",
+      "scope": "optional",
+      "type": "framework",
+      "version": "18.3.1"
+    },
+    {
+      "bom-ref": "pkg:npm/react@18.3.1",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/react/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://react.dev/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/react/react.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/react/package.json"
+        }
+      ],
+      "purl": "pkg:npm/react@18.3.1",
+      "scope": "optional",
+      "type": "framework",
+      "version": "18.3.1"
+    },
+    {
+      "bom-ref": "pkg:npm/prop-types@15.8.1",
+      "description": "Runtime type checking for React props and similar objects.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/prop-types/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://facebook.github.io/react/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/facebook/prop-types.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "prop-types",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/prop-types/package.json"
+        }
+      ],
+      "purl": "pkg:npm/prop-types@15.8.1",
+      "scope": "optional",
+      "type": "library",
+      "version": "15.8.1"
+    },
+    {
+      "bom-ref": "pkg:npm/jest@29.7.0",
+      "description": "Delightful JavaScript Testing.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/jest/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jestjs.io/"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/jestjs/jest.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "jest",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/jest/package.json"
+        }
+      ],
+      "purl": "pkg:npm/jest@29.7.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "29.7.0"
+    },
+    {
+      "author": "Arjun Barrett <arjunbarrett@gmail.com>",
+      "bom-ref": "pkg:npm/fflate@0.8.3",
+      "description": "High performance (de)compression in an 8kB package",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/fflate/package.json"
+            }
+          ]
+        },
+        "occurrences": [
+          {
+            "location": "src/modules/jovi-commerce/package.ts#4"
+          }
+        ]
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://101arrowz.github.io/fflate"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/101arrowz/fflate.git"
+        }
+      ],
+      "group": "",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "fflate",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/fflate/package.json"
+        },
+        {
+          "name": "ImportedModules",
+          "value": "fflate,zipSync,fflate/zipSync"
+        }
+      ],
+      "purl": "pkg:npm/fflate@0.8.3",
+      "scope": "required",
+      "type": "library",
+      "version": "0.8.3"
+    },
+    {
+      "bom-ref": "pkg:npm/@types/react-dom@19.0.5",
+      "description": "TypeScript definitions for react-dom",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@types/react-dom/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-dom"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        }
+      ],
+      "group": "@types",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react-dom",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@types/react-dom/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40types/react-dom@19.0.5",
+      "scope": "optional",
+      "type": "library",
+      "version": "19.0.5"
+    },
+    {
+      "bom-ref": "pkg:npm/@types/react@19.0.5",
+      "description": "TypeScript definitions for react",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@types/react/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        }
+      ],
+      "group": "@types",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@types/react/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40types/react@19.0.5",
+      "scope": "optional",
+      "type": "library",
+      "version": "19.0.5"
+    },
+    {
+      "bom-ref": "pkg:npm/@types/node@20.19.43",
+      "description": "TypeScript definitions for node",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@types/node/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        }
+      ],
+      "group": "@types",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "node",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@types/node/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40types/node@20.19.43",
+      "scope": "optional",
+      "type": "library",
+      "version": "20.19.43"
+    },
+    {
+      "bom-ref": "pkg:npm/@types/jest@29.5.14",
+      "description": "TypeScript definitions for jest",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@types/jest/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/jest"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+        }
+      ],
+      "group": "@types",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "jest",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@types/jest/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40types/jest@29.5.14",
+      "scope": "optional",
+      "type": "library",
+      "version": "29.5.14"
+    },
+    {
+      "author": "tannerlinsley",
+      "bom-ref": "pkg:npm/@tanstack/react-query@5.64.2",
+      "description": "Hooks for managing, caching and syncing asynchronous and remote data in React",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@tanstack/react-query/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://tanstack.com/query"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/TanStack/query.git"
+        }
+      ],
+      "group": "@tanstack",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "react-query",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@tanstack/react-query/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40tanstack/react-query@5.64.2",
+      "scope": "optional",
+      "type": "library",
+      "version": "5.64.2"
+    },
+    {
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "bom-ref": "pkg:npm/@swc/jest@0.2.39",
+      "description": "swc integration for jest",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@swc/jest/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/swc-project/pkgs/tree/main/packages/jest"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/pkgs.git"
+        }
+      ],
+      "group": "@swc",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "jest",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@swc/jest/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40swc/jest@0.2.39",
+      "scope": "optional",
+      "type": "library",
+      "version": "0.2.39"
+    },
+    {
+      "author": "강동윤 <kdy1997.dev@gmail.com>",
+      "bom-ref": "pkg:npm/@swc/core@1.16.1",
+      "description": "Super-fast alternative for babel",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@swc/core/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://swc.rs"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/swc-project/swc.git"
+        }
+      ],
+      "group": "@swc",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+          }
+        }
+      ],
+      "name": "core",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@swc/core/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40swc/core@1.16.1",
+      "scope": "optional",
+      "type": "library",
+      "version": "1.16.1"
+    },
+    {
+      "author": "Medusa",
+      "bom-ref": "pkg:npm/@medusajs/workflow-engine-redis@2.19.0",
+      "description": "Medusa Workflow Orchestrator module using Redis to track workflows executions",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/workflow-engine-redis/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "workflow-engine-redis",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/workflow-engine-redis/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/workflow-engine-redis@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Kasper Kristensen <kasper@medusajs.com>",
+      "bom-ref": "pkg:npm/@medusajs/ui@4.2.1",
+      "description": "<p align=\"center\">   <a href=\"https://www.medusajs.com\">   <picture>     <source media=\"(prefers-color-scheme: dark)\" srcset=\"https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg\">     <source media=\"(prefe",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/ui/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "ui",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/ui/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/ui@4.2.1",
+      "scope": "optional",
+      "type": "library",
+      "version": "4.2.1"
+    },
+    {
+      "author": "Medusa",
+      "bom-ref": "pkg:npm/@medusajs/test-utils@2.19.0",
+      "description": "Test utils for Medusa",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/test-utils/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "test-utils",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/test-utils/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/test-utils@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Sebastian Rindom",
+      "bom-ref": "pkg:npm/@medusajs/medusa@2.19.0",
+      "description": "Building blocks for digital commerce",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/medusa/package.json"
+            }
+          ]
+        },
+        "occurrences": [
+          {
+            "location": "src/migration-scripts/initial-data-seed.ts#3"
+          },
+          {
+            "location": "src/scripts/jovi-x2.ts#6"
+          }
+        ]
+      },
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://medusajs.com"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "expression": "SEE LICENSE IN LICENSE"
+        }
+      ],
+      "name": "medusa",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/medusa/package.json"
+        },
+        {
+          "name": "ImportedModules",
+          "value": "@medusajs/medusa/core-flows,createRegionsWorkflow,@medusajs/medusa/core-flows/createRegionsWorkflow,createSalesChannelsWorkflow,@medusajs/medusa/core-flows/createSalesChannelsWorkflow,createStoresWorkflow,@medusajs/medusa/core-flows/createStoresWorkflow,createOrderWorkflow,@medusajs/medusa/core-flows/createOrderWorkflow,createProductsWorkflow,@medusajs/medusa/core-flows/createProductsWorkflow,markPaymentCollectionAsPaid,@medusajs/medusa/core-flows/markPaymentCollectionAsPaid"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/medusa@2.19.0",
+      "scope": "required",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Medusa",
+      "bom-ref": "pkg:npm/@medusajs/locking-redis@2.19.0",
+      "description": "Redis Lock for Medusa",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/locking-redis/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "locking-redis",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/locking-redis/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/locking-redis@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Medusa",
+      "bom-ref": "pkg:npm/@medusajs/framework@2.19.0",
+      "description": "Framework",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/framework/package.json"
+            }
+          ]
+        },
+        "occurrences": [
+          {
+            "location": "integration-tests/setup.js#1"
+          },
+          {
+            "location": "src/migration-scripts/initial-data-seed.ts#1"
+          },
+          {
+            "location": "src/migration-scripts/initial-data-seed.ts#2"
+          },
+          {
+            "location": "src/modules/jovi-commerce/index.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/models/jovi-asset.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/models/jovi-delivery-receipt.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/models/jovi-entitlement.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/models/jovi-evidence.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/models/jovi-run.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/service.ts#2"
+          },
+          {
+            "location": "src/scripts/jovi-x2-concurrency.ts#2"
+          },
+          {
+            "location": "src/scripts/jovi-x2-negative.ts#5"
+          },
+          {
+            "location": "src/scripts/jovi-x2.ts#5"
+          },
+          {
+            "location": "src/workflows/jovi-x2.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/migrations/Migration20260830091019.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/migrations/Migration20260830104855.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/migrations/Migration20260830105444.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/migrations/Migration20260831122000.ts#1"
+          },
+          {
+            "location": "src/modules/jovi-commerce/service.ts#1"
+          },
+          {
+            "location": "src/scripts/jovi-x2-concurrency.ts#1"
+          },
+          {
+            "location": "src/scripts/jovi-x2-negative.ts#4"
+          },
+          {
+            "location": "src/scripts/jovi-x2.ts#4"
+          },
+          {
+            "location": "src/workflows/jovi-x2.ts#2"
+          }
+        ]
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "expression": "SEE LICENSE IN LICENSE"
+        }
+      ],
+      "name": "framework",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/framework/package.json"
+        },
+        {
+          "name": "ImportedModules",
+          "value": "@medusajs/framework/mikro-orm/core,@medusajs/framework,MedusaContainer,@medusajs/framework/MedusaContainer,@medusajs/framework/utils,ContainerRegistrationKeys,@medusajs/framework/utils/ContainerRegistrationKeys,Module,@medusajs/framework/utils/Module,model,@medusajs/framework/utils/model,InjectTransactionManager,@medusajs/framework/utils/InjectTransactionManager,MedusaContext,@medusajs/framework/utils/MedusaContext,MedusaService,@medusajs/framework/utils/MedusaService,Modules,@medusajs/framework/utils/Modules,@medusajs/framework/mikro-orm/migrations,Migration,@medusajs/framework/mikro-orm/migrations/Migration,@medusajs/framework/types,Context,@medusajs/framework/types/Context,ExecArgs,@medusajs/framework/types/ExecArgs,@medusajs/framework/workflows-sdk,createStep,@medusajs/framework/workflows-sdk/createStep,createWorkflow,@medusajs/framework/workflows-sdk/createWorkflow,StepResponse,@medusajs/framework/workflows-sdk/StepResponse,WorkflowResponse,@medusajs/framework/workflows-sdk/WorkflowResponse"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/framework@2.19.0",
+      "scope": "required",
+      "type": "framework",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Medusa (https://medusajs.com)",
+      "bom-ref": "pkg:npm/@medusajs/draft-order@2.19.0",
+      "description": "A draft order plugin for Medusa.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/draft-order/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "draft-order",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/draft-order/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/draft-order@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "bom-ref": "pkg:npm/@medusajs/dashboard@2.19.0",
+      "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/dashboard/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "expression": "SEE LICENSE IN LICENSE"
+        }
+      ],
+      "name": "dashboard",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/dashboard/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/dashboard@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Sebastian Rindom",
+      "bom-ref": "pkg:npm/@medusajs/cli@2.19.0",
+      "description": "Command Line interface for Medusa Commerce",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/cli/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "cli",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/cli/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/cli@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Medusa",
+      "bom-ref": "pkg:npm/@medusajs/caching@2.19.0",
+      "description": "Caching Module for Medusa",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/caching/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "caching",
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "node_modules/@medusajs/caching/package.json"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/caching@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Kasper Kristensen <kasper@medusajs.com>",
+      "bom-ref": "pkg:npm/@medusajs/admin-shared@2.19.0",
+      "description": "Shared code for Medusa admin packages.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/admin-shared/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://github.com/medusajs/medusa/blob/v2.19.0/LICENSE"
+          }
+        }
+      ],
+      "name": "admin-shared",
+      "properties": [
+        {
+          "name": "npm.integrity",
+          "value": "sha512-gVc0XnbocWnlQrs9tkrBWVgsvmQ5UvkkeezhVgLoXeOid01hN8iVZ8igyrhkKPCuSzCH1uSePRqOdioxrpiBWQ=="
+        },
+        {
+          "name": "tarball.sha256",
+          "value": "d829d307362fe967fe4ca62efc0188045ec695f9e2ca9427a89c55b621337322"
+        },
+        {
+          "name": "license.scope",
+          "value": "v2.19.0 root MIT outside Enterprise Edition; package path recorded"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/admin-shared@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "author": "Kasper Kristensen <kasper@medusajs.com>",
+      "bom-ref": "pkg:npm/@medusajs/admin-sdk@2.19.0",
+      "description": "SDK for building extension for the Medusa admin dashboard.",
+      "evidence": {
+        "identity": {
+          "confidence": 0.7,
+          "field": "purl",
+          "methods": [
+            {
+              "confidence": 0.7,
+              "technique": "manifest-analysis",
+              "value": "/workspace/apps/backend/node_modules/@medusajs/admin-sdk/package.json"
+            }
+          ]
+        }
+      },
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/medusajs/medusa#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/medusajs/medusa.git"
+        }
+      ],
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://github.com/medusajs/medusa/blob/v2.19.0/LICENSE"
+          }
+        }
+      ],
+      "name": "admin-sdk",
+      "properties": [
+        {
+          "name": "npm.integrity",
+          "value": "sha512-ErntT4yTs/ISslJs5oi00hQbb+Tq68wsl7N0ApPul4JF9NelJPBnfY6hzwHwDwO+WtiG+T70L7MFJnmZaEOKgw=="
+        },
+        {
+          "name": "tarball.sha256",
+          "value": "3a054f3d8aec612e15d393bd22efd4f67ad2c285b4335db393c08a6f1a9d5075"
+        },
+        {
+          "name": "license.scope",
+          "value": "v2.19.0 root MIT outside Enterprise Edition; package path recorded"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/admin-sdk@2.19.0",
+      "scope": "optional",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "bom-ref": "@medusajs/admin-bundler@2.19.0",
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://github.com/medusajs/medusa/blob/v2.19.0/LICENSE"
+          }
+        }
+      ],
+      "name": "admin-bundler",
+      "properties": [
+        {
+          "name": "npm.integrity",
+          "value": "sha512-k7zcVNjEHFpwdfVT099u6cnBpoAGpR91ZsBzH7Bn4iRtdlKLuCaRB2Z8+ZQ/7CqcDP115rztH+s6i6p4SeVG5Q=="
+        },
+        {
+          "name": "tarball.sha256",
+          "value": "7e58e0cd8bbcd790db2028a91e1e30e147c3d9328ddc5b5e47b05ca0d4fab473"
+        },
+        {
+          "name": "license.scope",
+          "value": "v2.19.0 root MIT outside Enterprise Edition; package path recorded"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/admin-bundler@2.19.0",
+      "type": "library",
+      "version": "2.19.0"
+    },
+    {
+      "bom-ref": "@medusajs/admin-vite-plugin@2.19.0",
+      "group": "@medusajs",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://github.com/medusajs/medusa/blob/v2.19.0/LICENSE"
+          }
+        }
+      ],
+      "name": "admin-vite-plugin",
+      "properties": [
+        {
+          "name": "npm.integrity",
+          "value": "sha512-OLFv+SWoBw17QxYV6ZpKRgyP1S7Xe86Je9oNbehe0FcoqXs+cnuIwMltuQ94QMCkK2Y/HwLpcCsdgzdJAzO2YQ=="
+        },
+        {
+          "name": "tarball.sha256",
+          "value": "aab9a26802abb6a9177767566e349ed3489abe5fe7e484ba34694b48252bcb7c"
+        },
+        {
+          "name": "license.scope",
+          "value": "v2.19.0 root MIT outside Enterprise Edition; package path recorded"
+        }
+      ],
+      "purl": "pkg:npm/%40medusajs/admin-vite-plugin@2.19.0",
+      "type": "library",
+      "version": "2.19.0"
+    }
+  ],
+  "dependencies": [],
+  "metadata": {
+    "authors": [
+      {
+        "name": "OWASP Foundation"
+      }
+    ],
+    "component": {
+      "author": "Medusa (https://medusajs.com)",
+      "bom-ref": "pkg:npm/@dtc/backend@0.0.1",
+      "description": "A starter for Medusa projects.",
+      "group": "@dtc",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+          }
+        }
+      ],
+      "name": "backend",
+      "purl": "pkg:npm/%40dtc/backend@0.0.1",
+      "type": "application",
+      "version": "0.0.1"
+    },
+    "lifecycles": [
+      {
+        "phase": "pre-build"
+      }
+    ],
+    "properties": [
+      {
+        "name": "cdx:bom:componentTypes",
+        "value": "npm"
+      },
+      {
+        "name": "cdx:bom:componentNamespaces",
+        "value": "@medusajs\\n@swc\\n@tanstack\\n@types"
+      },
+      {
+        "name": "cdx:bom:componentSrcFiles",
+        "value": "node_modules/@medusajs/admin-sdk/package.json\\nnode_modules/@medusajs/admin-shared/package.json\\nnode_modules/@medusajs/caching/package.json\\nnode_modules/@medusajs/cli/package.json\\nnode_modules/@medusajs/dashboard/package.json\\nnode_modules/@medusajs/draft-order/package.json\\nnode_modules/@medusajs/framework/package.json\\nnode_modules/@medusajs/locking-redis/package.json\\nnode_modules/@medusajs/medusa/package.json\\nnode_modules/@medusajs/test-utils/package.json\\nnode_modules/@medusajs/ui/package.json\\nnode_modules/@medusajs/workflow-engine-redis/package.json\\nnode_modules/@swc/core/package.json\\nnode_modules/@swc/jest/package.json\\nnode_modules/@tanstack/react-query/package.json\\nnode_modules/@types/jest/package.json\\nnode_modules/@types/node/package.json\\nnode_modules/@types/react-dom/package.json\\nnode_modules/@types/react/package.json\\nnode_modules/fflate/package.json\\nnode_modules/jest/package.json\\nnode_modules/prop-types/package.json\\nnode_modules/react-dom/package.json\\nnode_modules/react-i18next/package.json\\nnode_modules/react-router-dom/package.json\\nnode_modules/react/package.json\\nnode_modules/ts-node/package.json\\nnode_modules/typescript/package.json\\nnode_modules/vite/package.json\\nnode_modules/yalc/package.json\\nnode_modules/zod/package.json"
+      }
+    ],
+    "timestamp": "2026-09-01T04:28:39.198777+00:00",
+    "tools": {
+      "components": [
+        {
+          "author": "OWASP Foundation",
+          "bom-ref": "pkg:npm/@cyclonedx/cdxgen@11.5.0",
+          "group": "@cyclonedx",
+          "name": "cdxgen",
+          "publisher": "OWASP Foundation",
+          "purl": "pkg:npm/%40cyclonedx/cdxgen@11.5.0",
+          "type": "application",
+          "version": "11.5.0"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:6176a6c3-8153-4f52-af72-d0fd0c4adf5d",
+  "specVersion": "1.5",
+  "version": 1
+}
