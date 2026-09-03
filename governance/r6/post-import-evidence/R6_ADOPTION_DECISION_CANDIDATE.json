@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "evidence_type": "R6_ADOPTION_DECISION_CANDIDATE",
+  "issued_from_human": false,
+  "issued_by": "R6 Post-Import Independent Auditor (agent session, 2026-09-03)",
+  "based_on": {
+    "audit_result": "governance/r6/post-import-evidence/R6_POST_IMPORT_INDEPENDENT_AUDIT_RESULT.md",
+    "audit_result_sha256": "32f973736f8729ae417a7d253ae1cb9e6b9454e3b780c4c38bfc1374562f1e69",
+    "final_verdict": "R6_POST_IMPORT_PASS",
+    "audited_source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa",
+    "pnpm_lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+    "medusa_version": "2.19.0",
+    "controlled_repo": "E:\\project\\jovi-medusa-commerce-v1",
+    "baseline_branch": "main",
+    "integration_branch": "development"
+  },
+  "boundary_flags_must_remain_false": {
+    "production_integration_allowed": false,
+    "real_payment_allowed": false,
+    "real_customer_allowed": false,
+    "xianyu_allowed": false,
+    "auto_delivery_allowed": false,
+    "R12_supersede_allowed": false
+  },
+  "open_findings_to_close_in_r2_r3": [
+    {
+      "id": "F-1",
+      "severity": "Low",
+      "summary": "Admin session-cookie missing Set-Cookie on loopback HTTP due to default secure=true in Medusa v2.19.0.",
+      "owner_phase": "R2-R3"
+    },
+    {
+      "id": "F-2",
+      "severity": "Low",
+      "summary": "Candidate browser evidence JSON needs captured facts rather than hardcoded text.",
+      "owner_phase": "R2-R3"
+    }
+  ],
+  "next_step": "READY_FOR_JOVI_R6_MAINLINE_OR_ADMIN_CLOSURE"
+}
