@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "manifest_type": "R2R3_SOURCE_MANIFEST",
+  "updated_at": "2026-09-03",
+  "canonical_source_tree_sha256": "664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602",
+  "file_count": 76,
+  "runtime_pins": {
+    "medusa_version": "2.19.0",
+    "medusa_tag": "v2.19.0",
+    "medusa_commit": "87d77fa1b56ec287aa6655aaa2f54245387aa2f2",
+    "pnpm_lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+    "node_version": "22.17.1-bookworm-slim",
+    "postgres_image_digest": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+    "redis_image_digest": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1"
+  },
+  "source_lineage": {
+    "r6_post_import_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa (74 files)",
+    "r2r3_deltas": [
+      "modified: audit-source/backend/jovi-medusa-backend/apps/backend/medusa-config.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/session-cookie.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/session-cookie.unit.spec.ts"
+    ]
+  },
+  "boundaries": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false
+  }
+}

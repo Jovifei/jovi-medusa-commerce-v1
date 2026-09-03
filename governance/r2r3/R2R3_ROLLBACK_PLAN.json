@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "plan_type": "R2R3_ROLLBACK_PLAN",
+  "created_at": "2026-09-03",
+  "target_baseline": {
+    "branch": "development",
+    "commit": "e8c8a783daefc9cf9fead22091ebc4bf190e3d54",
+    "source_tree_sha256": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa"
+  },
+  "rollback_steps": [
+    "1. Stop container jovi-medusa-r2r3-backend: docker rm -f jovi-medusa-r2r3-backend",
+    "2. Re-start previous backend: docker start jovi-medusa-r2-r2-backend (or run image jovi-medusa-r6-backend:local)",
+    "3. Discard feature branch: git checkout development && git branch -D feature/r2r3-admin-session-cookie",
+    "4. Verify source tree SHA restores to e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa via verify_source_tree.py",
+    "5. Zero loss of production data since all workloads run on synthetic databases."
+  ]
+}

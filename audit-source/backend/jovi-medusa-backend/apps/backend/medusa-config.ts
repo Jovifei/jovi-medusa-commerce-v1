@@ -2,6 +2,10 @@ import { loadEnv, defineConfig, Modules } from '@medusajs/framework/utils'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
+import { resolveCookieOptions } from './src/modules/jovi-commerce/session-cookie'
+
+const cookieOptions = resolveCookieOptions()
+
 module.exports = defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
@@ -11,7 +15,8 @@ module.exports = defineConfig({
       authCors: process.env.AUTH_CORS!,
       jwtSecret: process.env.JWT_SECRET,
       cookieSecret: process.env.COOKIE_SECRET,
-    }
+    },
+    cookieOptions,
   },
   modules: [
     {

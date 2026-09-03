@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "manifest_type": "R2R3_CHANGE_MANIFEST",
+  "baseline_commit": "e8c8a783daefc9cf9fead22091ebc4bf190e3d54",
+  "baseline_branch": "development",
+  "feature_branch": "feature/r2r3-admin-session-cookie",
+  "objective": "Close R2-R2 Low findings F-1 (missing admin session-cookie over HTTP) and F-2 (hardcoded browser evidence), adopt Wave 1 OSS security tools (Gitleaks + Syft).",
+  "changes": [
+    {
+      "path": "audit-source/backend/jovi-medusa-backend/apps/backend/medusa-config.ts",
+      "change_type": "MODIFIED",
+      "rationale": "Imports resolveCookieOptions from session-cookie module, applies secure=!syntheticLoopbackHttp, sameSite=lax, httpOnly=true to projectConfig.cookieOptions."
+    },
+    {
+      "path": "audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/session-cookie.ts",
+      "change_type": "ADDED",
+      "rationale": "Implements resolveCookieOptions with fail-closed guard throwing if JOVI_SYNTHETIC_LOOPBACK_HTTP=true is combined with real commerce or production integration."
+    },
+    {
+      "path": "audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/session-cookie.unit.spec.ts",
+      "change_type": "ADDED",
+      "rationale": "Unit tests for resolveCookieOptions verifying default secure=true, loopback secure=false, and 3 fail-closed rejection cases."
+    },
+    {
+      "path": "governance/r2r3/verify_admin_cookie_session.mjs",
+      "change_type": "ADDED",
+      "rationale": "Deterministic Playwright browser verification script capturing real HTTP headers, cookies, users/me, products, orders, receipts, and refresh."
+    },
+    {
+      "path": "governance/r2r3/regression.sh",
+      "change_type": "ADDED",
+      "rationale": "Isolated regression script for the updated 76-file source tree with MSYS_NO_PATHCONV=1."
+    }
+  ],
+  "source_tree_sha_delta": {
+    "before": "e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa (74 files)",
+    "after": "664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602 (76 files)"
+  },
+  "lockfile_unchanged": true,
+  "node_modules_patched": false,
+  "upstream_medusa_code_patched": false
+}

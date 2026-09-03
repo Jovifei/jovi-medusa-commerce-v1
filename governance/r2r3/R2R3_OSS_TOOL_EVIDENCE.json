@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "evidence_type": "R2R3_OSS_TOOL_EVIDENCE",
+  "generated_at": "2026-09-03",
+  "wave_1_tools": {
+    "gitleaks": {
+      "repository": "gitleaks/gitleaks",
+      "pinned_image": "docker.io/zricethezav/gitleaks:v8.24.0",
+      "image_digest": "sha256:2bcceac45179b3a91bff11a824d0fb952585b429e54fc928728b1d4d5c3e5176",
+      "license": "MIT",
+      "clean_repo_scan": {
+        "status": "PASS",
+        "exit_code": 0,
+        "leaks_found": 0
+      },
+      "synthetic_fake_secret_test": {
+        "fixture": "tests/fixtures/synthetic_fake_secret.pem",
+        "status": "PASS (detected)",
+        "rule_id": "private-key",
+        "exit_code": 1
+      },
+      "post_fixture_removal_scan": {
+        "status": "PASS",
+        "exit_code": 0,
+        "leaks_found": 0
+      },
+      "dual_track_maintained": true
+    },
+    "syft": {
+      "repository": "anchore/syft",
+      "pinned_image": "docker.io/anchore/syft:v1.20.0",
+      "image_digest": "sha256:b46e597614ddc78621e560af3fabf9346e35462ea1c886a38b30bcc7ca601a73",
+      "license": "Apache-2.0",
+      "source_sbom": {
+        "file": "governance/r2r3/syft_source_sbom.cdx.json",
+        "format": "CycloneDX 1.5 JSON",
+        "sha256": "babe0997d7b421ce8938d1e1e20f728016bd541a5d720c4202e593da345c311d",
+        "component_count": 1301
+      },
+      "image_sbom": {
+        "file": "governance/r2r3/syft_image_sbom.cdx.json",
+        "format": "CycloneDX 1.5 JSON",
+        "sha256": "ade2fd2dca90649d2a92284c7fe03edf1b9dde8ff1e8ceb40be9e6124e19eb99",
+        "component_count": 6310
+      },
+      "key_dependencies_mapped": [
+        {
+          "name": "@medusajs/medusa",
+          "version": "2.19.0"
+        },
+        {
+          "name": "@medusajs/framework",
+          "version": "2.19.0"
+        },
+        {
+          "name": "@medusajs/admin-sdk",
+          "version": "2.19.0"
+        },
+        {
+          "name": "@medusajs/workflow-engine-redis",
+          "version": "2.19.0"
+        },
+        {
+          "name": "@medusajs/locking-redis",
+          "version": "2.19.0"
+        },
+        {
+          "name": "ioredis",
+          "version": "5.11.1"
+        },
+        {
+          "name": "bullmq",
+          "version": "5.13.0"
+        },
+        {
+          "name": "express",
+          "version": "4.22.2"
+        },
+        {
+          "name": "pg",
+          "version": "8.23.0 / 8.20.0"
+        }
+      ]
+    }
+  },
+  "wave_2_plans": {
+    "trivy": {
+      "repository": "aquasecurity/trivy",
+      "decision": "ADOPT_SECOND_WAVE",
+      "plan": "Add Trivy vulnerability & misconfiguration scanning for container filesystem and OCI image; configure fail-closed on HIGH/CRITICAL CVEs; cache vulnerability database locally."
+    },
+    "step_security_harden_runner": {
+      "repository": "step-security/harden-runner",
+      "decision": "ADOPT_WHEN_COMMERCE_REMOTE_EXISTS",
+      "plan": "Integrate into GitHub Actions CI once remote repository jovi-medusa-commerce-v1 is established; pin action to commit SHA; run initially in audit mode to record egress whitelist."
+    },
+    "dependency_review": {
+      "repository": "actions/dependency-review-action",
+      "decision": "CONDITIONAL_ON_REPOSITORY_PLAN",
+      "plan": "Adopt on PR gates if GitHub repository plan/visibility permits; block PRs introducing high-severity security advisories."
+    },
+    "slsa_framework": {
+      "repository": "slsa-framework/slsa-github-generator",
+      "decision": "DEFER_TO_RELEASE_PHASE",
+      "plan": "Defer until formal release candidate / binary distribution stage."
+    }
+  }
+}

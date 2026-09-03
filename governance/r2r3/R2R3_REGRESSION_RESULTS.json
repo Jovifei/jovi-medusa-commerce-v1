@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "evidence_type": "R2R3_REGRESSION_RESULTS",
+  "executed_at": "2026-09-03",
+  "source_tree_sha256": "664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602",
+  "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+  "typescript_check": {
+    "status": "PASS",
+    "command": "pnpm --filter @dtc/backend exec tsc --noEmit",
+    "errors": 0
+  },
+  "jest_unit": {
+    "status": "PASS",
+    "suites_passed": 7,
+    "suites_total": 7,
+    "tests_passed": 17,
+    "tests_total": 17,
+    "natural_shutdown": true,
+    "force_exit_used": false
+  },
+  "jest_integration": {
+    "status": "PASS",
+    "suites_passed": 1,
+    "suites_total": 1,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "spec": "src/modules/jovi-commerce/__tests__/service.spec.ts"
+  },
+  "x2_first": {
+    "status": "PASS",
+    "outcome": "READY_FOR_HUMAN_DELIVERY",
+    "environment": "SYNTHETIC_X2",
+    "synthetic_only": true
+  },
+  "x2_replay": {
+    "status": "PASS",
+    "outcome": "READY_FOR_HUMAN_DELIVERY",
+    "semantic_parity": true
+  },
+  "x2_concurrency": {
+    "status": "PASS",
+    "runs": 10,
+    "unique_results": 1,
+    "outcome": "READY_FOR_HUMAN_DELIVERY"
+  },
+  "x2_negative": {
+    "status": "PASS",
+    "rejected_cases_count": 6,
+    "database_unchanged": true,
+    "fail_closed": true
+  },
+  "oracle_comparison": {
+    "status": "PASS",
+    "matched_files": "7/7",
+    "oracle_status": "X2_STAGING_COMMERCE_FLOW_PASS"
+  },
+  "playwright_admin_cookie_session": {
+    "status": "PASS",
+    "verdict": "R2R3_ADMIN_SESSION_PASS",
+    "connect_sid_cookie_present": true,
+    "users_me_status": 200,
+    "bearer_used": false
+  },
+  "secret_scan_dual_track": {
+    "gitleaks": "PASS (clean repo 0 leaks; negative fixture rejected)",
+    "python_heuristic": "PASS (clean repo 0 findings; negative fixture rejected)"
+  },
+  "license_and_sbom": {
+    "status": "PASS",
+    "checker": "license_check.py",
+    "medusa_tag": "v2.19.0",
+    "admin_components": 4
+  },
+  "boundary_flags_must_remain_false": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  },
+  "overall_regression_verdict": "ALL_REGRESSIONS_PASS"
+}

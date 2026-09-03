@@ -1,0 +1,12 @@
+PASS src/workflows/__tests__/jovi-x2.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/domain.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/fixture.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/session-cookie.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/package.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/x2-contract.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/policy-command.unit.spec.ts
+
+Test Suites: 7 passed, 7 total
+Tests:       17 passed, 17 total
+Snapshots:   0 total
+Time:        2.438 s
