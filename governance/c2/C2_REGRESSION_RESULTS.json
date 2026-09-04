@@ -1,0 +1,105 @@
+﻿{
+  "schema_version": 1,
+  "evidence_type": "C2_REGRESSION_RESULTS",
+  "executed_at": "2026-09-05",
+  "source_tree_sha256": "e3afca520386f043820dd7811a5b6ceb0dc7c8f9caa6c268f01d25edc347ed11",
+  "lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+  "typescript_check": {
+    "status": "PASS",
+    "command": "pnpm --filter @dtc/backend exec tsc --noEmit",
+    "errors": 0
+  },
+  "jest_unit": {
+    "status": "PASS",
+    "suites_passed": 9,
+    "suites_total": 9,
+    "tests_passed": 41,
+    "tests_total": 41,
+    "natural_shutdown": true,
+    "force_exit_used": false
+  },
+  "jest_integration": {
+    "status": "PASS",
+    "suites_passed": 1,
+    "suites_total": 1,
+    "tests_passed": 3,
+    "tests_total": 3,
+    "spec": "src/modules/jovi-commerce/__tests__/service.spec.ts"
+  },
+  "x2_first": {
+    "status": "PASS",
+    "outcome": "READY_FOR_HUMAN_DELIVERY",
+    "environment": "SYNTHETIC_X2",
+    "synthetic_only": true
+  },
+  "x2_replay": {
+    "status": "PASS",
+    "outcome": "READY_FOR_HUMAN_DELIVERY",
+    "semantic_parity": true
+  },
+  "x2_concurrency": {
+    "status": "PASS",
+    "runs": 10,
+    "unique_results": 1,
+    "outcome": "READY_FOR_HUMAN_DELIVERY"
+  },
+  "x2_negative": {
+    "status": "PASS",
+    "rejected_cases_count": 6,
+    "database_unchanged": true,
+    "fail_closed": true
+  },
+  "c2_first": {
+    "status": "PASS",
+    "environment": "SYNTHETIC_C2",
+    "package_sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "package_manifest_sha256": "382a5a016905e1d5290d599e55abf36e3a766a62ad1b10dea1a2fc5dc4d391f0",
+    "download_verified": true,
+    "candidate_only": true,
+    "platform_action_allowed": false
+  },
+  "c2_replay": {
+    "status": "PASS",
+    "environment": "SYNTHETIC_C2",
+    "reused_existing": true,
+    "duplicate_records_created": 0
+  },
+  "c2_concurrency": {
+    "status": "PASS",
+    "runs": 10,
+    "unique_results": 1,
+    "duplicate_records_created": 0,
+    "lock_provider": "Medusa Redis Distributed Lock"
+  },
+  "c2_negative": {
+    "status": "PASS",
+    "scenarios_rejected": 7,
+    "database_unchanged": true,
+    "fail_closed": true
+  },
+  "c2_http_download": {
+    "status": "PASS",
+    "endpoint": "/store/jovi-commerce/downloads",
+    "status_code": 200,
+    "content_length": 2249,
+    "package_sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "negative_tests_pass": true
+  },
+  "playwright_admin_cookie_session": {
+    "status": "PASS",
+    "verdict": "C2_ADMIN_SESSION_PASS",
+    "connect_sid_cookie_present": true,
+    "bearer_used_for_ui_acceptance": false,
+    "external_requests": 0,
+    "fatal_console_errors": 0,
+    "page_errors": 0
+  },
+  "boundaries": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  }
+}

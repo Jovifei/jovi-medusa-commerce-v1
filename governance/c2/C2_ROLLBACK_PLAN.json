@@ -1,0 +1,17 @@
+﻿{
+  "schema_version": 1,
+  "plan_type": "C2_ROLLBACK_PLAN",
+  "created_at": "2026-09-05",
+  "target_baseline": {
+    "branch": "feature/r2r3-admin-session-cookie",
+    "commit": "363e1d6d45e5eb80242207aa1186716a1bce4c65",
+    "source_tree_sha256": "664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602"
+  },
+  "rollback_steps": [
+    "1. Stop regression containers: docker rm -f jovi-medusa-c2-reg-backend jovi-medusa-c2-reg-redis jovi-medusa-c2-reg-db || true",
+    "2. Remove isolated network and volumes: docker network rm jovi-medusa-c2-reg-internal || true; docker volume rm pgdata-c2 redisdata-c2 || true",
+    "3. Revert feature branch: git checkout feature/r2r3-admin-session-cookie",
+    "4. Verify source tree SHA restores to 664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602 via verify_source_tree.py",
+    "5. Zero loss of production data since all workloads run on synthetic databases."
+  ]
+}

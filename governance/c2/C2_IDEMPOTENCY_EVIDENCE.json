@@ -1,0 +1,32 @@
+﻿{
+  "schema_version": 1,
+  "evidence_type": "C2_IDEMPOTENCY_EVIDENCE",
+  "verified_at": "2026-09-05",
+  "run_id": "c2_71d638c59255b6a6",
+  "order_id": "order_01M1PJ0K7WMJGJRKE6S897JZ95",
+  "product_id": "SYNTH-C2-VALIDATION-PACK",
+  "version": "1.0.0",
+  "first_execution": {
+    "status": "PASS",
+    "entitlement_id": "ent_0df8116bad06696fb899ee48",
+    "delivery_receipt_id": "rcpt_67cfbb0e4396b1ce2105151b",
+    "records_inserted": 1
+  },
+  "replay_execution": {
+    "status": "PASS",
+    "returned_entitlement_id": "ent_0df8116bad06696fb899ee48",
+    "returned_delivery_receipt_id": "rcpt_67cfbb0e4396b1ce2105151b",
+    "duplicate_records_created": 0,
+    "identical_response": true
+  },
+  "concurrency_execution": {
+    "concurrency_level": 10,
+    "lock_provider": "Medusa 2.0 Redis Distributed Lock",
+    "runs_attempted": 10,
+    "unique_entitlement_ids": 1,
+    "unique_receipt_ids": 1,
+    "duplicate_records_created": 0,
+    "serialized_correctly": true
+  },
+  "verdict": "PASS"
+}

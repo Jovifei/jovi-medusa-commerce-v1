@@ -1,0 +1,45 @@
+﻿{
+  "schema_version": 1,
+  "manifest_type": "C2_SOURCE_MANIFEST",
+  "updated_at": "2026-09-05",
+  "canonical_source_tree_sha256": "e3afca520386f043820dd7811a5b6ceb0dc7c8f9caa6c268f01d25edc347ed11",
+  "file_count": 82,
+  "runtime_pins": {
+    "medusa_version": "2.19.0",
+    "medusa_tag": "v2.19.0",
+    "medusa_commit": "87d77fa1b56ec287aa6655aaa2f54245387aa2f2",
+    "pnpm_lockfile_sha256": "9855eabfc4fc37d916af0ac64585f15594b44a90dc6d8488d594789956237119",
+    "node_version": "22.17.1-bookworm-slim",
+    "postgres_image_digest": "sha256:cf78e76683b9ca8c5733cbbdce6c9262b45b6767934dd0a95e671f9a0fc20685",
+    "redis_image_digest": "sha256:1cd18c9774579b583415e2a1ce464f183e5ed15203c5d8195dcfc6b9dc710cd1"
+  },
+  "source_lineage": {
+    "r2r3_tree_sha256": "664d73663ffce757bdf394a293c5642720fad5cb0afa1564619f53e845090602 (76 files)",
+    "c2_deltas": [
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/c2-deterministic-zip.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/c2-domain.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/c2-deterministic-zip.unit.spec.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/__tests__/c2-negative.unit.spec.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/migrations/Migration20260904120000.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/api/store/jovi-commerce/downloads/route.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/api/admin/jovi-commerce/c2/route.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-c2.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-c2-replay.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-c2-concurrency.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-c2-negative.ts",
+      "added: audit-source/backend/jovi-medusa-backend/apps/backend/src/scripts/jovi-c2-http-download.ts",
+      "modified: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/domain.ts",
+      "modified: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/service.ts",
+      "modified: audit-source/backend/jovi-medusa-backend/apps/backend/src/modules/jovi-commerce/medusa-binding.ts",
+      "added: audit-source/backend/jovi-medusa-backend/THIRD_PARTY_NOTICES.md"
+    ]
+  },
+  "boundaries": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  }
+}

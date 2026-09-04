@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "source_repo": "Jovifei/Automation_Seal",
+  "source_branch": "commerce-c2-cloud-reference-20260904",
+  "source_remote_head": "17810430914c1e4e98d1e84d5574f3f7b2597d5e",
+  "imported_at": "2026-09-04",
+  "files": [
+    {
+      "relative_path": "fixture/README.txt",
+      "sha256": "23ce668014753df1ba1b4d6b13d31666e805d42d5fdd285872db8401f6909df2",
+      "size": 233
+    },
+    {
+      "relative_path": "fixture/checklist.json",
+      "sha256": "962d1634316ba7a11272bfe895f94aef36cd2b389d7d12255e95225207e2ceb8",
+      "size": 283
+    },
+    {
+      "relative_path": "fixture/sample-report.html",
+      "sha256": "9d1519db237c9b0be238db22a92814e02693c96f6c35353ed79d584cd63a046e",
+      "size": 310
+    },
+    {
+      "relative_path": "fixture/product-manifest.json",
+      "sha256": "71d638c59255b6a6520ecda3c36dccd77a44e42b0dc126e4514b09b0619ffade",
+      "size": 1400
+    },
+    {
+      "relative_path": "fixture/SHA256SUMS.txt",
+      "sha256": "ea3a1a1a09cdd54dbc82cbe8e50b8fdf487d709eb9a583fe633cb8ed25f0aad5",
+      "size": 331
+    },
+    {
+      "relative_path": "test-vector.json",
+      "sha256": "5b059820b9f5f6735c9a6b232075651879030b7b409f67a61c3f6293a2c3a25e",
+      "size": 1206
+    },
+    {
+      "relative_path": "c2-contracts.schema.json",
+      "sha256": "3f34b705dbf8e2ada02e0df52cbd49dcd1b47bc11c8e72be2e175f030f3c7ae7",
+      "size": 4983
+    },
+    {
+      "relative_path": "negative-test-matrix.json",
+      "sha256": "2011f3f94f1eda179eb668c654edfa563b6942892868c7df430d613d0639546a",
+      "size": 2229
+    }
+  ]
+}

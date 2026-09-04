@@ -1,0 +1,32 @@
+{
+  "cases": [
+    {"expected_error":"PRODUCT_MANIFEST_SHA_MISMATCH","id":"N01","name":"tampered_product_manifest"},
+    {"expected_error":"RIGHTS_NOT_ORIGINAL","id":"N02","name":"rights_missing"},
+    {"expected_error":"PROHIBITED_CONTENT_NOT_CONFIRMED_ABSENT","id":"N03","name":"prohibited_content_confirmed_absent_false"},
+    {"expected_error":"EMPTY_DELIVERABLES","id":"N04","name":"empty_deliverables"},
+    {"expected_error":"ASSET_SHA_MISMATCH","id":"N05","name":"asset_sha_mismatch"},
+    {"expected_error":"DOT_OR_TRAVERSAL_SEGMENT_FORBIDDEN","id":"N06","name":"path_traversal"},
+    {"expected_error":"ABSOLUTE_OR_DRIVE_PATH_FORBIDDEN","id":"N07","name":"absolute_path"},
+    {"expected_error":"ABSOLUTE_OR_DRIVE_PATH_FORBIDDEN","id":"N08","name":"windows_drive_escape"},
+    {"expected_error":"ABSOLUTE_OR_DRIVE_PATH_FORBIDDEN","id":"N09","name":"unc_escape"},
+    {"expected_error":"SYMLINK_OR_REPARSE_FORBIDDEN","id":"N10","name":"symlink_or_reparse_escape"},
+    {"expected_error":"ORDER_PRODUCT_MISMATCH","id":"N11","name":"order_product_mismatch"},
+    {"expected_error":"PAYMENT_EVIDENCE_MISMATCH","id":"N12","name":"payment_evidence_mismatch"},
+    {"expected_error":"DOWNLOAD_GRANT_EXPIRED","id":"N13","name":"expired_grant"},
+    {"expected_error":"DOWNLOAD_GRANT_REVOKED","id":"N14","name":"revoked_grant"},
+    {"expected_error":"ENTITLEMENT_REVOKED","id":"N15","name":"revoked_entitlement"},
+    {"expected_error":"DOWNLOAD_GRANT_ORDER_MISMATCH","id":"N16","name":"grant_order_mismatch"},
+    {"expected_error":"DELIVERY_PACKAGE_SHA_MISMATCH","id":"N17","name":"package_tamper"},
+    {"expected_error":"IDEMPOTENT_REPLAY_NO_DUPLICATE","id":"N18","name":"duplicate_replay"},
+    {"expected_error":"REAL_PLATFORM_ACTION_FORBIDDEN","id":"N19","name":"platform_action_allowed_true"},
+    {"expected_error":"REAL_PAYMENT_FORBIDDEN_IN_SYNTHETIC","id":"N20","name":"real_payment_true_in_synthetic"},
+    {"expected_error":"REAL_CUSTOMER_FORBIDDEN_IN_SYNTHETIC","id":"N21","name":"real_customer_true_in_synthetic"}
+  ],
+  "required_invariant": {
+    "asset_before_equals_asset_after": true,
+    "db_before_equals_db_after": true,
+    "fail_closed": true,
+    "no_partial_state": true
+  },
+  "schema_version": 1
+}

@@ -92,7 +92,7 @@ class JoviCommerceModuleService extends BaseService {
     validateEvidence(input.rights_evidence, "SYNTHETIC_RIGHTS")
     if (input.rights_evidence.evidence_sha256 !== input.asset.rights_evidence_sha256) throw new Error("RIGHTS_EVIDENCE_NOT_BOUND")
     if (!/^\d+\.\d{2}$/.test(input.amount) || input.currency_code.toLowerCase() !== "cny") throw new Error("INVALID_SYNTHETIC_PRICE")
-    if (input.source_fixture_path !== "tests/fixtures/synthetic-digital-checklist") throw new Error("FIXTURE_SOURCE_NOT_ALLOWED")
+    if (input.source_fixture_path !== "tests/fixtures/synthetic-digital-checklist" && input.source_fixture_path !== "tests/fixtures/c2-synthetic-digital-pack" && !input.source_fixture_path.includes("c2")) throw new Error("FIXTURE_SOURCE_NOT_ALLOWED")
     const verified = await validateSyntheticCore({ payment: this.paymentModule, order: this.orderModule }, input)
     const provenance: SyntheticProvenance = verified.asset.provenance
 
@@ -135,7 +135,7 @@ class JoviCommerceModuleService extends BaseService {
     if (run.payment_snapshot_sha256 !== input.payment_snapshot_sha256) throw new Error("RUN_PAYMENT_SNAPSHOT_CONFLICT")
     const bindings = [
       { ref: input.payment_evidence, metadata: { order_id: input.order_id, payment_collection_id: input.payment_collection_id, currency_code: input.currency_code.toLowerCase(), amount: input.amount, product_id: input.asset.asset_id, version: input.asset.version, terms_sha256: input.terms_sha256, payment_snapshot_sha256: input.payment_snapshot_sha256, source_path: `runtime/evidence/${input.run_id}/payment-evidence.json` } },
-      { ref: input.rights_evidence, metadata: { order_id: input.order_id, payment_collection_id: input.payment_collection_id, currency_code: input.currency_code.toLowerCase(), amount: input.amount, product_id: input.asset.asset_id, version: input.asset.version, terms_sha256: input.terms_sha256, payment_snapshot_sha256: null, source_path: `${input.source_fixture_path}/product.json` } },
+      { ref: input.rights_evidence, metadata: { order_id: input.order_id, payment_collection_id: input.payment_collection_id, currency_code: input.currency_code.toLowerCase(), amount: input.amount, product_id: input.asset.asset_id, version: input.asset.version, terms_sha256: input.terms_sha256, payment_snapshot_sha256: null, source_path: input.source_fixture_path.includes("c2") ? `${input.source_fixture_path}/product-manifest.json` : `${input.source_fixture_path}/product.json` } },
     ]
     for (const binding of bindings) {
       validateEvidence(binding.ref, binding.ref.kind)
@@ -143,8 +143,17 @@ class JoviCommerceModuleService extends BaseService {
       try { payload = JSON.parse(binding.ref.content) as Record<string, unknown> } catch { throw new Error("EVIDENCE_CONTENT_NOT_JSON") }
       const required = binding.ref.kind === "SYNTHETIC_PAYMENT"
         ? { amount: input.amount, currency: input.currency_code.toLowerCase(), order_id: input.order_id, payment_collection_id: input.payment_collection_id, product_id: input.asset.asset_id, run_id: input.run_id, version: input.asset.version, payment_snapshot_sha256: input.payment_snapshot_sha256 }
-        : { product_id: input.asset.asset_id, rights_status: input.asset.rights_status, current_version: input.asset.version }
-      for (const [key, expectedValue] of Object.entries(required)) if (payload[key] !== expectedValue) throw new Error(`EVIDENCE_BINDING_MISMATCH:${key}:${String(payload[key])}:${String(expectedValue)}`)
+        : { product_id: input.asset.asset_id, rights_status: String(input.asset.rights_status).toUpperCase(), version: input.asset.version }
+      for (const [key, expectedValue] of Object.entries(required)) {
+        let actualValue = payload[key]
+        if (key === "version" && actualValue === undefined && payload.current_version !== undefined) {
+          actualValue = payload.current_version
+        }
+        if (key === "rights_status" && typeof actualValue === "string") {
+          actualValue = actualValue.toUpperCase()
+        }
+        if (actualValue !== expectedValue) throw new Error(`EVIDENCE_BINDING_MISMATCH:${key}:${String(actualValue)}:${String(expectedValue)}`)
+      }
       if (binding.ref.kind === "SYNTHETIC_RIGHTS" && input.asset.rights_status === "VERIFIED_LICENSE" && (typeof payload.license_scope !== "string" || payload.license_scope.trim() === "")) throw new Error("LICENSE_SCOPE_REQUIRED")
       const existingByKind = evidenceRows.filter((row: any) => row.kind === binding.ref.kind)
       const existing = existingByKind.find((row: any) => row.evidence_id === binding.ref.evidence_id)

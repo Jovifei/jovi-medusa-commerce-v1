@@ -75,7 +75,7 @@ export async function validateSyntheticCore(dependencies: any, input: SyntheticI
   if (payment.status !== "completed") throw new Error("PAYMENT_COLLECTION_NOT_COMPLETED")
   if (provider !== "pp_system" && provider !== "pp_system_default") throw new Error("PAYMENT_PROVIDER_NOT_ALLOWED")
   if (payment.metadata?.order_id !== input.order_id) throw new Error("PAYMENT_COLLECTION_ORDER_MISMATCH")
-  if (payment.metadata?.environment !== "SYNTHETIC_X2") throw new Error("PAYMENT_ENVIRONMENT_MISMATCH")
+  if (payment.metadata?.environment !== "SYNTHETIC_X2" && payment.metadata?.environment !== "SYNTHETIC_C2") throw new Error("PAYMENT_ENVIRONMENT_MISMATCH")
   if (payment.metadata?.test_run_id !== input.run_id) throw new Error(`PAYMENT_RUN_MISMATCH:${String(payment.metadata?.test_run_id)}:${input.run_id}`)
   if (payment.metadata?.source_fixture_sha256 !== input.asset.provenance.source_fixture_sha256) throw new Error("PAYMENT_FIXTURE_MISMATCH")
   if (payment.metadata?.product_id !== input.asset.asset_id || payment.metadata?.version !== input.asset.version) throw new Error("PAYMENT_PRODUCT_MISMATCH")
@@ -83,7 +83,7 @@ export async function validateSyntheticCore(dependencies: any, input: SyntheticI
   if (String(payment.currency_code).toLowerCase() !== input.currency_code.toLowerCase()) throw new Error("PAYMENT_CURRENCY_MISMATCH")
   if (majorAmount(payment.amount) !== input.amount) throw new Error("PAYMENT_AMOUNT_MISMATCH")
   if (!order || order.id !== input.order_id || order.canceled_at) throw new Error("ORDER_CANCELLED")
-  if (order.metadata?.environment !== "SYNTHETIC_X2" || order.metadata?.test_run_id !== input.run_id || order.metadata?.source_fixture_sha256 !== input.asset.provenance.source_fixture_sha256) throw new Error("ORDER_PROVENANCE_MISMATCH")
+  if ((order.metadata?.environment !== "SYNTHETIC_X2" && order.metadata?.environment !== "SYNTHETIC_C2") || order.metadata?.test_run_id !== input.run_id || order.metadata?.source_fixture_sha256 !== input.asset.provenance.source_fixture_sha256) throw new Error("ORDER_PROVENANCE_MISMATCH")
   const orderTotal = order.total ?? order.summary?.totals?.current_order_total ?? order.summary?.totals?.original_order_total
   const expectedAmount = majorAmount(input.amount)
   if (String(order.currency_code).toLowerCase() !== input.currency_code.toLowerCase() || majorAmount(orderTotal) !== expectedAmount) throw new Error("ORDER_AMOUNT_MISMATCH")

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "evidence_type": "C2_ADMIN_SESSION_EVIDENCE",
+  "verified_at": "2026-09-04T16:13:24.791Z",
+  "base_url": "http://127.0.0.1:19003",
+  "synthetic_credentials": {
+    "email": "synthetic-admin@jovi-r2r2.local",
+    "password_masked": "***"
+  },
+  "emailpass_status": 200,
+  "session_status": 200,
+  "set_cookie_present": true,
+  "set_cookie_name": "connect.sid",
+  "set_cookie_raw": "connect.sid=s%3Aeef5zh1KCxyucv8ZuqXz5QfG5k1zJtpR.fKj3RieEcz%2BEMxm%2FuhbTpi4%2FN5gPchSO8%2FQ%2F14AV%2BNw; Path=/; Expires=Sat, 05 Sep 2026 02:13:16 GMT; HttpOnly; SameSite=Lax",
+  "browser_cookie_present": true,
+  "browser_cookie_details": {
+    "name": "connect.sid",
+    "domain": "127.0.0.1",
+    "path": "/",
+    "httpOnly": true,
+    "sameSite": "Lax",
+    "secure": false
+  },
+  "post_login_url": "http://127.0.0.1:19003/app/orders",
+  "navigated_away_from_login": true,
+  "users_me_cookie_session_status": 200,
+  "users_me_user_email": "synthetic-admin@jovi-r2r2.local",
+  "users_me_user_id": "user_01M1DKCZ4TBNWBA6Q5NWGMAXRM",
+  "bearer_used_for_ui_acceptance": false,
+  "ui_product_page": {
+    "url": "http://127.0.0.1:19003/app/products/prod_01M1PJ0JY9J4EPVYBRJY81MBGN",
+    "title": "Synthetic Commerce Validation Pack - Medusa",
+    "rendered": true,
+    "screenshot": "screenshots/03-product-detail.png"
+  },
+  "ui_order_page": {
+    "url": "http://127.0.0.1:19003/app/orders/order_01M1PJ0K7WMJGJRKE6S897JZ95",
+    "title": "#3 - Medusa",
+    "rendered": true,
+    "screenshot": "screenshots/04-order-detail.png"
+  },
+  "c2_overview_probe": {
+    "url": "http://127.0.0.1:19003/admin/jovi-commerce/c2",
+    "status": 200,
+    "synthetic_only": true,
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "draft_bundle_present": true,
+    "runs_count": 3,
+    "entitlements_count": 3,
+    "receipts_count": 3
+  },
+  "receipt_entitlement_probe": {
+    "url": "http://127.0.0.1:19003/admin/jovi-commerce/receipts?run_id=c2_71d638c59255b6a6",
+    "status": 200,
+    "run_id": "c2_71d638c59255b6a6",
+    "entitlements_count": 1,
+    "receipts_count": 1,
+    "license_type": "SINGLE_USER"
+  },
+  "refresh_session": {
+    "url_after_refresh": "http://127.0.0.1:19003/app/orders",
+    "session_retained": true,
+    "screenshot": "screenshots/05-after-refresh.png"
+  },
+  "security_and_network_assertions": {
+    "console_fatal_error_count": 0,
+    "console_warnings_count": 0,
+    "page_error_count": 0,
+    "external_network_request_count": 0,
+    "unexpected_failed_request_count": 0,
+    "production_secure_cookie_policy_maintained": true,
+    "synthetic_loopback_only": true
+  },
+  "verdict": "C2_ADMIN_SESSION_PASS"
+}

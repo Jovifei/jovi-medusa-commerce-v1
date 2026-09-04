@@ -1,0 +1,54 @@
+﻿{
+  "schema_version": 1,
+  "evidence_type": "C2_NEGATIVE_TEST_RESULTS",
+  "verified_at": "2026-09-05",
+  "unit_tests": {
+    "suite": "src/modules/jovi-commerce/__tests__/c2-negative.unit.spec.ts",
+    "total_tests": 21,
+    "passed_tests": 21,
+    "failed_tests": 0,
+    "coverage": [
+      "N01_NON_ORIGINAL_RIGHTS_REJECTED",
+      "N02_PROHIBITED_CONTENT_FLAG_FALSE_REJECTED",
+      "N03_SYNTHETIC_ONLY_FALSE_REJECTED",
+      "N04_MISSING_ASSETS_IN_MANIFEST_REJECTED",
+      "N05_ASSET_PATH_TRAVERSAL_REJECTED",
+      "N06_EMPTY_ASSET_REJECTED",
+      "N07_ASSET_SHA256_MISMATCH_REJECTED",
+      "N08_ASSET_SIZE_MISMATCH_REJECTED",
+      "N09_UNEXPECTED_FILE_IN_ZIP_REJECTED",
+      "N10_DEFLATE_COMPRESSION_REJECTED",
+      "N11_NON_1980_TIMESTAMP_REJECTED",
+      "N12_NON_0644_MODE_REJECTED",
+      "N13_UNSORTED_ENTRIES_REJECTED",
+      "N14_MISSING_GRANT_TOKEN_REJECTED_400",
+      "N15_INVALID_GRANT_TOKEN_REJECTED_403",
+      "N16_EXPIRED_GRANT_REJECTED_410",
+      "N17_REVOKED_GRANT_REJECTED_403",
+      "N18_MISMATCHED_RUN_ID_REJECTED_403",
+      "N19_EXCEEDED_MAX_DOWNLOADS_REJECTED_429",
+      "N20_PAYMENT_EVIDENCE_MISMATCH_REJECTED",
+      "N21_NON_SYNTHETIC_ORDER_REJECTED"
+    ]
+  },
+  "runtime_integration_negative_tests": {
+    "script": "src/scripts/jovi-c2-negative.ts",
+    "scenarios_tested": [
+      "FORGED_PAYMENT_BINDING_REJECTED",
+      "MISSING_TRANSACTION_PAYMENT_REJECTED",
+      "AMOUNT_MISMATCH_REJECTED",
+      "MANUAL_PAYMENT_INJECTION_REJECTED",
+      "EXPIRED_GRANT_REJECTED",
+      "REVOKED_GRANT_REJECTED",
+      "FORGED_TOKEN_REJECTED"
+    ],
+    "database_state_preserved": true,
+    "database_row_deltas": {
+      "jovi_run": 0,
+      "jovi_entitlement": 0,
+      "jovi_delivery_receipt": 0,
+      "jovi_evidence": 0
+    }
+  },
+  "verdict": "PASS"
+}

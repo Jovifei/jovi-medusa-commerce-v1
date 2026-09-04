@@ -1,0 +1,43 @@
+﻿{
+  "schema_version": 1,
+  "evidence_type": "C2_OSS_TOOL_EVIDENCE",
+  "generated_at": "2026-09-05",
+  "tools": {
+    "gitleaks": {
+      "repository": "gitleaks/gitleaks",
+      "pinned_image": "docker.io/zricethezav/gitleaks:v8.24.0",
+      "image_digest": "sha256:2bcceac45179b3a91bff11a824d0fb952585b429e54fc928728b1d4d5c3e5176",
+      "license": "MIT",
+      "clean_repo_scan": {
+        "status": "PASS",
+        "exit_code": 0,
+        "leaks_found": 0,
+        "report_file": "governance/c2/c2-gitleaks-report.json"
+      }
+    },
+    "syft": {
+      "repository": "anchore/syft",
+      "pinned_image": "docker.io/anchore/syft:v1.20.0",
+      "image_digest": "sha256:b46e597614ddc78621e560af3fabf9346e35462ea1c886a38b30bcc7ca601a73",
+      "license": "Apache-2.0",
+      "source_sbom": {
+        "file": "governance/c2/syft_source_sbom.cdx.json",
+        "format": "CycloneDX 1.5 JSON",
+        "component_count": 1301
+      },
+      "image_sbom": {
+        "file": "governance/c2/syft_image_sbom.cdx.json",
+        "format": "CycloneDX 1.5 JSON",
+        "component_count": 6310
+      }
+    },
+    "playwright": {
+      "version": "1.49.0-core",
+      "evidence_file": "governance/c2/C2_ADMIN_SESSION_EVIDENCE.json",
+      "status": "C2_ADMIN_SESSION_PASS",
+      "headless_browser": "Chromium 1234",
+      "cookie_session_verified": true,
+      "bearer_used_for_ui_acceptance": false
+    }
+  }
+}

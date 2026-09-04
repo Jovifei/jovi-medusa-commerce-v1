@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "acceptance_criteria": [
+    "all asset hashes match",
+    "delivery package is byte-for-byte deterministic",
+    "exactly one entitlement and one delivery receipt are issued",
+    "downloaded package SHA256 equals built package SHA256",
+    "all real-platform flags remain false"
+  ],
+  "assets": [
+    {
+      "media_type": "text/plain",
+      "relative_path": "README.txt",
+      "rights_status": "original",
+      "sha256": "23ce668014753df1ba1b4d6b13d31666e805d42d5fdd285872db8401f6909df2",
+      "size": 233
+    },
+    {
+      "media_type": "application/json",
+      "relative_path": "checklist.json",
+      "rights_status": "original",
+      "sha256": "962d1634316ba7a11272bfe895f94aef36cd2b389d7d12255e95225207e2ceb8",
+      "size": 283
+    },
+    {
+      "media_type": "text/html",
+      "relative_path": "sample-report.html",
+      "rights_status": "original",
+      "sha256": "9d1519db237c9b0be238db22a92814e02693c96f6c35353ed79d584cd63a046e",
+      "size": 310
+    }
+  ],
+  "deliverables": [
+    "README.txt",
+    "checklist.json",
+    "sample-report.html"
+  ],
+  "name": "Synthetic Commerce Validation Pack",
+  "owner": "Jovi",
+  "product_id": "SYNTH-C2-VALIDATION-PACK",
+  "prohibited_content_confirmed_absent": true,
+  "rights_status": "original",
+  "schema_version": 1,
+  "synthetic_only": true,
+  "version": "1.0.0"
+}

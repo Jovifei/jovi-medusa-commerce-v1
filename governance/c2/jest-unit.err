@@ -1,0 +1,14 @@
+PASS src/modules/jovi-commerce/__tests__/c2-negative.unit.spec.ts
+PASS src/workflows/__tests__/jovi-x2.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/c2-deterministic-zip.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/domain.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/fixture.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/session-cookie.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/package.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/x2-contract.unit.spec.ts
+PASS src/modules/jovi-commerce/__tests__/policy-command.unit.spec.ts
+
+Test Suites: 9 passed, 9 total
+Tests:       41 passed, 41 total
+Snapshots:   0 total
+Time:        3.131 s

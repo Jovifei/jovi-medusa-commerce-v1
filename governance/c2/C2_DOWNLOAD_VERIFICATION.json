@@ -1,0 +1,53 @@
+﻿{
+  "schema_version": 1,
+  "verification_type": "C2_DOWNLOAD_VERIFICATION",
+  "verified_at": "2026-09-05",
+  "artifact": {
+    "product_id": "SYNTH-C2-VALIDATION-PACK",
+    "version": "1.0.0",
+    "file_name": "SYNTH-C2-VALIDATION-PACK-1.0.0.zip",
+    "size_bytes": 2249,
+    "sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "package_manifest_sha256": "382a5a016905e1d5290d599e55abf36e3a766a62ad1b10dea1a2fc5dc4d391f0",
+    "format": "C2_DETERMINISTIC_ZIP_V1"
+  },
+  "oracle_cross_language_equivalence": {
+    "python_oracle_sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "node_fflate_sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "byte_exact_match": true,
+    "compression_method": "STORED (0)",
+    "timestamp_fixed": "1980-01-01 00:00:00 UTC",
+    "unix_permissions": "0644"
+  },
+  "http_loopback_download": {
+    "endpoint": "http://127.0.0.1:9000/store/jovi-commerce/downloads",
+    "method": "GET",
+    "auth_protocol": "Bearer DownloadGrant Token with x-publishable-api-key",
+    "response_status": 200,
+    "content_type": "application/zip",
+    "content_length": 2249,
+    "x_artifact_sha256_header": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "retrieved_bytes": 2249,
+    "retrieved_sha256": "d13f5d95cc9e46bfa8a871e5a8542552a38964db1ff7fdd68cfedb83ab6623ca",
+    "payload_intact": true
+  },
+  "fail_closed_negative_access": {
+    "missing_token": {
+      "status": 400,
+      "rejection_verified": true
+    },
+    "invalid_token": {
+      "status": 403,
+      "rejection_verified": true
+    },
+    "expired_grant": {
+      "status": 410,
+      "rejection_verified": true
+    },
+    "revoked_grant": {
+      "status": 403,
+      "rejection_verified": true
+    }
+  },
+  "verdict": "PASS"
+}

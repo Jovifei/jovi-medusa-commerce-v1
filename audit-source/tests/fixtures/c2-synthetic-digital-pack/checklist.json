@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "product_manifest_valid",
+    "rights_confirmed",
+    "delivery_package_deterministic",
+    "entitlement_exactly_once",
+    "receipt_exactly_once",
+    "download_sha_matches",
+    "platform_actions_disabled"
+  ],
+  "schema_version": 1,
+  "synthetic_only": true
+}

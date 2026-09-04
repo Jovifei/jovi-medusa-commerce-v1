@@ -2,7 +2,7 @@ import { createHash } from "node:crypto"
 
 export type RightsStatus = "ORIGINAL" | "VERIFIED_LICENSE"
 export type SyntheticProvenance = {
-  environment: "SYNTHETIC_X2"
+  environment: "SYNTHETIC_X2" | "SYNTHETIC_C2"
   synthetic_only: true
   test_run_id: string
   source_fixture_sha256: string
@@ -52,7 +52,13 @@ const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(valu
 const hashText = (value: string) => createHash("sha256").update(value, "utf8").digest("hex")
 
 export function validateProvenance(value: SyntheticProvenance): SyntheticProvenance {
-  if (value?.environment !== "SYNTHETIC_X2" || value.synthetic_only !== true || value.real_commerce_pilot_started !== false || !/^x2_[0-9a-f]{16,64}$/.test(value.test_run_id) || !isSha256(value.source_fixture_sha256)) {
+  if (
+    (value?.environment !== "SYNTHETIC_X2" && value?.environment !== "SYNTHETIC_C2") ||
+    value.synthetic_only !== true ||
+    value.real_commerce_pilot_started !== false ||
+    !/^(x2|c2)_[0-9a-f]{16,64}$/.test(value.test_run_id) ||
+    !isSha256(value.source_fixture_sha256)
+  ) {
     throw new Error("INVALID_SYNTHETIC_PROVENANCE")
   }
   return { ...value }
@@ -69,14 +75,23 @@ export function validateAsset(input: JoviAsset): JoviAsset {
   const provenance = validateProvenance(input.provenance)
   if (!["ORIGINAL", "VERIFIED_LICENSE"].includes(input.rights_status) || !input.asset_id || !input.version || !isSha256(input.manifest_sha256) || !isSha256(input.rights_evidence_sha256)) throw new Error("INVALID_ASSET")
   const files = [...input.package_files]
-  if (!files.length || new Set(files).size !== files.length || files.some((path) => !/^assets\/[^/]+(?:\/[^/]+)*$/.test(path) || path.split("/").some((part) => part === "." || part === ".."))) throw new Error("INVALID_ASSET_FILE_ALLOWLIST")
+  if (
+    !files.length ||
+    new Set(files).size !== files.length ||
+    files.some(
+      (path) =>
+        !/^[a-zA-Z0-9_.-]+(?:\/[a-zA-Z0-9_.-]+)*$/.test(path) ||
+        path.split("/").some((part) => part === "." || part === ".." || part === "")
+    )
+  )
+    throw new Error("INVALID_ASSET_FILE_ALLOWLIST")
   return { ...input, package_files: files.sort(), provenance }
 }
 
 export function issueEntitlement(orderId: string, paymentEvidence: EvidenceRef, assetInput: JoviAsset, runId: string, termsSha256: string, issuedAt = new Date().toISOString()): JoviEntitlement {
   const asset = validateAsset(assetInput)
   validateEvidence(paymentEvidence, "SYNTHETIC_PAYMENT")
-  if (!/^x2_[0-9a-f]{16,64}$/.test(runId) || !isSha256(termsSha256)) throw new Error("INVALID_ISSUANCE_INPUT")
+  if (!/^(x2|c2)_[0-9a-f]{16,64}$/.test(runId) || !isSha256(termsSha256)) throw new Error("INVALID_ISSUANCE_INPUT")
   if (!orderId) throw new Error("INVALID_ORDER_ID")
   const identity = hash({ order_id: orderId, asset_id: asset.asset_id, version: asset.version, terms_sha256: termsSha256 })
   return { entitlement_id: `ent_${identity.slice(0, 24)}`, order_id: orderId, product_id: asset.asset_id, version: asset.version, license_type: "SINGLE_USER", terms_sha256: termsSha256, payment_evidence_sha256: paymentEvidence.evidence_sha256, run_id: runId, issued_at: issuedAt, provenance: asset.provenance }
