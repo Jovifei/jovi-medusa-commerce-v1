@@ -1,0 +1,47 @@
+=== CMD: git status --short ===
+?? governance/c3/SYNTH-C3-MODBUS-RTU-0.2.0-dev.zip
+
+=== CMD: git branch --show-current ===
+main
+
+=== CMD: git remote -v ===
+origin	git@github.com:Jovifei/jovi-medusa-commerce-v1.git (fetch)
+origin	git@github.com:Jovifei/jovi-medusa-commerce-v1.git (push)
+
+=== CMD: git rev-parse HEAD ===
+63db06e9628331982893929f39b1037077138480
+
+=== CMD: git rev-parse main ===
+63db06e9628331982893929f39b1037077138480
+
+=== CMD: git rev-parse feature/c3-modbus-real-sku-staging ===
+63db06e9628331982893929f39b1037077138480
+
+=== CMD: git show -s --format="%H%n%P%n%T%n%an%n%ae%n%ad%n%cn%n%ce%n%cd%n%B" main ===
+63db06e9628331982893929f39b1037077138480
+5b190edce6a530264560a6822b347255fba014ba
+8829d0029a2ac0400aaecb5c5604cf61c3b2e555
+Jovi Commerce Adoption Executor
+executor@jovi-commerce.local
+Sat Sep 5 15:35:36 2026 +0800
+Jovi Commerce Adoption Executor
+executor@jovi-commerce.local
+E:\project\jovi-medusa-commerce-v1ndocs(governance): C3 independent audit verdict: C3_REAL_SKU_STAGING_INDEPENDENT_AUDIT_PASS
+
+=== CMD: git ls-remote origin refs/heads/main refs/heads/feature/c3-modbus-real-sku-staging ===
+63db06e9628331982893929f39b1037077138480	refs/heads/feature/c3-modbus-real-sku-staging
+63db06e9628331982893929f39b1037077138480	refs/heads/main
+
+=== CMD: git cat-file -t 63db06e9fd2e1cbdf6e7926b48ba72d3fbe06cb1 ===
+fatal: git cat-file: could not get object info
+
+=== CMD: git cat-file -t 63db06e9628331982893929f39b1037077138480 ===
+commit
+
+=== CMD: git cat-file -p 63db06e9628331982893929f39b1037077138480 ===
+tree 8829d0029a2ac0400aaecb5c5604cf61c3b2e555
+parent 5b190edce6a530264560a6822b347255fba014ba
+author Jovi Commerce Adoption Executor <executor@jovi-commerce.local> 1788593736 +0800
+committer Jovi Commerce Adoption Executor <executor@jovi-commerce.local> 1788593736 +0800
+
+docs(governance): C3 independent audit verdict: C3_REAL_SKU_STAGING_INDEPENDENT_AUDIT_PASS

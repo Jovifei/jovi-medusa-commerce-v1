@@ -34,3 +34,7 @@ Thumbs.db
 
 __pycache__/
 *.pyc
+
+# delivery zip archives
+governance/**/*.zip
+*.zip

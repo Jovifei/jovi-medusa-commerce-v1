@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "inventory_date": "2026-09-05",
+  "package_metadata": {
+    "audited_filename": "SYNTH-C3-MODBUS-RTU-0.2.0-dev.zip",
+    "audited_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+    "size_bytes": 82853839,
+    "format": "C3_DETERMINISTIC_ZIP_V1",
+    "customer_visible_alias_candidate": "JoviModbusDiagnosticToolkit-0.2.0-dev-Windows-x64.zip",
+    "alias_mapping_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59"
+  },
+  "outer_package_files": [
+    {
+      "filename": "MANIFEST.json",
+      "size_bytes": 857,
+      "sha256": "d42fa453d1ea9de2467c59a26d3b1f3b358e73ed22ca5c88edd2a36a5fa5a4c7"
+    },
+    {
+      "filename": "build/JoviModbusDiagnosticToolkit-portable.zip",
+      "size_bytes": 48288685,
+      "sha256": "7525e4c8d4fd55900d46c51e075b92e47d61c7d8e1393383e2e92206855a9628"
+    },
+    {
+      "filename": "build/installer/JoviModbusDiagnosticToolkit-0.2.0-dev-unsigned.exe",
+      "size_bytes": 34563797,
+      "sha256": "d86ccc3136bc2ed201622c5f961738e9e81762e74e71ac5772ea6d4b5a408e02"
+    }
+  ],
+  "inner_artifacts_breakdown": {
+    "installer_executable": {
+      "path": "build/installer/JoviModbusDiagnosticToolkit-0.2.0-dev-unsigned.exe",
+      "size_bytes": 34563797,
+      "sha256": "d86ccc3136bc2ed201622c5f961738e9e81762e74e71ac5772ea6d4b5a408e02",
+      "authenticode_status": "NotSigned"
+    },
+    "portable_zip": {
+      "path": "build/JoviModbusDiagnosticToolkit-portable.zip",
+      "size_bytes": 48288685,
+      "sha256": "7525e4c8d4fd55900d46c51e075b92e47d61c7d8e1393383e2e92206855a9628",
+      "contains_portable_exe": "JoviModbusDiagnostic/JoviModbusDiagnostic.exe",
+      "total_internal_files": 258
+    }
+  },
+  "content_verification": {
+    "source_code_included": false,
+    "source_code_note": "Package contains compiled standalone binary and bundled libraries; raw Python source tree (src/jovi_modbus) is NOT included.",
+    "python_environment_required_for_buyer": false,
+    "python_requirement_note": "Desktop application executable (.exe) runs directly on Windows 10/11 x64; buyer does not need to install Python.",
+    "virtual_serial_driver_bundled": false,
+    "virtual_serial_note": "com0com / virtual COM driver is NOT bundled in package.",
+    "documentation_and_legal_files": [
+      "JoviModbusDiagnostic/_internal/markupsafe-3.0.3.dist-info/licenses/",
+      "JoviModbusDiagnostic/_internal/markupsafe-3.0.3.dist-info/licenses/LICENSE.txt",
+      "LICENSE.txt",
+      "SBOM.cdx.json",
+      "THIRD_PARTY_NOTICES.md",
+      "docs/",
+      "docs/product/",
+      "docs/product/ARCHITECTURE_V1.md",
+      "docs/product/COMPATIBILITY_MATRIX.md",
+      "docs/product/CURRENT_CODE_ASSESSMENT.md",
+      "docs/product/PRD_V1.md",
+      "docs/product/QUICKSTART.md",
+      "docs/product/TROUBLESHOOTING.md",
+      "docs/product/USER_MANUAL.md"
+    ]
+  },
+  "alignment_with_c4_claim_review": {
+    "all_advertised_files_present": true,
+    "inconsistencies_detected": 0,
+    "notes": "Package exactly matches C4 Listing Claim Review conclusions: Windows desktop installer + portable executable + licenses + user manual."
+  },
+  "verdict": "C4_CUSTOMER_PACKAGE_INVENTORY_PASS"
+}

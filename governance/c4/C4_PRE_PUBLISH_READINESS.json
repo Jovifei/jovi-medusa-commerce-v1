@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "phase": "C4_PRE_PUBLISH_QA",
+  "verdict": "C4_PRE_PUBLISH_QA_PENDING",
+  "issued_from_human": false,
+  "review_date": "2026-09-05",
+  "real_action_flags": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  },
+  "gates": {
+    "c3_runtime_git_reconciliation": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C3_RUNTIME_GIT_RECONCILIATION.json",
+        "governance/c4/C3_RUNTIME_GIT_RECONCILIATION.md",
+        "governance/c4/c3_runtime_git_raw_evidence.txt"
+      ]
+    },
+    "c3_runtime_evidence_integrity": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_INDEPENDENT_AUDIT_RESULT.md",
+        "governance/c3/C3_NEGATIVE_TEST_RESULTS.json",
+        "governance/c3/C3_ADMIN_E2E_RESULT.json"
+      ]
+    },
+    "product_zero_write": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_PRODUCT_SOURCE_ZERO_WRITE_PROOF.json"
+      ]
+    },
+    "product_head_binding": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_PRODUCT_MANIFEST.json",
+        "governance/c3/C3_MODBUS_SOURCE_QUALIFICATION.json"
+      ]
+    },
+    "installer_binding": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_DELIVERY_PACKAGE_MANIFEST.json"
+      ]
+    },
+    "portable_binding": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_DELIVERY_PACKAGE_MANIFEST.json"
+      ]
+    },
+    "delivery_package_binding": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_RELEASE_CANDIDATE.json"
+      ]
+    },
+    "listing_claim_review": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_LISTING_CLAIM_REVIEW.json",
+        "governance/c4/C4_LISTING_CLAIM_REVIEW.md"
+      ]
+    },
+    "customer_package_inventory": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_CUSTOMER_PACKAGE_INVENTORY.json",
+        "governance/c4/C4_CUSTOMER_PACKAGE_INVENTORY.md"
+      ]
+    },
+    "xianyu_human_rule_check": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "release_posture_human_choice": {
+      "status": "PENDING",
+      "evidence": []
+    },
+    "delivery_transport_frozen": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_MANUAL_DELIVERY_TRANSPORT.json",
+        "governance/c4/C4_MANUAL_DELIVERY_TRANSPORT.md"
+      ]
+    },
+    "privacy_minimization": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_LISTING_CLAIM_REVIEW.md"
+      ]
+    },
+    "six_real_action_flags_false": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c3/C3_RELEASE_CANDIDATE.json",
+        "governance/c4/C3_RUNTIME_GIT_RECONCILIATION.json"
+      ]
+    },
+    "governance_pr_ci_status": {
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C3_RUNTIME_GIT_RECONCILIATION.json"
+      ]
+    }
+  }
+}

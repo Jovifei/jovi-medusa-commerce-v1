@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-05",
+  "product_id": "E01",
+  "product_version": "0.2.0-dev",
+  "source_c3_evidence_file": "governance/c3/C3_LISTING_CLAIM_EVIDENCE.json",
+  "source_c3_evidence_sha256": "471fc8bcbf6d48c4850a54baa533698e4c71b5d3c5a673e024e2c6ba6e5c3623",
+  "claims_total": 12,
+  "claims_keep": 10,
+  "claims_rewrite": 2,
+  "claims_remove": 0,
+  "reviewed_claims": [
+    {
+      "source_c3_claim_id": "C3-CLAIM-001",
+      "original_claim_text": "Product release version is 0.2.0-dev",
+      "customer_safe_wording": "当前试点版本为 0.2.0-dev，按 Beta Pilot 透明披露；安装包为未签名构件（UNSIGNED）。",
+      "placement": "basic_info",
+      "evidence_path": "src/jovi_modbus/__init__.py",
+      "evidence_sha256": "a1eba6dd08cd5ebffe62defbd119989fcdf66008d463cf3f2f3dcbfacdddff27",
+      "decision": "KEEP",
+      "reason": "Accurately reflects 0.2.0-dev product version and discloses Beta Pilot / unsigned state."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-002",
+      "original_claim_text": "Supports Modbus RTU standard read function codes FC01, FC03, and FC04",
+      "customer_safe_wording": "支持 Modbus RTU 标准读取功能码 FC01（读线圈）、FC03（读保持寄存器）、FC04（读输入寄存器）。",
+      "placement": "verified_features",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md section 'Main workflow'."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-003",
+      "original_claim_text": "Provides COM port parameter configuration including baudrate, parity, stop bits and address scan range 1-247",
+      "customer_safe_wording": "可配置 COM 串口参数（波特率、校验位、停止位），并支持 1–247 地址范围扫描配置。",
+      "placement": "verified_features",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md port panel documentation."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-004",
+      "original_claim_text": "Device identity identification is strictly governed by reviewed JSON profiles, otherwise returns NOT_AVAILABLE",
+      "customer_safe_wording": "设备身份识别仅依据已审核的 JSON profile 规则比对；无法确认时返回 NOT_AVAILABLE，不虚构设备标识。",
+      "placement": "known_behavior",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md explicit profile behavior statement."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-005",
+      "original_claim_text": "Manual write functions FC06 and FC16 are disabled by default in candidate scan mode for safety",
+      "customer_safe_wording": "为保障工业设备现场安全，扫描模式下默认禁用 FC06/FC16 写操作，需用户显式二次确认后方可启用。",
+      "placement": "safety_limitations",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md write operation safety guard documentation."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-006",
+      "original_claim_text": "Generates diagnostic reports in HTML and PDF formats from unified session data model",
+      "customer_safe_wording": "支持从统一诊断会话数据生成 HTML 与 PDF 格式的诊断测试报告。",
+      "placement": "verified_features",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md reporting and export section."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-007",
+      "original_claim_text": "Protocol engine, CRC calculator, frame parser and offscreen GUI pass 40 unit and integration tests",
+      "customer_safe_wording": "协议引擎、CRC 校验计算器、帧解析和离屏 GUI 路径已通过 40 项本地单元与集成自动化测试。",
+      "placement": "quality_evidence",
+      "evidence_path": "modbus_test_run.log",
+      "evidence_sha256": "9fdfe5775dfb4c2b0c9256109ebcfc348f9e2b0635abb17bd56174ab540544dd",
+      "decision": "REWRITE",
+      "reason": "Clarified CRC as computation and verification (error detection), avoiding description as error correction, hardware CRC or digital signature."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-008",
+      "original_claim_text": "Release deliverables comprise standalone Windows installer executable and portable standalone ZIP package",
+      "customer_safe_wording": "发布构件包含 Windows 桌面端安装包（.exe）与免安装便携版（Portable .zip）。",
+      "placement": "deliverables",
+      "evidence_path": "reports/product/TEST_RESULTS.md",
+      "evidence_sha256": "04c3078bf495a226b7c9042978f3ebc5a01048f9f52fbf72585c63f98e3ea438",
+      "decision": "KEEP",
+      "reason": "Directly backed by reports/product/TEST_RESULTS.md and release artifacts."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-009",
+      "original_claim_text": "Software distributed under Jovi commercial evaluation license terms",
+      "customer_safe_wording": "本交付物受随包 LICENSE.txt 所载 Jovi 商业评估许可条款约束，具体授权与使用权利以随包法律文本为准。",
+      "placement": "license_terms",
+      "evidence_path": "LICENSE.txt",
+      "evidence_sha256": "bacf1b4764ba654888752356ae1b211fb9ed7770e34b01d1ad05b501b89ae4ff",
+      "decision": "REWRITE",
+      "reason": "Clarified commercial evaluation terms without promising perpetual/unrestricted redistribution rights beyond license."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-010",
+      "original_claim_text": "Third-party open-source components and licenses documented in THIRD_PARTY_NOTICES.md",
+      "customer_safe_wording": "第三方开源依赖组件与其许可证声明完整记录于随包 THIRD_PARTY_NOTICES.md 文件中。",
+      "placement": "legal_notices",
+      "evidence_path": "THIRD_PARTY_NOTICES.md",
+      "evidence_sha256": "396984054f5b5ff85f65f2799d479c48e93cc3011fbab5b0902beffcbebc324c",
+      "decision": "KEEP",
+      "reason": "Directly backed by THIRD_PARTY_NOTICES.md in product root."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-011",
+      "original_claim_text": "Requires Windows 10/11 x64 and compatible USB-RS485 adapter with vendor-provided driver",
+      "customer_safe_wording": "运行环境要求为 64 位 Windows 10 或 Windows 11 系统；若连接真实物理设备，需自备兼容的 USB-RS485 转接器及厂商驱动。",
+      "placement": "system_requirements",
+      "evidence_path": "docs/product/COMPATIBILITY_MATRIX.md",
+      "evidence_sha256": "0d488911f6fd83d6ab78b060606fe6052742ea1f4330be00a04cddec04c855c8",
+      "decision": "KEEP",
+      "reason": "Directly backed by COMPATIBILITY_MATRIX.md."
+    },
+    {
+      "source_c3_claim_id": "C3-CLAIM-012",
+      "original_claim_text": "Demo simulation mode produces synthetic device telemetry labeled SIMULATED for UI evaluation only",
+      "customer_safe_wording": "软件内置的 Demo 仿真模式仅生成标记为 SIMULATED 的模拟数据用于界面操作评估，不可替代真实物理硬件验收。",
+      "placement": "known_limitations",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "decision": "KEEP",
+      "reason": "Directly backed by USER_MANUAL.md demo mode disclaimer."
+    }
+  ],
+  "excluded_or_prohibited_marketing_claims": [
+    "Python 3.10+ required for ordinary buyer use (desktop executable is bundled, Python is not required for buyer)",
+    "Buyer needs Python programming basics (not required for desktop GUI operation)",
+    "Virtual serial port driver / com0com included or bundled (not part of deliverable package)",
+    "Raw Python source project included (not included in binary deliverable package)",
+    "QUICKSTART.md or requirements.txt at outer root (documentation is located inside portable package docs/)",
+    "3-minute setup or fixed execution time guarantee (unsupported across arbitrary PC setups)",
+    "CRC-16 hardware error correction (CRC is error detection/verification, not correction)",
+    "SHA256 digital signature (SHA256 is integrity digest, Authenticode signature is NotSigned)",
+    "100% Modbus device compatibility (untested across proprietary vendor variations)",
+    "Universal Windows compatibility without test verification",
+    "Permanent free updates guarantee",
+    "Unlimited lifetime customer support",
+    "Absolute blanket non-refundable policy (platform supports refund/dispute process)"
+  ],
+  "verdict": "C4_LISTING_CLAIM_REVIEW_PASS"
+}

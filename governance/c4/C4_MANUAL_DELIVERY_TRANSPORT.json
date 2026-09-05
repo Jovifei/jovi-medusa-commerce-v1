@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "specification_date": "2026-09-05",
+  "transport_name": "MANUAL_SECURE_CLOUD_OR_DIRECT_LINK",
+  "transport_type": "HUMAN_CONTROLLED_ONE_TO_ONE",
+  "canonical_customer_visible_filename": "JoviModbusDiagnosticToolkit-0.2.0-dev-Windows-x64.zip",
+  "immutable_underlying_package_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+  "package_size_bytes": 82853839,
+  "alias_mapping_rule": "JoviModbusDiagnosticToolkit-0.2.0-dev-Windows-x64.zip is byte-for-byte identical to SYNTH-C3-MODBUS-RTU-0.2.0-dev.zip",
+  "access_procedure": "1. Buyer pays on Xianyu; 2. Jovi verifies payment manually and creates sanitized pilot order entry; 3. Jovi generates temporary access link (e.g. Baidu Netdisk with extraction code or private direct HTTPS link); 4. Jovi pastes download link, extraction code, and SHA256 integrity hash into Xianyu private chat; 5. Jovi provides certutil verification one-liner for buyer.",
+  "expiration_revocation_policy": "Download links are order-scoped or time-limited (default 7 days). Links can be revoked immediately if dispute arises.",
+  "human_verification_steps": [
+    "Recompute local delivery package SHA256 before uploading/sharing",
+    "Verify underlying hash matches 4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59 exactly",
+    "Include PowerShell command in delivery message: certutil -hashfile <filename> SHA256"
+  ],
+  "automated_platform_send": false,
+  "verdict": "C4_MANUAL_DELIVERY_TRANSPORT_FROZEN"
+}
