@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "evidence_type": "C3_ADMIN_E2E_RESULT",
+  "verified_at": "2026-09-05T15:16:30Z",
+  "base_url": "http://127.0.0.1:19003",
+  "admin_session": {
+    "auth_protocol": "Cookie session connect.sid",
+    "email": "synthetic-admin@jovi-r2r2.local",
+    "emailpass_status": 200,
+    "session_status": 200,
+    "bearer_injection_bypassed": false
+  },
+  "observed_entities": {
+    "product": {
+      "product_id": "E01",
+      "name": "Modbus RTU Diagnostic Toolkit",
+      "version": "0.2.0-dev",
+      "status": "VERIFIED"
+    },
+    "order": {
+      "order_id": "order_c3_modbus_rtu_synthetic_01",
+      "status": "COMPLETED",
+      "amount": 99.0,
+      "currency": "CNY"
+    },
+    "entitlement": {
+      "entitlement_id": "ent_c3_modbus_rtu_001",
+      "count": 1,
+      "status": "ACTIVE"
+    },
+    "delivery_receipt": {
+      "receipt_id": "rcpt_c3_modbus_rtu_001",
+      "count": 1,
+      "channel": "SYNTHETIC"
+    },
+    "digital_release": {
+      "release_id": "rel_E01_0_2_0-dev",
+      "state": "FROZEN"
+    },
+    "delivery_package": {
+      "package_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+      "size_bytes": 82853839
+    }
+  },
+  "refresh_verification": {
+    "session_retained": true,
+    "status": 200
+  },
+  "security_observations": {
+    "external_network_requests": 0,
+    "unexpected_failures": 0,
+    "synthetic_loopback_only": true
+  },
+  "verdict": "C3_ADMIN_E2E_PASS"
+}

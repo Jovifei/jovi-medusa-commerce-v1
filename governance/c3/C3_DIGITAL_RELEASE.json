@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "release_id": "rel_E01_0_2_0-dev",
+  "product_id": "E01",
+  "variant_id": "var_E01_0_2_0-dev",
+  "version": "0.2.0-dev",
+  "state": "FROZEN",
+  "release_manifest_sha256": "d42fa453d1ea9de2467c59a26d3b1f3b358e73ed22ca5c88edd2a36a5fa5a4c7",
+  "source_product_manifest_sha256": "879fdff9a7148f9730f773e9a012cf0dfe68b107ababf850585348f54def4e66",
+  "delivery_package_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+  "delivery_package_size_bytes": 82853839,
+  "rights_status": "original_plus_licensed_dependencies",
+  "candidate_only": true,
+  "created_at": "2026-09-05T15:15:57Z"
+}

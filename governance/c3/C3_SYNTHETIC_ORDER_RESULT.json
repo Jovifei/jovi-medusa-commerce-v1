@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "order_id": "order_c3_modbus_rtu_synthetic_01",
+  "product_id": "E01",
+  "product_version": "0.2.0-dev",
+  "payment": {
+    "provider": "jovi_synthetic_test_payment",
+    "transaction_id": "txn_c3_synthetic_pay_001",
+    "amount": 99.0,
+    "currency": "CNY",
+    "real_payment": false,
+    "payment_evidence_sha256": "8d2463f00c2f9177d6e08a1cd5c6b8a31efe56120f40c53feed2839c34387cfe"
+  },
+  "entitlement": {
+    "entitlement_id": "ent_c3_modbus_rtu_001",
+    "entitlement_count": 1,
+    "status": "ACTIVE",
+    "license_type": "SINGLE_USER",
+    "customer": "synthetic-buyer@jovi.local"
+  },
+  "delivery_receipt": {
+    "receipt_id": "rcpt_c3_modbus_rtu_001",
+    "delivery_receipt_count": 1,
+    "status": "COMPLETED",
+    "channel": "SYNTHETIC_DIRECT_DOWNLOAD"
+  },
+  "download_grant": {
+    "grant_id": "grant_c3_modbus_rtu_001",
+    "grant_token_hash": "c3grant_3f92d4b8e2a10459c08d519b78a42e",
+    "verified": true,
+    "max_downloads": 5,
+    "used_downloads": 1
+  },
+  "loopback_download_verification": {
+    "endpoint": "http://127.0.0.1:9000/store/jovi-commerce/downloads",
+    "downloaded_bytes": 82853839,
+    "downloaded_package_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+    "delivery_package_sha256": "4bd5703ae80fcea9c1dcf7d5d1ea2a02fe282a5cf6ef3f04a2c9703db5188e59",
+    "byte_exact_match": true,
+    "status": "PASS"
+  },
+  "final_state": "READY_FOR_HUMAN_DELIVERY",
+  "candidate_only": true,
+  "real_action_flags": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  }
+}

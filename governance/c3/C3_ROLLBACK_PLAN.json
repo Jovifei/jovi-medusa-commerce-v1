@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "plan_type": "C3_ROLLBACK_PLAN",
+  "created_at": "2026-09-05",
+  "target_baseline": {
+    "branch": "feature/c2-synthetic-commerce-e2e",
+    "commit": "ce25c9e2a660b1f6b64ead3192ff861b3a8a19fa"
+  },
+  "rollback_steps": [
+    "1. In Runtime repo, discard working tree changes: git checkout -- .",
+    "2. If restoring to C2 baseline: git checkout ce25c9e2a660b1f6b64ead3192ff861b3a8a19fa",
+    "3. Product repository E:\\project\\jovi-modbus-diagnostic-toolkit-v1 is verified zero-write and strictly unmodified, requiring zero rollback action.",
+    "4. Zero production impact because all operations ran on isolated test sandboxes and synthetic databases."
+  ]
+}

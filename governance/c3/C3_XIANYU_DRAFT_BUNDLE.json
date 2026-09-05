@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "product_version": "0.2.0-dev",
+  "draft_type": "XIANYU_DRAFT_CANDIDATE",
+  "listing_title": "工控Modbus RTU串口诊断工具软件V0.2.0-dev支持FC01/03/04生成报告",
+  "listing_body": "【产品说明】\nJovi 原创工业自动化 Modbus RTU 串口诊断工具包（V0.2.0-dev）。\n用于工程现场 RS485 链路通信排查、从站设备轮询与诊断。\n\n【核心功能】\n1. 支持 Modbus RTU 标准读功能码（FC01线圈、FC03保持寄存器、FC04输入寄存器）。\n2. 从站地址范围 1-247 扫描，自动解析正常应答与异常码。\n3. 安全防护：默认锁定写操作，杜绝误操作修改 PLC/从机参数。\n4. 支持导出 HTML/PDF 诊断报告，排查结果便于归档。\n\n【交付内容】\n1. Windows 桌面版安装程序（.exe）\n2. 免安装解压即用绿色包（.zip）\n3. 快速上手手册与配套使用说明\n\n【运行要求】\nWindows 10 / Windows 11 64位系统。需要自备正常工作的 USB 转 RS485 适配器及驱动。\n\n【特别声明】\n本发布为手动导入草稿包（Candidate Only），不执行任何自动发布、自动改价或自动回复。禁止夸大宣称。",
+  "tags": [
+    "ModbusRTU",
+    "工控诊断",
+    "串口调试",
+    "RS485",
+    "自动化排查"
+  ],
+  "price_synthetic": 99.0,
+  "candidate_only": true,
+  "platform_action_allowed": false,
+  "human_review_required": true
+}

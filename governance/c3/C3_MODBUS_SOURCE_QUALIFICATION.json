@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "source_repository_path": "E:\\project\\jovi-modbus-diagnostic-toolkit-v1",
+  "source_git_head": "25ef15386b21bcc53277c0d5af5973ad8ea272eb",
+  "tracked_worktree_clean": true,
+  "source_index_clean": true,
+  "qualified_untracked_release_artifacts": [],
+  "product_source_readonly": true,
+  "product_repository_modified_by_commerce": false,
+  "version": "0.2.0-dev",
+  "version_evidence": {
+    "relative_path": "src/jovi_modbus/__init__.py",
+    "sha256": "a1eba6dd08cd5ebffe62defbd119989fcdf66008d463cf3f2f3dcbfacdddff27"
+  },
+  "build_system": {
+    "kind": "pyinstaller_inno_setup",
+    "recipe_path": "installer/JoviModbusDiagnosticToolkit.iss",
+    "tool_versions_recorded": true
+  },
+  "deliverables": [
+    {
+      "role": "installer",
+      "relative_path": "build/installer/JoviModbusDiagnosticToolkit-0.2.0-dev-unsigned.exe",
+      "sha256": "d86ccc3136bc2ed201622c5f961738e9e81762e74e71ac5772ea6d4b5a408e02",
+      "size_bytes": 34563797,
+      "media_type": "application/vnd.microsoft.portable-executable",
+      "authenticode_status": "UNSIGNED"
+    },
+    {
+      "role": "portable_zip",
+      "relative_path": "build/JoviModbusDiagnosticToolkit-portable.zip",
+      "sha256": "7525e4c8d4fd55900d46c51e075b92e47d61c7d8e1393383e2e92206855a9628",
+      "size_bytes": 48288685,
+      "media_type": "application/zip",
+      "authenticode_status": "NOT_APPLICABLE"
+    }
+  ],
+  "tests": [
+    {
+      "name": "pytest canonical unit and GUI test suite (40 passed)",
+      "command": "pytest -v",
+      "result": "PASS",
+      "evidence_path": "modbus_test_run.log",
+      "evidence_sha256": "9fdfe5775dfb4c2b0c9256109ebcfc348f9e2b0635abb17bd56174ab540544dd"
+    }
+  ],
+  "supported_platforms": [
+    {
+      "platform": "Windows 10/11 x64 (host execution verified via 40 unit and gui offscreen tests under Python 3.12)",
+      "status": "VERIFIED",
+      "evidence_path": "modbus_test_run.log",
+      "evidence_sha256": "9fdfe5775dfb4c2b0c9256109ebcfc348f9e2b0635abb17bd56174ab540544dd"
+    }
+  ],
+  "license_inventory_status": "VERIFIED",
+  "third_party_notices_status": "VERIFIED",
+  "known_limitations": [
+    "Hardware integration with real USB-RS485 adapters and physical slaves requires local UAT with appropriate serial drivers.",
+    "Write operations (FC06/FC16) are disabled by default in candidate scan mode to prevent inadvertent device overwrites.",
+    "Device identity is only recognized for reviewed JSON profile templates; unprofiled devices return NOT_AVAILABLE without serial fabrication.",
+    "Demo simulation mode produces synthetic telemetry labeled SIMULATED for walkthrough purposes only.",
+    "Application binaries are unsigned (UNSIGNED Authenticode status) during C3 pre-release staging; Windows SmartScreen warnings are expected until code signing is configured."
+  ],
+  "support_boundary": "Evaluation pre-release digital product. Support covers documented Modbus RTU protocol diagnostics, standard COM serial configuration, and report export. Physical RS-485 bus electrical issues and custom hardware proprietary protocols are out of scope.",
+  "authenticode_status": "UNSIGNED",
+  "smart_screen_status": "NOT_A_GUARANTEE",
+  "qualification_verdict": "C3_PRODUCT_SOURCE_QUALIFIED"
+}

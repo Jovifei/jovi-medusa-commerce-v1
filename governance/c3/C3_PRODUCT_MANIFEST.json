@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "name": "Modbus RTU Diagnostic Toolkit",
+  "version": "0.2.0-dev",
+  "owner": "Jovi",
+  "rights_status": "original_plus_licensed_dependencies",
+  "prohibited_content_confirmed_absent": true,
+  "source_git_head": "25ef15386b21bcc53277c0d5af5973ad8ea272eb",
+  "supported_platforms": [
+    {
+      "name": "Windows 10/11 x64",
+      "status": "VERIFIED",
+      "evidence_ref": "modbus_test_run.log"
+    }
+  ],
+  "deliverables": [
+    {
+      "role": "installer",
+      "relative_path": "build/installer/JoviModbusDiagnosticToolkit-0.2.0-dev-unsigned.exe",
+      "sha256": "d86ccc3136bc2ed201622c5f961738e9e81762e74e71ac5772ea6d4b5a408e02",
+      "size_bytes": 34563797
+    },
+    {
+      "role": "portable_zip",
+      "relative_path": "build/JoviModbusDiagnosticToolkit-portable.zip",
+      "sha256": "7525e4c8d4fd55900d46c51e075b92e47d61c7d8e1393383e2e92206855a9628",
+      "size_bytes": 48288685
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion": "Pytest unit, protocol, CRC, parser, and GUI offscreen test suite passes completely",
+      "status": "PASS",
+      "evidence_ref": "modbus_test_run.log"
+    }
+  ],
+  "third_party_dependencies": [
+    {
+      "name": "pyserial",
+      "version": "3.5",
+      "license": "BSD-3-Clause",
+      "source": "https://github.com/pyserial/pyserial"
+    },
+    {
+      "name": "PySide6",
+      "version": "6.8.1",
+      "license": "LGPL-3.0",
+      "source": "https://pypi.org/project/PySide6/"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.5",
+      "license": "BSD-3-Clause",
+      "source": "https://palletsprojects.com/p/jinja/"
+    },
+    {
+      "name": "WeasyPrint",
+      "version": "63.1",
+      "license": "BSD-3-Clause",
+      "source": "https://weasyprint.org/"
+    }
+  ],
+  "support_boundary": "Evaluation pre-release digital product. Support covers documented Modbus RTU protocol diagnostics, standard COM serial configuration, and report export. Physical RS-485 bus electrical issues and custom hardware proprietary protocols are out of scope.",
+  "known_limitations": [
+    "Hardware integration with real USB-RS485 adapters and physical slaves requires local UAT with appropriate serial drivers.",
+    "Write operations (FC06/FC16) are disabled by default in candidate scan mode to prevent inadvertent device overwrites.",
+    "Device identity is only recognized for reviewed JSON profile templates; unprofiled devices return NOT_AVAILABLE without serial fabrication.",
+    "Demo simulation mode produces synthetic telemetry labeled SIMULATED for walkthrough purposes only.",
+    "Application binaries are unsigned (UNSIGNED Authenticode status) during C3 pre-release staging; Windows SmartScreen warnings are expected until code signing is configured."
+  ],
+  "product_source_readonly": true,
+  "candidate_only": true
+}

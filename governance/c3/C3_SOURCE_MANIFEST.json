@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "manifest_type": "C3_SOURCE_MANIFEST",
+  "created_at": "2026-09-05",
+  "runtime_base_commit": "ce25c9e2a660b1f6b64ead3192ff861b3a8a19fa",
+  "canonical_source_tree_sha256": "e3afca520386f043820dd7811a5b6ceb0dc7c8f9caa6c268f01d25edc347ed11",
+  "file_count": 82,
+  "product_source": {
+    "path": "E:\\project\\jovi-modbus-diagnostic-toolkit-v1",
+    "git_head": "25ef15386b21bcc53277c0d5af5973ad8ea272eb",
+    "tracked_worktree_clean": true,
+    "source_index_clean": true,
+    "untracked_files_count": 0,
+    "product_repo_write_attempts": 0
+  },
+  "security_and_supply_chain": {
+    "runtime_gitleaks": "PASS (0 findings)",
+    "product_gitleaks_readonly": "PASS (0 findings)",
+    "syft_source_inventory": "PASS (SBOM verified)",
+    "authenticode_status": "UNSIGNED (recorded factually, no bypass)"
+  },
+  "six_boundary_flags": {
+    "production_integration_allowed": false,
+    "real_payment": false,
+    "real_customer": false,
+    "xianyu": false,
+    "auto_delivery": false,
+    "n8n_production": false
+  }
+}

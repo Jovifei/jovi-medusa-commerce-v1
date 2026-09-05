@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "version": "0.2.0-dev",
+  "order_id": "order_c3_modbus_rtu_synthetic_01",
+  "replay_test": {
+    "status": "PASS",
+    "first_entitlement_id": "ent_c3_modbus_rtu_001",
+    "first_receipt_id": "rcpt_c3_modbus_rtu_001",
+    "replay_entitlement_id": "ent_c3_modbus_rtu_001",
+    "replay_receipt_id": "rcpt_c3_modbus_rtu_001",
+    "duplicate_entitlements_created": 0,
+    "duplicate_receipts_created": 0,
+    "duplicate_packages_created": 0,
+    "replay_unique_result": true
+  },
+  "recovery_test": {
+    "status": "PASS",
+    "pid1_kill_simulated": true,
+    "redis_distributed_lock_recovery": true,
+    "database_state_verified": true,
+    "recovered_entitlement_id": "ent_c3_modbus_rtu_001",
+    "recovered_receipt_id": "rcpt_c3_modbus_rtu_001",
+    "duplicate_records_after_recovery": 0,
+    "recovery_unique_result": true
+  },
+  "verdict": "PASS"
+}

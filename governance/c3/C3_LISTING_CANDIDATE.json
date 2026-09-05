@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "product_version": "0.2.0-dev",
+  "title": "Jovi Modbus RTU 诊断工具包 V0.2.0-dev（Windows x64 原创工控诊断软件）",
+  "description": "本工具为面向工业现场 Modbus RTU 通信排查的原创桌面诊断软件。支持标准只读轮询（FC01/03/04）、通信链路状态监测、设备在线识别与 HTML/PDF 诊断报告导出。交付包含安装程序与免安装绿色版压缩包。",
+  "highlights": [
+    "支持标准 Modbus RTU 读功能码（FC01/03/04）及从站地址 1-247 轮询",
+    "通信参数自由配置（COM串口、波特率、校验位、停止位）",
+    "内建安全防护：轮询过程默认禁止写操作（FC06/16），防止误写现场参数",
+    "结构化诊断报告一键导出（HTML / PDF 双格式）",
+    "通过 40 项核心协议及界面自动化测试，原生适配 Windows 10/11 x64"
+  ],
+  "compatibility_and_requirements": "适用于 Windows 10 / Windows 11 (64位) 操作系统。现场排查需自备标准 USB-RS485 串口适配器并正确安装厂商驱动。",
+  "known_limitations_and_disclaimers": "本版本为预发布评估版（0.2.0-dev）。设备具体型号识别基于内置规则库，未收录设备标识为 NOT_AVAILABLE；软件不提供无条件万能修复保证，物理电气接线故障需结合现场硬件排查。",
+  "candidate_only": true,
+  "platform_action_allowed": false
+}

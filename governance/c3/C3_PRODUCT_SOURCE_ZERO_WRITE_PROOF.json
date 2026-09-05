@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "before_head": "25ef15386b21bcc53277c0d5af5973ad8ea272eb",
+  "after_head": "25ef15386b21bcc53277c0d5af5973ad8ea272eb",
+  "before_tracked_worktree_clean": true,
+  "after_tracked_worktree_clean": true,
+  "before_index_clean": true,
+  "after_index_clean": true,
+  "before_qualified_untracked_artifacts": [],
+  "after_qualified_untracked_artifacts": [],
+  "product_repo_write_attempts": 0,
+  "verdict": "PASS_ZERO_WRITE"
+}

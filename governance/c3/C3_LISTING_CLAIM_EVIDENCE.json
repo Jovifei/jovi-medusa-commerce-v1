@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "product_id": "E01",
+  "product_version": "0.2.0-dev",
+  "claims": [
+    {
+      "claim_id": "C3-CLAIM-001",
+      "claim_text": "Product release version is 0.2.0-dev",
+      "claim_type": "version",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "src/jovi_modbus/__init__.py",
+      "evidence_sha256": "a1eba6dd08cd5ebffe62defbd119989fcdf66008d463cf3f2f3dcbfacdddff27",
+      "notes": "Version defined in authoritative __init__.py module"
+    },
+    {
+      "claim_id": "C3-CLAIM-002",
+      "claim_text": "Supports Modbus RTU standard read function codes FC01, FC03, and FC04",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "Section 'Main workflow' documents FC01-FC04 quick scan support"
+    },
+    {
+      "claim_id": "C3-CLAIM-003",
+      "claim_text": "Provides COM port parameter configuration including baudrate, parity, stop bits and address scan range 1-247",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "Port panel parameters and address bounding documented in User Manual"
+    },
+    {
+      "claim_id": "C3-CLAIM-004",
+      "claim_text": "Device identity identification is strictly governed by reviewed JSON profiles, otherwise returns NOT_AVAILABLE",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "User Manual explicitly states application never fabricates SN values"
+    },
+    {
+      "claim_id": "C3-CLAIM-005",
+      "claim_text": "Manual write functions FC06 and FC16 are disabled by default in candidate scan mode for safety",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "Section 'Writes' specifies default disabled state until explicit confirmation"
+    },
+    {
+      "claim_id": "C3-CLAIM-006",
+      "claim_text": "Generates diagnostic reports in HTML and PDF formats from unified session data model",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "Export features and data model verified in User Manual"
+    },
+    {
+      "claim_id": "C3-CLAIM-007",
+      "claim_text": "Protocol engine, CRC calculator, frame parser and offscreen GUI pass 40 unit and integration tests",
+      "claim_type": "functionality",
+      "status": "VERIFIED",
+      "evidence_type": "test",
+      "evidence_path": "modbus_test_run.log",
+      "evidence_sha256": "9fdfe5775dfb4c2b0c9256109ebcfc348f9e2b0635abb17bd56174ab540544dd",
+      "notes": "40/40 passed pytest run in isolated sandbox execution"
+    },
+    {
+      "claim_id": "C3-CLAIM-008",
+      "claim_text": "Release deliverables comprise standalone Windows installer executable and portable standalone ZIP package",
+      "claim_type": "delivery",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "reports/product/TEST_RESULTS.md",
+      "evidence_sha256": "04c3078bf495a226b7c9042978f3ebc5a01048f9f52fbf72585c63f98e3ea438",
+      "notes": "Local installer smoke and portable test outcomes documented"
+    },
+    {
+      "claim_id": "C3-CLAIM-009",
+      "claim_text": "Software distributed under Jovi commercial evaluation license terms",
+      "claim_type": "license",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "LICENSE.txt",
+      "evidence_sha256": "bacf1b4764ba654888752356ae1b211fb9ed7770e34b01d1ad05b501b89ae4ff",
+      "notes": "License agreement specifies terms and rights reservation"
+    },
+    {
+      "claim_id": "C3-CLAIM-010",
+      "claim_text": "Third-party open-source components and licenses documented in THIRD_PARTY_NOTICES.md",
+      "claim_type": "license",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "THIRD_PARTY_NOTICES.md",
+      "evidence_sha256": "396984054f5b5ff85f65f2799d479c48e93cc3011fbab5b0902beffcbebc324c",
+      "notes": "Notices file inventories bundled third-party dependencies"
+    },
+    {
+      "claim_id": "C3-CLAIM-011",
+      "claim_text": "Requires Windows 10/11 x64 and compatible USB-RS485 adapter with vendor-provided driver",
+      "claim_type": "system_requirement",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/COMPATIBILITY_MATRIX.md",
+      "evidence_sha256": "0d488911f6fd83d6ab78b060606fe6052742ea1f4330be00a04cddec04c855c8",
+      "notes": "Compatibility matrix clarifies hardware and OS boundaries"
+    },
+    {
+      "claim_id": "C3-CLAIM-012",
+      "claim_text": "Demo simulation mode produces synthetic device telemetry labeled SIMULATED for UI evaluation only",
+      "claim_type": "known_limitation",
+      "status": "VERIFIED",
+      "evidence_type": "file",
+      "evidence_path": "docs/product/USER_MANUAL.md",
+      "evidence_sha256": "d66c2261209a380030917574865ee30d46425491b5c5e4a5a3e0def97c50fdc3",
+      "notes": "Explicitly states demo mode cannot satisfy real hardware acceptance"
+    }
+  ],
+  "omitted_unverified_claims": [
+    "100% Modbus device compatibility (unproven across arbitrary proprietary vendor extensions)",
+    "Universal Windows compatibility without test verification",
+    "Guaranteed hardware fault resolution or repair warranty",
+    "Permanent free updates guarantee",
+    "Universal driver-free operation across all serial chipsets"
+  ],
+  "verdict": "C3_LISTING_CLAIMS_EVIDENCE_BOUND"
+}
