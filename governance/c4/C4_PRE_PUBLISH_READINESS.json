@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "phase": "C4_PRE_PUBLISH_QA",
-  "verdict": "C4_PRE_PUBLISH_QA_PENDING",
+  "verdict": "C4_PRE_PUBLISH_QA_READY_FOR_HUMAN_DECISION",
   "issued_from_human": false,
-  "review_date": "2026-09-05",
+  "review_date": "2026-09-06",
   "real_action_flags": {
     "production_integration_allowed": false,
     "real_payment": false,
@@ -75,12 +75,18 @@
       ]
     },
     "xianyu_human_rule_check": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_XIANYU_HUMAN_RULE_CHECK_20260905.md"
+      ]
     },
     "release_posture_human_choice": {
-      "status": "PENDING",
-      "evidence": []
+      "status": "PASS",
+      "evidence": [
+        "governance/c4/C4_CUSTOMER_PACKAGE_INVENTORY.md",
+        "governance/c4/C4_LISTING_CLAIM_REVIEW.md"
+      ],
+      "chosen_posture": "BETA_PILOT"
     },
     "delivery_transport_frozen": {
       "status": "PASS",
