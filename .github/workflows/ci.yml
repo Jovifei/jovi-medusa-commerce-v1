@@ -29,11 +29,12 @@ jobs:
           corepack enable
           corepack prepare pnpm@10.32.0 --activate
 
-      # provenance / manifest validation first (fail fast if import drifts)
+      # C3-derived audited Runtime baseline. R6's original import hash is historical;
+      # see governance/c4/C4_RUNTIME_CI_BASELINE_RECONCILIATION.md.
       - name: Validate audited source tree SHA (deterministic)
         run: |
           python3 governance/r6/ci/verify_source_tree.py audit-source \
-            e533f0ce0010cc0f75848b9854d8ccd4da364768f31174349d8981827342f8aa
+            3101604bf10c9c6ed3c9b67a23e5ef77a6704472835ccfd536c2cc0b6b8e568a
 
       - name: Validate evidence sidecars
         run: |
